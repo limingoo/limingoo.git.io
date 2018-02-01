@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wuhainan.com/"/>
-  <updated>2018-02-01T04:35:25.043Z</updated>
+  <updated>2018-02-01T04:56:39.478Z</updated>
   <id>http://wuhainan.com/</id>
   
   <author>
@@ -21,9 +21,16 @@
     <link href="http://wuhainan.com/2018/02/01/BP%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     <id>http://wuhainan.com/2018/02/01/BP神经网络/</id>
     <published>2018-02-01T04:19:30.000Z</published>
-    <updated>2018-02-01T04:35:25.043Z</updated>
+    <updated>2018-02-01T04:56:39.478Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="BP神经网络基本原理"><a href="#BP神经网络基本原理" class="headerlink" title="BP神经网络基本原理"></a>BP神经网络基本原理</h2><p>​    基本BP算法包括信号的前向传播和误差的反向传播两个过程。即计算误差输出时按从输入到输出的方向进行，而调整权值和阈值则从输出到输入的方向进行。正向传播时，输入信号通过隐含层作用于输出节点，经过非线性变换，产生输出信号，若实际输出与期望输出不相符，则转入误差的反向传播过程。误差反传是将输出误差通过隐含层向输入层逐层反传，并将误差分摊给各层所有单元，以从各层获得的误差信号作为调整各单元权值的依据。通过调整输入节点与隐层节点的联接强度和隐层节点与输出节点的联接强度以及阈值，使误差沿梯度方向下降，经过反复学习训练，确定与最小误差相对应的网络参数(权值和阈值)，训练即告停止。此时经过训练的神经网络即能对类似样本的输入信息，自行处理输出误差最小的经过非线形转换的信息。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;BP神经网络基本原理&quot;&gt;&lt;a href=&quot;#BP神经网络基本原理&quot; class=&quot;headerlink&quot; title=&quot;BP神经网络基本原理&quot;&gt;&lt;/a&gt;BP神经网络基本原理&lt;/h2&gt;&lt;p&gt;​    基本BP算法包括信号的前向传播和误差的反向传播两个过程。即计算误差
+      
     
     </summary>
     
@@ -38,10 +45,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://wuhainan.com/2018/01/30/hello-world/"/>
-    <id>http://wuhainan.com/2018/01/30/hello-world/</id>
-    <published>2018-01-30T03:59:21.357Z</published>
-    <updated>2018-01-30T03:59:21.357Z</updated>
+    <link href="http://wuhainan.com/2018/02/01/hello-world/"/>
+    <id>http://wuhainan.com/2018/02/01/hello-world/</id>
+    <published>2018-02-01T02:45:48.431Z</published>
+    <updated>2018-01-30T03:59:21.356Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
