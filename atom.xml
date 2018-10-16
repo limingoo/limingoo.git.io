@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wuhainan.com/"/>
-  <updated>2018-10-16T06:41:19.667Z</updated>
+  <updated>2018-10-16T06:44:39.198Z</updated>
   <id>http://wuhainan.com/</id>
   
   <author>
@@ -21,17 +21,16 @@
     <link href="http://wuhainan.com/2018/10/16/k-%E8%BF%91%E9%82%BB/"/>
     <id>http://wuhainan.com/2018/10/16/k-近邻/</id>
     <published>2018-10-16T05:54:14.008Z</published>
-    <updated>2018-10-16T06:41:19.667Z</updated>
+    <updated>2018-10-16T06:44:39.198Z</updated>
     
-    <content type="html"><![CDATA[<p><code>def classify0(inX,dataSet,labels,k): #inX为用于分类的输入向量,dataSet为训练样本集,labels为标签向量 ​    dataSetSize = dataSet.shape[0]​    diffMat = tile(inX,(dataSetSize,1)) - dataSet #tile函数将inX重复为与dataSet相同的行数​    sqDiffMat = diffMat**2​    sqDistances = sqDiffMat.sum(axis=1)​    distances = sqDistances**0.5  #inX到每个实例点的距离​    sortedDistIndicies = distances.argsort()​    classCount={}​    for i in range(k):​        voteIlabel = labels[sortedDistIndicies[i]]​        classCount[voteIlabel] = classCount.get(voteIlabel,0)+1  #如果该类别不存在，初值置为0，已存在则加1​    sortedClassCount = sorted(classCount.items(),    #选出距离最小的k个实例，按标签出现的次数从大到小排序​                              key = operator.itemgetter(1),reverse=True)​    return sortedClassCount[0][0]</code></p>]]></content>
+    <content type="html"><![CDATA[<p>(<code>``)</code></p><p>def classify0(inX,dataSet,labels,k): #inX为用于分类的输入向量,dataSet为训练样本集,labels为标签向量<br>​    dataSetSize = dataSet.shape[0]<br>​    diffMat = tile(inX,(dataSetSize,1)) - dataSet #tile函数将inX重复为与dataSet相同的行数<br>​    sqDiffMat = diffMat<strong>2<br>​    sqDistances = sqDiffMat.sum(axis=1)<br>​    distances = sqDistances</strong>0.5  #inX到每个实例点的距离<br>​    sortedDistIndicies = distances.argsort()<br>​    classCount={}<br>​    for i in range(k):<br>​        voteIlabel = labels[sortedDistIndicies[i]]<br>​        classCount[voteIlabel] = classCount.get(voteIlabel,0)+1  #如果该类别不存在，初值置为0，已存在则加1<br>​    sortedClassCount = sorted(classCount.items(),    #选出距离最小的k个实例，按标签出现的次数从大到小排序<br>​                              key = operator.itemgetter(1),reverse=True)<br>​    return sortedClassCount[0][0]</p><p>(```)</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;code&gt;def classify0(inX,dataSet,labels,k): #inX为用于分类的输入向量,dataSet为训练样本集,labels为标签向量 
-​    dataSetSize = dataSet.shape[0]
-​    diffMat = t
+        &lt;p&gt;(&lt;code&gt;``)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;def classify0(inX,dataSet,labels,k): #inX为用于分类的输入向量,dataSet为训练样本集,labels为标签向量&lt;br&gt;​    dataSetSize = dataSet.shap
       
     
     </summary>
