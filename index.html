@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  151
+                  9
                 </span>
               
 
@@ -390,8 +390,10 @@
       
         
           
-            <p>(<code>``)</code></p>
-<p>def classify0(inX,dataSet,labels,k): #inX为用于分类的输入向量,dataSet为训练样本集,labels为标签向量<br>​    dataSetSize = dataSet.shape[0]<br>​    diffMat = tile(inX,(dataSetSize,1)) - dataSet #tile函数将inX重复为与dataSet相同的行数<br>​    sqDiffMat = diffMat<strong>2<br>​    sqDistances = sqDiffMat.sum(axis=1)<br>​    distances = sqDistances</strong>0.5  #inX到每个实例点的距离<br>​    sortedDistIndicies = distances.argsort()<br>​    classCount={}<br>​    for i in range(k):<br>​        voteIlabel = labels[sortedDistIndicies[i]]<br>​        classCount[voteIlabel] = classCount.get(voteIlabel,0)+1  #如果该类别不存在，初值置为0，已存在则加1<br>​    sortedClassCount = sorted(classCount.items(),    #选出距离最小的k个实例，按标签出现的次数从大到小排序<br>​                              key = operator.itemgetter(1),reverse=True)<br>​    return sortedClassCount[0][0]</p>
+            <p>(```)</p>
+<p>def classify(inX,labels):</p>
+<p>​    datasize=len(inX)</p>
+<p>return a</p>
 <p>(```)</p>
 
           
@@ -944,7 +946,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共547字</span>
+  <span class="post-count">博客全站共405字</span>
 </div>
 
         
