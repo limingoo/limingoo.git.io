@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,022
+                  1,024
                 </span>
               
 
@@ -412,184 +412,8 @@
       
         
           
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Created on Wed Oct 10 15:59:12 2018</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">@author: wuhainan</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir  <span class="comment">#列出给定目录的文件名</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createDataSet</span><span class="params">()</span>:</span></span><br><span class="line">    group=array([[<span class="number">1.0</span>,<span class="number">1.1</span>],[<span class="number">1.0</span>,<span class="number">1.0</span>],[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">0.1</span>]])</span><br><span class="line">    labels=[<span class="string">'A'</span>,<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'B'</span>]</span><br><span class="line">    <span class="keyword">return</span> group,labels</span><br><span class="line">    </span><br><span class="line"><span class="comment">#k近邻算法 </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify0</span><span class="params">(inX,dataSet,labels,k)</span>:</span> <span class="comment">#inX为用于分类的输入向量,dataSet为训练样本集,labels为标签向量 </span></span><br><span class="line">    dataSetSize = dataSet.shape[<span class="number">0</span>]</span><br><span class="line">    diffMat = tile(inX,(dataSetSize,<span class="number">1</span>)) - dataSet <span class="comment">#tile函数将inX重复为与dataSet相同的行数</span></span><br><span class="line">    sqDiffMat = diffMat**<span class="number">2</span></span><br><span class="line">    sqDistances = sqDiffMat.sum(axis=<span class="number">1</span>)</span><br><span class="line">    distances = sqDistances**<span class="number">0.5</span>  <span class="comment">#inX到每个实例点的距离</span></span><br><span class="line">    sortedDistIndicies = distances.argsort()</span><br><span class="line">    classCount=&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        voteIlabel = labels[sortedDistIndicies[i]]</span><br><span class="line">        classCount[voteIlabel] = classCount.get(voteIlabel,<span class="number">0</span>)+<span class="number">1</span>  <span class="comment">#如果该类别不存在，初值置为0，已存在则加1</span></span><br><span class="line">    sortedClassCount = sorted(classCount.items(),    <span class="comment">#选出距离最小的k个实例，按标签出现的次数从大到小排序</span></span><br><span class="line">                              key = operator.itemgetter(<span class="number">1</span>),reverse=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">return</span> sortedClassCount[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#---------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">#使用k-近邻算法改进约会网站的配对效果</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">file2matrix</span><span class="params">(filename)</span>:</span>  <span class="comment">#将文本文件转换为列表</span></span><br><span class="line">    fr=open(filename)   <span class="comment">#读取文件</span></span><br><span class="line">    arrayOLines=fr.readlines()  <span class="comment">#返回由文件的每一行为元素构成的列表</span></span><br><span class="line">    numberOfLines=len(arrayOLines)  <span class="comment">#文件的总行数</span></span><br><span class="line">    returnMat=zeros((numberOfLines,<span class="number">3</span>))  <span class="comment">#特征向量</span></span><br><span class="line">    classLabelVector=[]  <span class="comment">#标签向量</span></span><br><span class="line">    index=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> arrayOLines:  <span class="comment">#依次读取每行</span></span><br><span class="line">        line=line.strip()  <span class="comment">#去掉每行头尾空白</span></span><br><span class="line">        listFromLine=line.split(<span class="string">'\t'</span>) <span class="comment">#返回以制表符\t分隔之后的列表，如['40920', '8.326976', '0.953952', 'largeDoses']</span></span><br><span class="line">        returnMat[index,:]=listFromLine[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line">        classLabelVector.append(int(listFromLine[<span class="number">-1</span>]))</span><br><span class="line">        index+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> returnMat,classLabelVector</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">autoNorm</span><span class="params">(dataSet)</span>:</span>  <span class="comment">#归一化特征值</span></span><br><span class="line">    minVals=dataSet.min(<span class="number">0</span>)  <span class="comment">#每一列的最小值</span></span><br><span class="line">    maxVals=dataSet.max(<span class="number">0</span>)  <span class="comment">#每一列的最大值</span></span><br><span class="line">    ranges=maxVals-minVals</span><br><span class="line">    normalDataSet=zeros(shape(dataSet))</span><br><span class="line">    m=dataSet.shape[<span class="number">0</span>]</span><br><span class="line">    normalDataSet=dataSet-tile(minVals,(m,<span class="number">1</span>))</span><br><span class="line">    normalDataSet=normalDataSet/tile(ranges,(m,<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> normalDataSet,ranges,minVals</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">datingClassTest</span><span class="params">()</span>:</span></span><br><span class="line">    hoRatio=<span class="number">0.10</span></span><br><span class="line">    datingDataMat,datingLabels=file2matrix(<span class="string">"datingTestSet2.txt"</span>)</span><br><span class="line">    normalMat,ranges,minVals=autoNorm(datingDataMat)</span><br><span class="line">    m=normalMat.shape[<span class="number">0</span>]  <span class="comment">#总样本数量</span></span><br><span class="line">    numTestVecs=int(m*hoRatio)  <span class="comment">#测试集数量</span></span><br><span class="line">    errorCount=<span class="number">0.0</span>  <span class="comment">#用于错误结果计数</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numTestVecs):</span><br><span class="line">        classifierResult=classify0(normalMat[i,:],normalMat[numTestVecs:m,:],</span><br><span class="line">                                   datingLabels[numTestVecs:m],<span class="number">3</span>)</span><br><span class="line">        print(<span class="string">"the classifier came back with: %d,the real answer is %d"</span> % (classifierResult,datingLabels[i]))</span><br><span class="line">        <span class="keyword">if</span>(classifierResult != datingLabels[i]):</span><br><span class="line">            errorCount+=<span class="number">1.0</span></span><br><span class="line">    print(<span class="string">"the total error rate is %f"</span> % (errorCount/float(numTestVecs)))</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classifyPerson</span><span class="params">()</span>:</span>  <span class="comment">#预测函数</span></span><br><span class="line">    resultList=[<span class="string">'not at all'</span>,<span class="string">'in small doses'</span>,<span class="string">'in large doses'</span>]</span><br><span class="line">    percentTats=float(input(<span class="string">"percentage of time spent playing video game?"</span>))  <span class="comment">#玩视频游戏所耗时间百分比</span></span><br><span class="line">    ffMiles=float(input(<span class="string">"frequent flier miles earned per year?"</span>))  <span class="comment">#每年获得的飞行常客里程数</span></span><br><span class="line">    iceCream=float(input(<span class="string">"liters of ice cream consumed per year?"</span>))  <span class="comment">#每周消费的冰淇淋公升数</span></span><br><span class="line">    datingDataMat,datingLabels=file2matrix(<span class="string">"datingTestSet2.txt"</span>)</span><br><span class="line">    normalMat,ranges,minVals=autoNorm(datingDataMat)</span><br><span class="line">    inArr=array([ffMiles,percentTats,iceCream])</span><br><span class="line">    classifierResult=classify0((inArr-minVals)/ranges,normalMat,datingLabels,<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"You will probably like this person:"</span>,resultList[classifierResult<span class="number">-1</span>])</span><br><span class="line">    </span><br><span class="line"><span class="comment">#------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">#使用k-近邻算法识别手写数字</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">img2vector</span><span class="params">(filename)</span>:</span>  <span class="comment">#将图像转换为1×1024的向量</span></span><br><span class="line">    returnVector=zeros((<span class="number">1</span>,<span class="number">1024</span>))</span><br><span class="line">    fr=open(filename)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">32</span>):</span><br><span class="line">        lineStr=fr.readline()  <span class="comment">#读取每一行</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">32</span>):</span><br><span class="line">            returnVector[<span class="number">0</span>,<span class="number">32</span>*i+j]=int(lineStr[j])</span><br><span class="line">    <span class="keyword">return</span> returnVector</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">handwritingClassTest</span><span class="params">()</span>:</span></span><br><span class="line">    hwLabels=[]  <span class="comment">#标签向量</span></span><br><span class="line">    trainFileList=listdir(<span class="string">"trainingDigits"</span>)  <span class="comment">#返回以trainingDigits目录下的所有文件名为元素的列表</span></span><br><span class="line">    m=len(trainFileList)  <span class="comment">#样本数量</span></span><br><span class="line">    trainingMat=zeros((m,<span class="number">1024</span>))  <span class="comment">#训练集特征向量,每一行存储一个数字的图像信息</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        fileNameStr=trainFileList[i]</span><br><span class="line">        fileStr=fileNameStr.split(<span class="string">'.'</span>)[<span class="number">0</span>]</span><br><span class="line">        classNumStr=int(fileStr.split(<span class="string">'_'</span>)[<span class="number">0</span>])  <span class="comment">#从文件名解析出具体的数字</span></span><br><span class="line">        hwLabels.append(classNumStr)</span><br><span class="line">        trainingMat[i,:]=img2vector(<span class="string">'trainingDigits/%s'</span> % fileNameStr)  <span class="comment">#将该样本添加到训练集中</span></span><br><span class="line">    testFileList=listdir(<span class="string">"testDigits"</span>)</span><br><span class="line">    mTest=len(testFileList)  <span class="comment">#测试样本数量</span></span><br><span class="line">    errorCount=<span class="number">0.0</span>  <span class="comment">#记录误分类样本数量</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(mTest):</span><br><span class="line">        fileNameStr=testFileList[i]</span><br><span class="line">        fileStr=fileNameStr.split(<span class="string">'.'</span>)[<span class="number">0</span>]</span><br><span class="line">        classNumStr=int(fileStr.split(<span class="string">'_'</span>)[<span class="number">0</span>])</span><br><span class="line">        vectorUnderTest=img2vector(<span class="string">"testDigits/%s"</span> % fileNameStr)  <span class="comment">#测试向量</span></span><br><span class="line">        classifierResult=classify0(vectorUnderTest,trainingMat,hwLabels,<span class="number">3</span>)</span><br><span class="line">        print(<span class="string">"the classifier came back with: %d,the real answer is %d"</span> % 		(classifierResult,classNumStr))</span><br><span class="line">        <span class="keyword">if</span>(classifierResult != classNumStr):</span><br><span class="line">            errorCount+=<span class="number">1.0</span></span><br><span class="line">    print(<span class="string">"the total number of errors is: %d"</span> % errorCount)  <span class="comment">#误分类样本总数量</span></span><br><span class="line">    print(<span class="string">"the total error rate is %f"</span> % (errorCount/float(mTest)))  <span class="comment">#错误率</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-
-      
-
-    
-
-    <footer class="post-footer">
-      
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wuhainan.com/2018/02/01/BP神经网络/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="天道酬勤whn">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WuHainan'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/01/BP神经网络/" itemprop="url">BP神经网络</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-01T12:19:30+08:00">
-                2018-02-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/神经网络/" itemprop="url" rel="index">
-                    <span itemprop="name">神经网络</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  318
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="BP神经网络基本原理"><a href="#BP神经网络基本原理" class="headerlink" title="BP神经网络基本原理"></a>BP神经网络基本原理</h2><p>​    基本BP算法包括信号的前向传播和误差的反向传播两个过程。即计算误差输出时按从输入到输出的方向进行，而调整权值和阈值则从输出到输入的方向进行。正向传播时，输入信号通过隐含层作用于输出节点，经过非线性变换，产生输出信号，若实际输出与期望输出不相符，则转入误差的反向传播过程。误差反传是将输出误差通过隐含层向输入层逐层反传，并将误差分摊给各层所有单元，以从各层获得的误差信号作为调整各单元权值的依据。通过调整输入节点与隐层节点的联接强度和隐层节点与输出节点的联接强度以及阈值，使误差沿梯度方向下降，经过反复学习训练，确定与最小误差相对应的网络参数(权值和阈值)，训练即告停止。此时经过训练的神经网络即能对类似样本的输入信息，自行处理输出误差最小的经过非线形转换的信息。</p>
+            <p>##代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Created on Wed Oct 10 15:59:12 2018</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">@author: wuhainan</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir  <span class="comment">#列出给定目录的文件名</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createDataSet</span><span class="params">()</span>:</span></span><br><span class="line">    group=array([[<span class="number">1.0</span>,<span class="number">1.1</span>],[<span class="number">1.0</span>,<span class="number">1.0</span>],[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">0</span>,<span class="number">0.1</span>]])</span><br><span class="line">    labels=[<span class="string">'A'</span>,<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'B'</span>]</span><br><span class="line">    <span class="keyword">return</span> group,labels</span><br><span class="line">    </span><br><span class="line"><span class="comment">#k近邻算法 </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify0</span><span class="params">(inX,dataSet,labels,k)</span>:</span> <span class="comment">#inX为用于分类的输入向量,dataSet为训练样本集,labels为标签向量 </span></span><br><span class="line">    dataSetSize = dataSet.shape[<span class="number">0</span>]</span><br><span class="line">    diffMat = tile(inX,(dataSetSize,<span class="number">1</span>)) - dataSet <span class="comment">#tile函数将inX重复为与dataSet相同的行数</span></span><br><span class="line">    sqDiffMat = diffMat**<span class="number">2</span></span><br><span class="line">    sqDistances = sqDiffMat.sum(axis=<span class="number">1</span>)</span><br><span class="line">    distances = sqDistances**<span class="number">0.5</span>  <span class="comment">#inX到每个实例点的距离</span></span><br><span class="line">    sortedDistIndicies = distances.argsort()</span><br><span class="line">    classCount=&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        voteIlabel = labels[sortedDistIndicies[i]]</span><br><span class="line">        classCount[voteIlabel] = classCount.get(voteIlabel,<span class="number">0</span>)+<span class="number">1</span>  <span class="comment">#如果该类别不存在，初值置为0，已存在则加1</span></span><br><span class="line">    sortedClassCount = sorted(classCount.items(),    <span class="comment">#选出距离最小的k个实例，按标签出现的次数从大到小排序</span></span><br><span class="line">                              key = operator.itemgetter(<span class="number">1</span>),reverse=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">return</span> sortedClassCount[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#--------------------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">#使用k-近邻算法改进约会网站的配对效果</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">file2matrix</span><span class="params">(filename)</span>:</span>  <span class="comment">#将文本文件转换为列表</span></span><br><span class="line">    fr=open(filename)   <span class="comment">#读取文件</span></span><br><span class="line">    arrayOLines=fr.readlines()  <span class="comment">#返回由文件的每一行为元素构成的列表</span></span><br><span class="line">    numberOfLines=len(arrayOLines)  <span class="comment">#文件的总行数</span></span><br><span class="line">    returnMat=zeros((numberOfLines,<span class="number">3</span>))  <span class="comment">#特征向量</span></span><br><span class="line">    classLabelVector=[]  <span class="comment">#标签向量</span></span><br><span class="line">    index=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> arrayOLines:  <span class="comment">#依次读取每行</span></span><br><span class="line">        line=line.strip()  <span class="comment">#去掉每行头尾空白</span></span><br><span class="line">        listFromLine=line.split(<span class="string">'\t'</span>) <span class="comment">#返回以制表符\t分隔之后的列表，如['40920', '8.326976', '0.953952', 'largeDoses']</span></span><br><span class="line">        returnMat[index,:]=listFromLine[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line">        classLabelVector.append(int(listFromLine[<span class="number">-1</span>]))</span><br><span class="line">        index+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> returnMat,classLabelVector</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">autoNorm</span><span class="params">(dataSet)</span>:</span>  <span class="comment">#归一化特征值</span></span><br><span class="line">    minVals=dataSet.min(<span class="number">0</span>)  <span class="comment">#每一列的最小值</span></span><br><span class="line">    maxVals=dataSet.max(<span class="number">0</span>)  <span class="comment">#每一列的最大值</span></span><br><span class="line">    ranges=maxVals-minVals</span><br><span class="line">    normalDataSet=zeros(shape(dataSet))</span><br><span class="line">    m=dataSet.shape[<span class="number">0</span>]</span><br><span class="line">    normalDataSet=dataSet-tile(minVals,(m,<span class="number">1</span>))</span><br><span class="line">    normalDataSet=normalDataSet/tile(ranges,(m,<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> normalDataSet,ranges,minVals</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">datingClassTest</span><span class="params">()</span>:</span></span><br><span class="line">    hoRatio=<span class="number">0.10</span></span><br><span class="line">    datingDataMat,datingLabels=file2matrix(<span class="string">"datingTestSet2.txt"</span>)</span><br><span class="line">    normalMat,ranges,minVals=autoNorm(datingDataMat)</span><br><span class="line">    m=normalMat.shape[<span class="number">0</span>]  <span class="comment">#总样本数量</span></span><br><span class="line">    numTestVecs=int(m*hoRatio)  <span class="comment">#测试集数量</span></span><br><span class="line">    errorCount=<span class="number">0.0</span>  <span class="comment">#用于错误结果计数</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numTestVecs):</span><br><span class="line">        classifierResult=classify0(normalMat[i,:],normalMat[numTestVecs:m,:],</span><br><span class="line">                                   datingLabels[numTestVecs:m],<span class="number">3</span>)</span><br><span class="line">        print(<span class="string">"the classifier came back with: %d,the real answer is %d"</span> % (classifierResult,datingLabels[i]))</span><br><span class="line">        <span class="keyword">if</span>(classifierResult != datingLabels[i]):</span><br><span class="line">            errorCount+=<span class="number">1.0</span></span><br><span class="line">    print(<span class="string">"the total error rate is %f"</span> % (errorCount/float(numTestVecs)))</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classifyPerson</span><span class="params">()</span>:</span>  <span class="comment">#预测函数</span></span><br><span class="line">    resultList=[<span class="string">'not at all'</span>,<span class="string">'in small doses'</span>,<span class="string">'in large doses'</span>]</span><br><span class="line">    percentTats=float(input(<span class="string">"percentage of time spent playing video game?"</span>))  <span class="comment">#玩视频游戏所耗时间百分比</span></span><br><span class="line">    ffMiles=float(input(<span class="string">"frequent flier miles earned per year?"</span>))  <span class="comment">#每年获得的飞行常客里程数</span></span><br><span class="line">    iceCream=float(input(<span class="string">"liters of ice cream consumed per year?"</span>))  <span class="comment">#每周消费的冰淇淋公升数</span></span><br><span class="line">    datingDataMat,datingLabels=file2matrix(<span class="string">"datingTestSet2.txt"</span>)</span><br><span class="line">    normalMat,ranges,minVals=autoNorm(datingDataMat)</span><br><span class="line">    inArr=array([ffMiles,percentTats,iceCream])</span><br><span class="line">    classifierResult=classify0((inArr-minVals)/ranges,normalMat,datingLabels,<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"You will probably like this person:"</span>,resultList[classifierResult<span class="number">-1</span>])</span><br><span class="line">    </span><br><span class="line"><span class="comment">#------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">#使用k-近邻算法识别手写数字</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">img2vector</span><span class="params">(filename)</span>:</span>  <span class="comment">#将图像转换为1×1024的向量</span></span><br><span class="line">    returnVector=zeros((<span class="number">1</span>,<span class="number">1024</span>))</span><br><span class="line">    fr=open(filename)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">32</span>):</span><br><span class="line">        lineStr=fr.readline()  <span class="comment">#读取每一行</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">32</span>):</span><br><span class="line">            returnVector[<span class="number">0</span>,<span class="number">32</span>*i+j]=int(lineStr[j])</span><br><span class="line">    <span class="keyword">return</span> returnVector</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">handwritingClassTest</span><span class="params">()</span>:</span></span><br><span class="line">    hwLabels=[]  <span class="comment">#标签向量</span></span><br><span class="line">    trainFileList=listdir(<span class="string">"trainingDigits"</span>)  <span class="comment">#返回以trainingDigits目录下的所有文件名为元素的列表</span></span><br><span class="line">    m=len(trainFileList)  <span class="comment">#样本数量</span></span><br><span class="line">    trainingMat=zeros((m,<span class="number">1024</span>))  <span class="comment">#训练集特征向量,每一行存储一个数字的图像信息</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        fileNameStr=trainFileList[i]</span><br><span class="line">        fileStr=fileNameStr.split(<span class="string">'.'</span>)[<span class="number">0</span>]</span><br><span class="line">        classNumStr=int(fileStr.split(<span class="string">'_'</span>)[<span class="number">0</span>])  <span class="comment">#从文件名解析出具体的数字</span></span><br><span class="line">        hwLabels.append(classNumStr)</span><br><span class="line">        trainingMat[i,:]=img2vector(<span class="string">'trainingDigits/%s'</span> % fileNameStr)  <span class="comment">#将该样本添加到训练集中</span></span><br><span class="line">    testFileList=listdir(<span class="string">"testDigits"</span>)</span><br><span class="line">    mTest=len(testFileList)  <span class="comment">#测试样本数量</span></span><br><span class="line">    errorCount=<span class="number">0.0</span>  <span class="comment">#记录误分类样本数量</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(mTest):</span><br><span class="line">        fileNameStr=testFileList[i]</span><br><span class="line">        fileStr=fileNameStr.split(<span class="string">'.'</span>)[<span class="number">0</span>]</span><br><span class="line">        classNumStr=int(fileStr.split(<span class="string">'_'</span>)[<span class="number">0</span>])</span><br><span class="line">        vectorUnderTest=img2vector(<span class="string">"testDigits/%s"</span> % fileNameStr)  <span class="comment">#测试向量</span></span><br><span class="line">        classifierResult=classify0(vectorUnderTest,trainingMat,hwLabels,<span class="number">3</span>)</span><br><span class="line">        print(<span class="string">"the classifier came back with: %d,the real answer is %d"</span> % 		(classifierResult,classNumStr))</span><br><span class="line">        <span class="keyword">if</span>(classifierResult != classNumStr):</span><br><span class="line">            errorCount+=<span class="number">1.0</span></span><br><span class="line">    print(<span class="string">"the total number of errors is: %d"</span> % errorCount)  <span class="comment">#误分类样本总数量</span></span><br><span class="line">    print(<span class="string">"the total error rate is %f"</span> % (errorCount/float(mTest)))  <span class="comment">#错误率</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -840,7 +664,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -851,7 +675,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -862,7 +686,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -964,7 +788,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.4k字</span>
+  <span class="post-count">博客全站共1.1k字</span>
 </div>
 
         
