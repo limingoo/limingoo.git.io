@@ -23,14 +23,14 @@
     <published>2018-10-29T12:28:35.000Z</published>
     <updated>2018-10-29T13:46:39.753Z</updated>
     
-    <content type="html"><![CDATA[<p>##线性回归</p><p>$$<br>\textrm{给定数据集D=}{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,…,m,x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T。<br>$$</p><p>线性模型试图学得一个通过属性的线性组合来进行预测的函数，即<br>$$<br>f(x)=w_1x_1+w_2x_2+…+w_nx_n+b,<br>$$<br>写成向量形式为<br>$$<br>f(x)=w^Tx+b<br>$$</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><script type="math/tex; mode=display">\textrm{给定数据集D=}\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})\},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,...,m,x^{(i)}=(x_1^{(i)},x_2^{(i)},...x_n^{(i)})^T。</script><p>线性模型试图学得一个通过属性的线性组合来进行预测的函数，即</p><script type="math/tex; mode=display">f(x)=w_1x_1+w_2x_2+...+w_nx_n+b,</script><p>写成向量形式为</p><script type="math/tex; mode=display">f(x)=w^Tx+b</script>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;##线性回归&lt;/p&gt;
-&lt;p&gt;$$&lt;br&gt;\textrm{给定数据集D=}{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y
+        &lt;h2 id=&quot;线性回归&quot;&gt;&lt;a href=&quot;#线性回归&quot; class=&quot;headerlink&quot; title=&quot;线性回归&quot;&gt;&lt;/a&gt;线性回归&lt;/h2&gt;&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\textrm{给定数据集D=}\{(x^{(1)}
       
     
     </summary>

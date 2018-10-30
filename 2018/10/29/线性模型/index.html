@@ -96,17 +96,17 @@
 
 
 
-<meta name="description" content="##线性回归 $$\textrm{给定数据集D=}{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,…,m,x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T。$">
+<meta name="description" content="线性回归 \textrm{给定数据集D=}\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})\},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,...,m,x^{(i)}=(x_1^{(i)},x_2^{(i)},...x_n^{(i)})^T">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性模型">
 <meta property="og:url" content="http://wuhainan.com/2018/10/29/线性模型/index.html">
 <meta property="og:site_name" content="WuHainan&#39;Blog">
-<meta property="og:description" content="##线性回归 $$\textrm{给定数据集D=}{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,…,m,x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T。$">
+<meta property="og:description" content="线性回归 \textrm{给定数据集D=}\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})\},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,...,m,x^{(i)}=(x_1^{(i)},x_2^{(i)},...x_n^{(i)})^T">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-10-29T13:46:39.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性模型">
-<meta name="twitter:description" content="##线性回归 $$\textrm{给定数据集D=}{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,…,m,x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T。$">
+<meta name="twitter:description" content="线性回归 \textrm{给定数据集D=}\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})\},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,...,m,x^{(i)}=(x_1^{(i)},x_2^{(i)},...x_n^{(i)})^T">
 
 
 
@@ -352,7 +352,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  95
+                  39
                 </span>
               
 
@@ -389,10 +389,12 @@
       
 
       
-        <p>##线性回归</p>
-<p>$$<br>\textrm{给定数据集D=}{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,…,m,x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T。<br>$$</p>
-<p>线性模型试图学得一个通过属性的线性组合来进行预测的函数，即<br>$$<br>f(x)=w_1x_1+w_2x_2+…+w_nx_n+b,<br>$$<br>写成向量形式为<br>$$<br>f(x)=w^Tx+b<br>$$</p>
-
+        <h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><script type="math/tex; mode=display">
+\textrm{给定数据集D=}\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})\},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,...,m,x^{(i)}=(x_1^{(i)},x_2^{(i)},...x_n^{(i)})^T。</script><p>线性模型试图学得一个通过属性的线性组合来进行预测的函数，即</p>
+<script type="math/tex; mode=display">
+f(x)=w_1x_1+w_2x_2+...+w_nx_n+b,</script><p>写成向量形式为</p>
+<script type="math/tex; mode=display">
+f(x)=w^Tx+b</script>
       
     </div>
     
@@ -516,8 +518,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -616,6 +627,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归"><span class="nav-number">1.</span> <span class="nav-text">线性回归</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
