@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wuhainan.com/"/>
-  <updated>2018-10-31T11:32:22.536Z</updated>
+  <updated>2018-10-31T11:40:36.605Z</updated>
   <id>http://wuhainan.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://wuhainan.com/2018/10/29/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/"/>
     <id>http://wuhainan.com/2018/10/29/线性模型/</id>
     <published>2018-10-29T12:28:35.000Z</published>
-    <updated>2018-10-31T11:32:22.536Z</updated>
+    <updated>2018-10-31T11:40:36.605Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="线性回归模型"><a href="#线性回归模型" class="headerlink" title="线性回归模型"></a>线性回归模型</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>给定数据集D=$\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})\},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,…,m,x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T$，其中m为样本的数量，n为特征的数量，线性模型试图学得一个通过属性的线性组合来进行预测的函数，即</p><script type="math/tex; mode=display">f(x)=w_1x_1+w_2x_2+...+w_nx_n+b,</script><p>其中$w$为权重，b为截距，写成向量形式为</p><script type="math/tex; mode=display">f(x)=w^Tx+b</script><p>为了简化公式，设$x^{(i)}=(1,x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T，w=(b,w_1,w_2,…,w_n)^T$，简化之后为</p><script type="math/tex; mode=display">f(x)=\sum_{i=0}^nw_ix_i=w^Tx</script><p>我们的目标便是通过给定的数据集D来学习参数$w$，对于给定的样本$x^{(i)}$，其预测值$\hat{y}^{(i)}=w^Tx^{(i)}$，与真实值$y^{(i)}$越接近越好。这里我们采用平方损失函数，则在训练集D上，模型的损失函数为</p><script type="math/tex; mode=display">L(w)=\sum_{i=1}^m(f(x^{(i)})-y^{(i)})^2\\\quad\quad=\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><p>这样，我们的目标便变为损失函数最小化。为了之后求导方便，在损失函数前乘以1/2，即：</p><script type="math/tex; mode=display">w^*=\mathop{\arg\min}_{w}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><p>为了求出使$L(w)$最小的$w$值，我们可以使用梯度下降法和正规方程两种方法。</p><h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3>]]></content>
+    <content type="html"><![CDATA[<h2 id="线性回归模型"><a href="#线性回归模型" class="headerlink" title="线性回归模型"></a>线性回归模型</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>给定数据集D=$\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})\},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,…,m,\\x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T$，其中m为样本的数量，n为特征的数量，线性模型试图学得一个通过属性的线性组合来进行预测的函数，即</p><script type="math/tex; mode=display">f(x)=w_1x_1+w_2x_2+...+w_nx_n+b,</script><p>其中$w$为权重，b为截距，写成向量形式为</p><script type="math/tex; mode=display">f(x)=w^Tx+b</script><p>为了简化公式，设$x^{(i)}=(1,x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T，w=(b,w_1,w_2,…,w_n)^T$，简化之后为</p><script type="math/tex; mode=display">f(x)=\sum_{i=0}^nw_ix_i=w^Tx</script><p>我们的目标便是通过给定的数据集D来学习参数$w$，对于给定的样本$x^{(i)}$，其预测值$\hat{y}^{(i)}=w^Tx^{(i)}$，与真实值$y^{(i)}$越接近越好。这里我们采用平方损失函数，则在训练集D上，模型的损失函数为</p><script type="math/tex; mode=display">L(w)=\sum_{i=1}^m(f(x^{(i)})-y^{(i)})^2\\\quad\quad=\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><p>这样，我们的目标便变为损失函数最小化。为了之后求导方便，在损失函数前乘以1/2，即：</p><script type="math/tex; mode=display">w^*=\mathop{\arg\min}_{w}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><p>为了求出使$L(w)$最小的$w$值，我们可以使用梯度下降法和正规方程两种方法。</p><h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3>]]></content>
     
     <summary type="html">
     
