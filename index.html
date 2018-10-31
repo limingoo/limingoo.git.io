@@ -328,6 +328,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -351,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  513
+                  539
                 </span>
               
 
@@ -404,11 +426,14 @@ L(w)=\sum_{i=1}^m(f(x^{(i)})-y^{(i)})^2
 w^*=\mathop{\arg\min}_{w}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><p>为了求出使$L(w)$最小的$w$值，我们可以使用梯度下降法和正规方程两种方法。</p>
 <h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p>梯度下降的思想是：开始时随机选择一个参数的组合$(w_0,w_1,w_2,…,w_n)$，计算损失函数，然后寻找下一个能让损失函数下降最多的参数组合，持续这么做直到一个局部最小值。通常选择不同的初始参数组合，可能会找到不同的局部最小值。</p>
 <p>梯度下降算法公式为：</p>
-<p>repeat until convercence{</p>
-<p>$w_j:=w_j-\alpha\frac{\partial}{\partial w_j}L(w)$    </p>
+<p>重复直到收敛{</p>
+<p>​    $w_j:=w_j-\alpha\frac{\partial}{\partial w_j}L(w)$    </p>
 <p>}</p>
 <p>要实现这个算法，关键在于求出损失函数关于$w$的导数</p>
-<p>$\frac{\partial}{\partial w_j}L(w)=\frac{\partial}{w_j}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2<br>\\\quad\quad\quad\,\,\,\,=\frac{\partial}{\partial w_j}\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+…+w_jx_j^{(i)}+…+w_nx_n^{(i)}-y^{(i)})^2<br>\\\quad\quad\quad\,\,\,\,=x_j^{(i)}·2·\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+…+w_nx_n^{(i)}-y^{(i)})<br>\\\quad\quad\quad\,\,\,\,=x_j^{(i)}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})$</p>
+<p>$\frac{\partial}{\partial w_j}L(w)=\frac{\partial}{w_j}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2<br>\\\quad\quad\quad\,\,\,\,=\frac{\partial}{\partial w_j}\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+…+w_jx_j^{(i)}+…+w_nx_n^{(i)}-y^{(i)})^2<br>\\\quad\quad\quad\,\,\,\,=2·\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+…+w_nx_n^{(i)}-y^{(i)})·x_j^{(i)}<br>\\\quad\quad\quad\,\,\,\,=\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})x_j^{(i)}$</p>
+<p>重复直到收敛{</p>
+<p>​    $w_j:=w_j+\alpha\sum_{i=1}^m(y^{(i)}-w^Tx^{(i)})x_j^{(i)}​$        (for  every  j)</p>
+<p>}</p>
 
           
         
@@ -797,7 +822,7 @@ w^*=\mathop{\arg\min}_{w}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.5k字</span>
+  <span class="post-count">博客全站共1.6k字</span>
 </div>
 
         
