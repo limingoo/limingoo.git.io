@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  431
+                  513
                 </span>
               
 
@@ -407,12 +407,9 @@ w^*=\mathop{\arg\min}_{w}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><
 <p>repeat until convercence{</p>
 <p>$w_j:=w_j-\alpha\frac{\partial}{\partial w_j}L(w)$    </p>
 <p>}</p>
-<p>要实现这个算法，关键在于求出损失函数关于$w​$的导数</p>
-<script type="math/tex; mode=display">
-\frac{\partial}{\partial w_j}L(w)=\frac{\partial}{w_j}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2
-\\\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\ \ \,=\frac{\partial}{\partial w_j}\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+...+w_jx_j^{(i)}+...+w_nx_n^{(i)}-y^{(i)})^2
-\\\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\,=x_j^{(i)}·2·\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+...+w_nx_n^{(i)}-y^{(i)})
-\\\quad=x_j^{(i)}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})</script>
+<p>要实现这个算法，关键在于求出损失函数关于$w$的导数</p>
+<p>$\frac{\partial}{\partial w_j}L(w)=\frac{\partial}{w_j}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2<br>\\\quad\quad\quad\,\,\,\,=\frac{\partial}{\partial w_j}\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+…+w_jx_j^{(i)}+…+w_nx_n^{(i)}-y^{(i)})^2<br>\\\quad\quad\quad\,\,\,\,=x_j^{(i)}·2·\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+…+w_nx_n^{(i)}-y^{(i)})<br>\\\quad\quad\quad\,\,\,\,=x_j^{(i)}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})$</p>
+
           
         
       
