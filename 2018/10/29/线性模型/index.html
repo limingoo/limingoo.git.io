@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="WuHainan&#39;Blog">
 <meta property="og:description" content="线性回归模型概述给定数据集D=$\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})\},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,…,m\\x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T$，其中m为样本">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-31T11:50:40.730Z">
+<meta property="og:updated_time" content="2018-10-31T12:37:45.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性模型">
 <meta name="twitter:description" content="线性回归模型概述给定数据集D=$\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})\},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,…,m\\x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T$，其中m为样本">
@@ -352,7 +352,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  293
+                  431
                 </span>
               
 
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -401,7 +401,17 @@ L(w)=\sum_{i=1}^m(f(x^{(i)})-y^{(i)})^2
 \\\quad\quad=\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><p>这样，我们的目标便变为损失函数最小化。为了之后求导方便，在损失函数前乘以1/2，即：</p>
 <script type="math/tex; mode=display">
 w^*=\mathop{\arg\min}_{w}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><p>为了求出使$L(w)$最小的$w$值，我们可以使用梯度下降法和正规方程两种方法。</p>
-<h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2>
+<h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p>梯度下降的思想是：开始时随机选择一个参数的组合$(w_0,w_1,w_2,…,w_n)$，计算损失函数，然后寻找下一个能让损失函数下降最多的参数组合，持续这么做直到一个局部最小值。通常选择不同的初始参数组合，可能会找到不同的局部最小值。</p>
+<p>梯度下降算法公式为：</p>
+<p>repeat until convercence{</p>
+<p>$w_j:=w_j-\alpha\frac{\partial}{\partial w_j}L(w)$    </p>
+<p>}</p>
+<p>要实现这个算法，关键在于求出损失函数关于$w​$的导数</p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial w_j}L(w)=\frac{\partial}{w_j}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2
+\\\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\ \ \,=\frac{\partial}{\partial w_j}\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+...+w_jx_j^{(i)}+...+w_nx_n^{(i)}-y^{(i)})^2
+\\\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\,=x_j^{(i)}·2·\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+...+w_nx_n^{(i)}-y^{(i)})
+\\\quad=x_j^{(i)}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})</script>
       
     </div>
     
@@ -694,7 +704,7 @@ w^*=\mathop{\arg\min}_{w}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.3k字</span>
+  <span class="post-count">博客全站共1.5k字</span>
 </div>
 
         
