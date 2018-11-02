@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  539
+                  802
                 </span>
               
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -416,7 +416,7 @@
 <script type="math/tex; mode=display">
 f(x)=w_1x_1+w_2x_2+...+w_nx_n+b,</script><p>其中$w$为权重，b为截距，写成向量形式为</p>
 <script type="math/tex; mode=display">
-f(x)=w^Tx+b</script><p>为了简化公式，设$x^{(i)}=(1,x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T，w=(b,w_1,w_2,…,w_n)^T$，简化之后为</p>
+f(x)=w^Tx+b</script><p>为了简化公式，设$x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)},1)^T，w=(w_1,w_2,…,w_n,b)^T$，简化之后为</p>
 <script type="math/tex; mode=display">
 f(x)=\sum_{i=0}^nw_ix_i=w^Tx</script><p>我们的目标便是通过给定的数据集D来学习参数$w$，对于给定的样本$x^{(i)}$，其预测值$\hat{y}^{(i)}=w^Tx^{(i)}$，与真实值$y^{(i)}$越接近越好。这里我们采用平方损失函数，则在训练集D上，模型的损失函数为</p>
 <script type="math/tex; mode=display">
@@ -434,7 +434,38 @@ w^*=\mathop{\arg\min}_{w}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><
 <p>重复直到收敛{</p>
 <p>​    $w_j:=w_j+\alpha\sum_{i=1}^m(y^{(i)}-w^Tx^{(i)})x_j^{(i)}​$        (for  every  j)</p>
 <p>}</p>
-
+<h2 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程</h2><p>正规方程通过求解下面的方程来找出使损失函数最小的参数：$\frac{\partial}{\partial w}L(w)=0$</p>
+<h3 id="矩阵导数"><a href="#矩阵导数" class="headerlink" title="矩阵导数"></a>矩阵导数</h3><p>假设函数$f:R^{m×n}\to R$，从m*n大小的矩阵映射到实数域，那么当矩阵为A时导函数定义如下所示：</p>
+<script type="math/tex; mode=display">
+\frac{\partial f(A)}{\partial A}=\begin{bmatrix}\frac{\partial f}{\partial A_{11}} & \cdots & \frac{\partial f}{\partial A_{1n}}\\\vdots &\ddots&\vdots\\\frac{\partial f}{\partial A_{m1}}&\cdots&\frac{\partial f}{\partial A_{mn}} \end{bmatrix}</script><p>例如A=$\begin{bmatrix}A_{11}&amp;A_{12}\\A_{21}&amp;A_{22} \end{bmatrix}$是2*2矩阵，给定函数$f:R^{2×2} \to R$为：</p>
+<script type="math/tex; mode=display">
+f(A)=\frac{3}{2}A_{11}+5A_{12}^2+A_{21}A_{22}</script><p>那么$\frac{\partial f(A)}{\partial A}=\begin{bmatrix}\frac{3}{2}&amp;10A_{12}\\A_{22}&amp;A_{21} \end{bmatrix}$，我们还要引入矩阵的迹(trace)，简写为tr。对于一个给定的n*n的方阵A，它的迹定义为对角线元素之和：</p>
+<script type="math/tex; mode=display">
+tr\ A=\sum_{i=1}^nA_{ii}</script><p>如果有两矩阵A和B，满足AB为方阵，则迹运算有以下性质：</p>
+<script type="math/tex; mode=display">
+trAB=trBA\\trABC=trCAB=trBCA\\trA=trA^T\\tr(A+B)=trA+trB\\tr\ aA=atrA</script><p>接下来提出一些矩阵导数：</p>
+<script type="math/tex; mode=display">
+\frac{\partial(trAB)}{\partial A}=B^T\\\frac{\partial f(A)}{\partial A^T}=(\frac{\partial f(A)}{\partial A})^T\\\frac{\partial(trABA^TC)}{\partial A}=CAB+C^TAB^T\\\frac{\partial |A|}{\partial A}=|A|(A^{-1})^T</script><p>下面把损失函数$L(w)$用向量的形式表述。令</p>
+<script type="math/tex; mode=display">
+X=\begin{bmatrix}(x^{(1)})^T\\(x^{(2)})^T\\\vdots\\(x^{(m)})^T\end{bmatrix}=\begin{bmatrix}x_1^{(1)}&x_2^{(1)}&\cdots& x_n^{(1)}&1\\x_1^{(2)}&x_2^{(2)}&\cdots&x_n^{(2)}&1\\\vdots&\vdots&\ddots&\vdots&1\\x_1^{(m)}&x_2^{(m)}&\cdots&x_n^{(m)}&1\end{bmatrix}\\y=\begin{bmatrix}y^{(1)}\\y^{(2)}\\\vdots\\y^{(m)}\end{bmatrix},w=\begin{bmatrix}w_1\\w_2\\\vdots\\w_n\\b\end{bmatrix}</script><p>则有</p>
+<script type="math/tex; mode=display">
+Xw-y=\begin{bmatrix}f(x^{(1)})-y^{(1)}\\f(x^{(2)})-y^{(2)}\\\vdots\\f(x^{(m)})-y^{(m)}\end{bmatrix}\\\frac{1}{2}(Xw-y)^T(Xw-y)=\frac{1}{2}\sum_{i=1}^m(f(x^{(i)})-y^{(i)})^2=L(w)</script><script type="math/tex; mode=display">
+\begin{equation}
+\begin{split}
+\frac{\partial L(w)}{\partial w}&=\frac{\partial }{\partial w}\frac{1}{2}(Xw-y)^T(Xw-y)\\
+&=\frac{1}{2}\frac{\partial}{\partial w}(w^TX^TXw-w^TX^Ty-y^TXw+y^Ty)\\
+&=\frac{1}{2}\frac{\partial}{\partial w}tr(w^TX^TXw-w^TX^Ty-y^TXw+y^Ty)\\
+&=\frac{1}{2}\frac{\partial}{\partial w}(tr(w^TX^TXw)-2tr(y^TXw))\\
+&=\frac{1}{2}(X^TXw+X^TXw-2X^Ty)\\
+&=X^TXw-X^Ty
+\end{split}
+\end{equation}</script><p>令其等于0便得到下面的正规方程：</p>
+<script type="math/tex; mode=display">
+X^TXw=X^Ty</script><p>当$X^TX$可逆时，可得：</p>
+<script type="math/tex; mode=display">
+w^*=(X^TX)^{-1}X^Ty</script><p>于是学得的线性回归模型为：</p>
+<script type="math/tex; mode=display">
+f(x^{(i)})=w^{*T}x^{(i)}</script>
           
         
       
@@ -822,7 +853,7 @@ w^*=\mathop{\arg\min}_{w}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.6k字</span>
+  <span class="post-count">博客全站共1.8k字</span>
 </div>
 
         
