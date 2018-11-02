@@ -188,7 +188,7 @@ body {
   font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 16px;
   line-height: 2;
-  color: #555;
+  color: #ddd;
   background: #fff;
 }
 @media (max-width: 767px) {
@@ -277,15 +277,15 @@ p {
   margin: 0 0 20px 0;
 }
 a {
-  color: #555;
+  color: #ddd;
   text-decoration: none;
   outline: none;
   border-bottom: 1px solid #999;
   word-wrap: break-word;
 }
 a:hover {
-  color: #222;
-  border-bottom-color: #222;
+  color: #ddd;
+  border-bottom-color: #ddd;
 }
 blockquote {
   margin: 0;
@@ -921,7 +921,7 @@ pre .javascript .function {
 }
 .post-body .tabs ul.nav-tabs li.tab.active a {
   cursor: default;
-  color: #555;
+  color: #ddd;
 }
 .post-body .tabs .tab-content {
   background-color: #fff;
@@ -967,7 +967,7 @@ pre .javascript .function {
   display: block;
   width: 22px;
   height: 2px;
-  background: #555;
+  background: #ddd;
   border-radius: 1px;
 }
 .btn-bar+.btn-bar {
@@ -1265,6 +1265,16 @@ pre .javascript .function {
 }
 .use-motion .collection-title {
   opacity: 0;
+}
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+}
+.post-body p a:hover {
+  color: #fc6423;
+  border-bottom: none;
+  border-bottom: 1px solid #fc6423;
 }
 .posts-expand {
   padding-top: 40px;
@@ -1580,11 +1590,11 @@ pre .javascript .function {
   display: block;
   line-height: 25px;
   font-size: 14px;
-  color: #555;
+  color: #ddd;
   border-bottom: none;
 }
 .post-nav-item a:hover {
-  color: #222;
+  color: #ddd;
   border-bottom: none;
 }
 .post-nav-item a:active {
@@ -1997,7 +2007,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffba8f;
+  background: #ff6bff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2841,4 +2851,10 @@ embed {
   padding: 25px;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+body {
+  background: url("/images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
