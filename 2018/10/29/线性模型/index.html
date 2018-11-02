@@ -146,7 +146,7 @@
 <meta property="og:site_name" content="WuHainan&#39;Blog">
 <meta property="og:description" content="线性回归模型概述给定数据集D=$\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})\},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,…,m\\x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T$，其中m为样本">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-02T11:33:05.630Z">
+<meta property="og:updated_time" content="2018-11-02T11:35:10.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性模型">
 <meta name="twitter:description" content="线性回归模型概述给定数据集D=$\{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),…,(x^{(m)},y^{(m)})\},x^{(i)}∈\chi\subseteq\mathbb{R}^n,y^{(i)}∈Y\subseteq\mathbb{R},i=1,2,…,m\\x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)})^T$，其中m为样本">
@@ -448,7 +448,8 @@ f(x)=w_1x_1+w_2x_2+...+w_nx_n+b,</script><p>其中$w$为权重，b为截距，�
 <script type="math/tex; mode=display">
 f(x)=w^Tx+b</script><p>为了简化公式，设$x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)},1)^T，w=(w_1,w_2,…,w_n,b)^T$，简化之后为</p>
 <script type="math/tex; mode=display">
-f(x)=\sum_{i=0}^nw_ix_i=w^Tx</script><p>我们的目标便是通过给定的数据集D来学习参数$w$，对于给定的样本$x^{(i)}$，其预测值$\hat{y}^{(i)}=w^Tx^{(i)}$，与真实值$y^{(i)}$越接近越好。这里我们采用平方损失函数，则在训练集D上，模型的损失函数为</p>
+f(x)=\sum_{i=0}^nw_ix_i=w^Tx</script><a id="more"></a>
+<p>我们的目标便是通过给定的数据集D来学习参数$w$，对于给定的样本$x^{(i)}$，其预测值$\hat{y}^{(i)}=w^Tx^{(i)}$，与真实值$y^{(i)}$越接近越好。这里我们采用平方损失函数，则在训练集D上，模型的损失函数为</p>
 <script type="math/tex; mode=display">
 L(w)=\sum_{i=1}^m(f(x^{(i)})-y^{(i)})^2
 \\\quad\quad=\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><p>这样，我们的目标便变为损失函数最小化。为了之后求导方便，在损失函数前乘以1/2，即：</p>
@@ -495,7 +496,7 @@ X^TXw=X^Ty</script><p>当$X^TX$可逆时，可得：</p>
 <script type="math/tex; mode=display">
 w^*=(X^TX)^{-1}X^Ty</script><p>于是学得的线性回归模型为：</p>
 <script type="math/tex; mode=display">
-f(x^{(i)})=w^{*T}x^{(i)}</script><a id="more"></a>
+f(x^{(i)})=w^{*T}x^{(i)}</script>
       
     </div>
     
