@@ -1,38 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[朴素贝叶斯]]></title>
-    <url>%2F2018%2F11%2F08%2F%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[逻辑回归]]></title>
-    <url>%2F2018%2F11%2F02%2F%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%2F</url>
-    <content type="text"><![CDATA[百度]]></content>
-      <tags>
-        <tag>分类</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[线性模型]]></title>
-    <url>%2F2018%2F10%2F29%2F%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B%2F</url>
-    <content type="text"><![CDATA[线性回归模型概述给定数据集D={$(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),\cdots(x^{(m)},y^{(m)})$}，$x^{(i)}\in\mathcal{X}\subseteq\mathbb{R}^m,y^{(i)}\in\mathcal{Y}\subseteq\mathbb{R},i=1,2,\cdots,m,$其中$x^{(i)}=(x_1^{(i)},x_2^{(i)},\cdots,x_n^{(i)})^T,$m为样本的数量，n为特征的数量。 线性模型试图学得一个通过属性的线性组合来进行预测的函数，即 f(x)=w_1x_1+w_2x_2+...+w_nx_n+b,其中$w$为权重，b为截距，写成向量形式为 f(x)=w^Tx+b为了简化公式，设$x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)},1)^T，w=(w_1,w_2,…,w_n,b)^T$，简化之后为 f(x)=\sum_{i=0}^nw_ix_i=w^Tx我们的目标便是通过给定的数据集D来学习参数$w$，对于给定的样本$x^{(i)}$，其预测值$\hat{y}^{(i)}=w^Tx^{(i)}$，与真实值$y^{(i)}$越接近越好。这里我们采用平方损失函数，则在训练集D上，模型的损失函数为 L(w)=\sum_{i=1}^m(f(x^{(i)})-y^{(i)})^2 \\\quad\quad=\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2这样，我们的目标便变为损失函数最小化。为了之后求导方便，在损失函数前乘以1/2，即： w^*=\mathop{\arg\min}_{w}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2为了求出使$L(w)$最小的$w$值，我们可以使用梯度下降法和正规方程两种方法。 梯度下降法梯度下降的思想是：开始时随机选择一个参数的组合$(w_0,w_1,w_2,…,w_n)$，计算损失函数，然后寻找下一个能让损失函数下降最多的参数组合，持续这么做直到一个局部最小值。通常选择不同的初始参数组合，可能会找到不同的局部最小值。 梯度下降算法公式为： 重复直到收敛{ ​ $w_j:=w_j-\alpha\frac{\partial}{\partial w_j}L(w)$ } 要实现这个算法，关键在于求出损失函数关于$w$的导数 $\frac{\partial}{\partial w_j}L(w)=\frac{\partial}{w_j}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2\\\quad\quad\quad\,\,\,\,=\frac{\partial}{\partial w_j}\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+…+w_jx_j^{(i)}+…+w_nx_n^{(i)}-y^{(i)})^2\\\quad\quad\quad\,\,\,\,=2·\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+…+w_nx_n^{(i)}-y^{(i)})·x_j^{(i)}\\\quad\quad\quad\,\,\,\,=\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})x_j^{(i)}$ 重复直到收敛{ ​ $w_j:=w_j+\alpha\sum_{i=1}^m(y^{(i)}-w^Tx^{(i)})x_j^{(i)}​$ (for every j) } 正规方程正规方程通过求解下面的方程来找出使损失函数最小的参数：$\frac{\partial}{\partial w}L(w)=0$ 矩阵导数假设函数$f:R^{m×n}\to R$，从m*n大小的矩阵映射到实数域，那么当矩阵为A时导函数定义如下所示： \frac{\partial f(A)}{\partial A}=\begin{bmatrix}\frac{\partial f}{\partial A_{11}} & \cdots & \frac{\partial f}{\partial A_{1n}}\\\vdots &\ddots&\vdots\\\frac{\partial f}{\partial A_{m1}}&\cdots&\frac{\partial f}{\partial A_{mn}} \end{bmatrix}例如A=$\begin{bmatrix}A_{11}&amp;A_{12}\\A_{21}&amp;A_{22} \end{bmatrix}$是2*2矩阵，给定函数$f:R^{2×2} \to R$为： f(A)=\frac{3}{2}A_{11}+5A_{12}^2+A_{21}A_{22}那么$\frac{\partial f(A)}{\partial A}=\begin{bmatrix}\frac{3}{2}&amp;10A_{12}\\A_{22}&amp;A_{21} \end{bmatrix}$，我们还要引入矩阵的迹(trace)，简写为tr。对于一个给定的n*n的方阵A，它的迹定义为对角线元素之和： tr\ A=\sum_{i=1}^nA_{ii}如果有两矩阵A和B，满足AB为方阵，则迹运算有以下性质： trAB=trBA\\trABC=trCAB=trBCA\\trA=trA^T\\tr(A+B)=trA+trB\\tr\ aA=atrA接下来提出一些矩阵导数： \frac{\partial(trAB)}{\partial A}=B^T\\\frac{\partial f(A)}{\partial A^T}=(\frac{\partial f(A)}{\partial A})^T\\\frac{\partial(trABA^TC)}{\partial A}=CAB+C^TAB^T\\\frac{\partial |A|}{\partial A}=|A|(A^{-1})^T下面把损失函数$L(w)$用向量的形式表述。令 X=\begin{bmatrix}(x^{(1)})^T\\(x^{(2)})^T\\\vdots\\(x^{(m)})^T\end{bmatrix}=\begin{bmatrix}x_1^{(1)}&x_2^{(1)}&\cdots& x_n^{(1)}&1\\x_1^{(2)}&x_2^{(2)}&\cdots&x_n^{(2)}&1\\\vdots&\vdots&\ddots&\vdots&1\\x_1^{(m)}&x_2^{(m)}&\cdots&x_n^{(m)}&1\end{bmatrix}\\y=\begin{bmatrix}y^{(1)}\\y^{(2)}\\\vdots\\y^{(m)}\end{bmatrix},w=\begin{bmatrix}w_1\\w_2\\\vdots\\w_n\\b\end{bmatrix}则有 Xw-y=\begin{bmatrix}f(x^{(1)})-y^{(1)}\\f(x^{(2)})-y^{(2)}\\\vdots\\f(x^{(m)})-y^{(m)}\end{bmatrix}\\\frac{1}{2}(Xw-y)^T(Xw-y)=\frac{1}{2}\sum_{i=1}^m(f(x^{(i)})-y^{(i)})^2=L(w) \begin{equation} \begin{split} \frac{\partial L(w)}{\partial w}&=\frac{\partial }{\partial w}\frac{1}{2}(Xw-y)^T(Xw-y)\\ &=\frac{1}{2}\frac{\partial}{\partial w}(w^TX^TXw-w^TX^Ty-y^TXw+y^Ty)\\ &=\frac{1}{2}\frac{\partial}{\partial w}tr(w^TX^TXw-w^TX^Ty-y^TXw+y^Ty)\\ &=\frac{1}{2}\frac{\partial}{\partial w}(tr(w^TX^TXw)-2tr(y^TXw))\\ &=\frac{1}{2}(X^TXw+X^TXw-2X^Ty)\\ &=X^TXw-X^Ty \end{split} \end{equation}令其等于0便得到下面的正规方程： X^TXw=X^Ty当$X^TX$可逆时，可得： w^*=(X^TX)^{-1}X^Ty于是学得的线性回归模型为： f(x^{(i)})=w^{*T}x^{(i)}]]></content>
+<search> 
+  
+    
+    <entry>
+      <title>方程组的几何解释</title>
+      <link href="/2018/11/12/%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A/"/>
+      <url>/2018/11/12/%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A/</url>
+      
+        <content type="html"><![CDATA[<p>从一个例子讲起：2个方程，2个未知数的方程组</p><script type="math/tex; mode=display">\left\{\begin{aligned}2x-y=0\\-x+2y=3\\\end{aligned}\right.</script><p>写成矩阵形式为</p><script type="math/tex; mode=display">\begin{bmatrix}2&-1\\-1&2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}</script><p>第一个矩阵称为系数矩阵A，第二个矩阵称为x，第三个矩阵称为b，这样方程组可写为$Ax=b​$，一个行图像显示一个方程，可以画出该方程组的行图像：</p><p><img src="E:\相册\hexo\3.png" alt=""></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 线性代数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>朴素贝叶斯</title>
+      <link href="/2018/11/08/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
+      <url>/2018/11/08/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
+      <title>逻辑回归</title>
+      <link href="/2018/11/02/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/"/>
+      <url>/2018/11/02/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/</url>
+      
+        <content type="html"><![CDATA[<p><a href="http://baidu.com" target="_blank" rel="noopener">百度</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 分类 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>线性模型</title>
+      <link href="/2018/10/29/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/"/>
+      <url>/2018/10/29/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="线性回归模型"><a href="#线性回归模型" class="headerlink" title="线性回归模型"></a>线性回归模型</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>给定数据集D={$(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),\cdots(x^{(m)},y^{(m)})$}，$x^{(i)}\in\mathcal{X}\subseteq\mathbb{R}^m,y^{(i)}\in\mathcal{Y}\subseteq\mathbb{R},i=1,2,\cdots,m,$其中$x^{(i)}=(x_1^{(i)},x_2^{(i)},\cdots,x_n^{(i)})^T,$m为样本的数量，n为特征的数量。</p><p>线性模型试图学得一个通过属性的线性组合来进行预测的函数，即</p><script type="math/tex; mode=display">f(x)=w_1x_1+w_2x_2+...+w_nx_n+b,</script><p>其中$w$为权重，b为截距，写成向量形式为</p><script type="math/tex; mode=display">f(x)=w^Tx+b</script><p>为了简化公式，设$x^{(i)}=(x_1^{(i)},x_2^{(i)},…x_n^{(i)},1)^T，w=(w_1,w_2,…,w_n,b)^T$，简化之后为</p><script type="math/tex; mode=display">f(x)=\sum_{i=0}^nw_ix_i=w^Tx</script><p>我们的目标便是通过给定的数据集D来学习参数$w$，对于给定的样本$x^{(i)}$，其预测值$\hat{y}^{(i)}=w^Tx^{(i)}$，与真实值$y^{(i)}$越接近越好。这里我们采用平方损失函数，则在训练集D上，模型的损失函数为</p><script type="math/tex; mode=display">L(w)=\sum_{i=1}^m(f(x^{(i)})-y^{(i)})^2\\\quad\quad=\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><p>这样，我们的目标便变为损失函数最小化。为了之后求导方便，在损失函数前乘以1/2，即：</p><script type="math/tex; mode=display">w^*=\mathop{\arg\min}_{w}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2</script><p>为了求出使$L(w)$最小的$w$值，我们可以使用梯度下降法和正规方程两种方法。</p><h2 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h2><p>梯度下降的思想是：开始时随机选择一个参数的组合$(w_0,w_1,w_2,…,w_n)$，计算损失函数，然后寻找下一个能让损失函数下降最多的参数组合，持续这么做直到一个局部最小值。通常选择不同的初始参数组合，可能会找到不同的局部最小值。</p><p>梯度下降算法公式为：</p><p>重复直到收敛{</p><p>​    $w_j:=w_j-\alpha\frac{\partial}{\partial w_j}L(w)$    </p><p>}</p><p>要实现这个算法，关键在于求出损失函数关于$w$的导数</p><p>$\frac{\partial}{\partial w_j}L(w)=\frac{\partial}{w_j}\frac{1}{2}\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})^2<br>\\\quad\quad\quad\,\,\,\,=\frac{\partial}{\partial w_j}\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+…+w_jx_j^{(i)}+…+w_nx_n^{(i)}-y^{(i)})^2<br>\\\quad\quad\quad\,\,\,\,=2·\frac{1}{2}\sum_{i=1}^m(w_0x_0^{(i)}+w_1x_1^{(i)}+…+w_nx_n^{(i)}-y^{(i)})·x_j^{(i)}<br>\\\quad\quad\quad\,\,\,\,=\sum_{i=1}^m(w^Tx^{(i)}-y^{(i)})x_j^{(i)}$</p><p>重复直到收敛{</p><p>​    $w_j:=w_j+\alpha\sum_{i=1}^m(y^{(i)}-w^Tx^{(i)})x_j^{(i)}​$        (for  every  j)</p><p>}</p><h2 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程</h2><p>正规方程通过求解下面的方程来找出使损失函数最小的参数：$\frac{\partial}{\partial w}L(w)=0$</p><h3 id="矩阵导数"><a href="#矩阵导数" class="headerlink" title="矩阵导数"></a>矩阵导数</h3><p>假设函数$f:R^{m×n}\to R$，从m*n大小的矩阵映射到实数域，那么当矩阵为A时导函数定义如下所示：</p><script type="math/tex; mode=display">\frac{\partial f(A)}{\partial A}=\begin{bmatrix}\frac{\partial f}{\partial A_{11}} & \cdots & \frac{\partial f}{\partial A_{1n}}\\\vdots &\ddots&\vdots\\\frac{\partial f}{\partial A_{m1}}&\cdots&\frac{\partial f}{\partial A_{mn}} \end{bmatrix}</script><p>例如A=$\begin{bmatrix}A_{11}&amp;A_{12}\\A_{21}&amp;A_{22} \end{bmatrix}$是2*2矩阵，给定函数$f:R^{2×2} \to R$为：</p><script type="math/tex; mode=display">f(A)=\frac{3}{2}A_{11}+5A_{12}^2+A_{21}A_{22}</script><p>那么$\frac{\partial f(A)}{\partial A}=\begin{bmatrix}\frac{3}{2}&amp;10A_{12}\\A_{22}&amp;A_{21} \end{bmatrix}$，我们还要引入矩阵的迹(trace)，简写为tr。对于一个给定的n*n的方阵A，它的迹定义为对角线元素之和：</p><script type="math/tex; mode=display">tr\ A=\sum_{i=1}^nA_{ii}</script><p>如果有两矩阵A和B，满足AB为方阵，则迹运算有以下性质：</p><script type="math/tex; mode=display">trAB=trBA\\trABC=trCAB=trBCA\\trA=trA^T\\tr(A+B)=trA+trB\\tr\ aA=atrA</script><p>接下来提出一些矩阵导数：</p><script type="math/tex; mode=display">\frac{\partial(trAB)}{\partial A}=B^T\\\frac{\partial f(A)}{\partial A^T}=(\frac{\partial f(A)}{\partial A})^T\\\frac{\partial(trABA^TC)}{\partial A}=CAB+C^TAB^T\\\frac{\partial |A|}{\partial A}=|A|(A^{-1})^T</script><p>下面把损失函数$L(w)$用向量的形式表述。令</p><script type="math/tex; mode=display">X=\begin{bmatrix}(x^{(1)})^T\\(x^{(2)})^T\\\vdots\\(x^{(m)})^T\end{bmatrix}=\begin{bmatrix}x_1^{(1)}&x_2^{(1)}&\cdots& x_n^{(1)}&1\\x_1^{(2)}&x_2^{(2)}&\cdots&x_n^{(2)}&1\\\vdots&\vdots&\ddots&\vdots&1\\x_1^{(m)}&x_2^{(m)}&\cdots&x_n^{(m)}&1\end{bmatrix}\\y=\begin{bmatrix}y^{(1)}\\y^{(2)}\\\vdots\\y^{(m)}\end{bmatrix},w=\begin{bmatrix}w_1\\w_2\\\vdots\\w_n\\b\end{bmatrix}</script><p>则有</p><script type="math/tex; mode=display">Xw-y=\begin{bmatrix}f(x^{(1)})-y^{(1)}\\f(x^{(2)})-y^{(2)}\\\vdots\\f(x^{(m)})-y^{(m)}\end{bmatrix}\\\frac{1}{2}(Xw-y)^T(Xw-y)=\frac{1}{2}\sum_{i=1}^m(f(x^{(i)})-y^{(i)})^2=L(w)</script><script type="math/tex; mode=display">\begin{equation}\begin{split}\frac{\partial L(w)}{\partial w}&=\frac{\partial }{\partial w}\frac{1}{2}(Xw-y)^T(Xw-y)\\&=\frac{1}{2}\frac{\partial}{\partial w}(w^TX^TXw-w^TX^Ty-y^TXw+y^Ty)\\&=\frac{1}{2}\frac{\partial}{\partial w}tr(w^TX^TXw-w^TX^Ty-y^TXw+y^Ty)\\&=\frac{1}{2}\frac{\partial}{\partial w}(tr(w^TX^TXw)-2tr(y^TXw))\\&=\frac{1}{2}(X^TXw+X^TXw-2X^Ty)\\&=X^TXw-X^Ty\end{split}\end{equation}</script><p>令其等于0便得到下面的正规方程：</p><script type="math/tex; mode=display">X^TXw=X^Ty</script><p>当$X^TX$可逆时，可得：</p><script type="math/tex; mode=display">w^*=(X^TX)^{-1}X^Ty</script><p>于是学得的线性回归模型为：</p><script type="math/tex; mode=display">f(x^{(i)})=w^{*T}x^{(i)}</script>]]></content>
+      
+      
       <categories>
-        <category>机器学习</category>
+          
+          <category> 机器学习 </category>
+          
       </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[k-近邻]]></title>
-    <url>%2F2018%2F10%2F16%2Fk-%E8%BF%91%E9%82%BB%2F</url>
-    <content type="text"><![CDATA[概述k近邻法是一种基本的分类与回归算法，它的输入为实例的特征向量，通过计算新数据与训练数据特征值之间的距离，然后选取与该实例最邻近的k个实例，这k个实例的多数属于哪一类，就把该输入实例分到这个类。对于分类问题，输出为实例的类别，对于新的实例，根据其k个最近邻的训练实例的类别，通过多数表决等方式进行预测；对于回归问题，输出为实例的值，对于新的实例，取其k个最近邻的训练实例的平均值作为预测值。 kNN三要素k近邻法不具有显式的学习过程，它是直接预测，实际上是利用训练数据集对特征向量空间划分，作为其分类的模型，模型由距离度量、k值的选择、分类决策规则三要素决定。 距离度量特征空间中两个实例点的距离是两个实例点相似程度的反映。k近邻模型的特征空间一般是n维实数向量空间$\mathbb{R}^n$。k近邻模型的特征空间的距离一般使用欧氏距离，也可以是更一般的$L_p$距离。 设特征空间$\mathcal{X}$是n维实数向量空间，$x_i,x_j\in\mathcal{X},x_i=(x_i^{(1)},x_i^{(2)},\cdots,x_i^{(n)})^T,x_j=(x_j^{(1)},x_j^{(2)},\cdots,x_j^{(n)})^T,x_i,x_j$的$L_p$距离定义为： L_p(x_i,x_j)=(\sum_{l=1}^n|x_i^{(l)}-x_j^{(l)}|^p)^\frac{1}{p}这里$p\ge1$，当$p=2$时，为欧氏距离： L_2(x_i,x_j)=(\sum_{l=1}^n|x_i^{(l)}-x_j^{(l)}|^2)^\frac{1}{2}当$p=1$时，为曼哈顿距离： L_1(x_i,x_j)=\sum_{l=1}^n|x_i^{(l)}-x_j^{(l)}|当$p=\infty$时，为各个维度距离的最大值： L_\infty(x_i,x_j)=\max_l|x_i^{(l)}-x_j^{(l)}|k值的选择如果选择较小的k值，相当于用较小的邻域中的训练实例进行预测，“学习”的近似误差会减小，只有与输入实例较近的训练实例才会对预测起作用。但缺点是“学习”的估计误差会增大，预测结果会对近邻的实例点非常敏感。如果邻近的实例点恰巧是噪声，预测就会出错。即k值的减小意味着整体模型变得复杂，容易发生过拟合。 如果选择较大的k值，相当于用较大的邻域中的训练实例进行预测，其优点是可以减少学习的估计误差。但缺点是学习的近似误差会增大。这时与输入实例较远的训练实例也会对预测起作用，使预测发生错误，即k值的增大意味着整体模型变得简单。当k=N时，无论输入实例是什么，都将简单地预测它为训练实例中最多的类。此时，模型过于简单，完全忽略训练实例中的大量有用信息。 在应用中，k一般取一个较小的数值。通常采用交叉验证法选取最优的k值，就是比较不同k值时的交叉验证平均误差率，选择误差率最小的那个k值。 分类决策规则k近邻法中的分类决策规则往往是多数表决，即由输入实例的k个近邻的训练实例中的多数类决定输入实例的类，也可以基于距离的远近进行加权投票，距离越近的样本权重越大。 如果分类的损失函数为0-1损失函数，分类函数为 f：\mathbb{R}^n\to\{c_1,c_2,\cdots,c_K\}那么误分类的概率为 P(Y\ne f(X))=1-P(Y=f(X))对给定的实例$x\in\mathcal{X}$，其最近邻的k个训练实例点构成集合$N_k(x)$。如果涵盖$N_k(x)$的区域的类别是$c_j$，那么误分类率是 \frac{1}{k}\sum_{x_i\in N_k(x)}I(y_i\ne c_j)=1-\frac{1}{k}\sum_{x_i\in N_k(x)}I(y_i=c_j)要使误分类率最小即经验风险最小，就要使$\sum_\limits{x_i\in N_k(x)}I(y_i=c_j)$最大，所以多数表决规则等价于经验风险最化。 kd树sklearn代码]]></content>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>k-近邻</title>
+      <link href="/2018/10/16/k-%E8%BF%91%E9%82%BB/"/>
+      <url>/2018/10/16/k-%E8%BF%91%E9%82%BB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>k近邻法是一种基本的分类与回归算法，它的输入为实例的特征向量，通过计算新数据与训练数据特征值之间的距离，然后选取与该实例最邻近的k个实例，这k个实例的多数属于哪一类，就把该输入实例分到这个类。对于分类问题，输出为实例的类别，对于新的实例，根据其k个最近邻的训练实例的类别，通过多数表决等方式进行预测；对于回归问题，输出为实例的值，对于新的实例，取其k个最近邻的训练实例的平均值作为预测值。</p><h1 id="kNN三要素"><a href="#kNN三要素" class="headerlink" title="kNN三要素"></a>kNN三要素</h1><p>k近邻法不具有显式的学习过程，它是直接预测，实际上是利用训练数据集对特征向量空间划分，作为其分类的模型，模型由距离度量、k值的选择、分类决策规则三要素决定。</p><h2 id="距离度量"><a href="#距离度量" class="headerlink" title="距离度量"></a>距离度量</h2><p>特征空间中两个实例点的距离是两个实例点相似程度的反映。k近邻模型的特征空间一般是n维实数向量空间$\mathbb{R}^n$。k近邻模型的特征空间的距离一般使用欧氏距离，也可以是更一般的$L_p$距离。</p><p>设特征空间$\mathcal{X}$是n维实数向量空间，$x_i,x_j\in\mathcal{X},x_i=(x_i^{(1)},x_i^{(2)},\cdots,x_i^{(n)})^T,x_j=(x_j^{(1)},x_j^{(2)},\cdots,x_j^{(n)})^T,x_i,x_j$的$L_p$距离定义为：</p><script type="math/tex; mode=display">L_p(x_i,x_j)=(\sum_{l=1}^n|x_i^{(l)}-x_j^{(l)}|^p)^\frac{1}{p}</script><p>这里$p\ge1$，当$p=2$时，为欧氏距离：</p><script type="math/tex; mode=display">L_2(x_i,x_j)=(\sum_{l=1}^n|x_i^{(l)}-x_j^{(l)}|^2)^\frac{1}{2}</script><p>当$p=1$时，为曼哈顿距离：</p><script type="math/tex; mode=display">L_1(x_i,x_j)=\sum_{l=1}^n|x_i^{(l)}-x_j^{(l)}|</script><p>当$p=\infty$时，为各个维度距离的最大值：</p><script type="math/tex; mode=display">L_\infty(x_i,x_j)=\max_l|x_i^{(l)}-x_j^{(l)}|</script><h2 id="k值的选择"><a href="#k值的选择" class="headerlink" title="k值的选择"></a>k值的选择</h2><p>如果选择较小的k值，相当于用较小的邻域中的训练实例进行预测，“学习”的近似误差会减小，只有与输入实例较近的训练实例才会对预测起作用。但缺点是“学习”的估计误差会增大，预测结果会对近邻的实例点非常敏感。如果邻近的实例点恰巧是噪声，预测就会出错。即k值的减小意味着整体模型变得复杂，容易发生过拟合。</p><p>如果选择较大的k值，相当于用较大的邻域中的训练实例进行预测，其优点是可以减少学习的估计误差。但缺点是学习的近似误差会增大。这时与输入实例较远的训练实例也会对预测起作用，使预测发生错误，即k值的增大意味着整体模型变得简单。当k=N时，无论输入实例是什么，都将简单地预测它为训练实例中最多的类。此时，模型过于简单，完全忽略训练实例中的大量有用信息。</p><p>在应用中，k一般取一个较小的数值。通常采用交叉验证法选取最优的k值，就是比较不同k值时的交叉验证平均误差率，选择误差率最小的那个k值。</p><h2 id="分类决策规则"><a href="#分类决策规则" class="headerlink" title="分类决策规则"></a>分类决策规则</h2><p>k近邻法中的分类决策规则往往是多数表决，即由输入实例的k个近邻的训练实例中的多数类决定输入实例的类，也可以基于距离的远近进行加权投票，距离越近的样本权重越大。</p><p>如果分类的损失函数为0-1损失函数，分类函数为</p><script type="math/tex; mode=display">f：\mathbb{R}^n\to\{c_1,c_2,\cdots,c_K\}</script><p>那么误分类的概率为</p><script type="math/tex; mode=display">P(Y\ne f(X))=1-P(Y=f(X))</script><p>对给定的实例$x\in\mathcal{X}$，其最近邻的k个训练实例点构成集合$N_k(x)$。如果涵盖$N_k(x)$的区域的类别是$c_j$，那么误分类率是</p><script type="math/tex; mode=display">\frac{1}{k}\sum_{x_i\in N_k(x)}I(y_i\ne c_j)=1-\frac{1}{k}\sum_{x_i\in N_k(x)}I(y_i=c_j)</script><p>要使误分类率最小即经验风险最小，就要使$\sum_\limits{x_i\in N_k(x)}I(y_i=c_j)$最大，所以多数表决规则等价于经验风险最化。</p><h1 id="kd树"><a href="#kd树" class="headerlink" title="kd树"></a>kd树</h1><h1 id="sklearn代码"><a href="#sklearn代码" class="headerlink" title="sklearn代码"></a>sklearn代码</h1>]]></content>
+      
+      
       <categories>
-        <category>机器学习</category>
+          
+          <category> 机器学习 </category>
+          
       </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
 </search>
