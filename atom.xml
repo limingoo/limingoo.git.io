@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wuhainan.com/"/>
-  <updated>2018-11-13T08:59:33.206Z</updated>
+  <updated>2018-11-13T12:12:45.401Z</updated>
   <id>http://wuhainan.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://wuhainan.com/2018/11/13/%E7%9F%A9%E9%98%B5%E6%B6%88%E5%85%83/"/>
     <id>http://wuhainan.com/2018/11/13/矩阵消元/</id>
     <published>2018-11-13T07:57:59.000Z</published>
-    <updated>2018-11-13T08:59:33.206Z</updated>
+    <updated>2018-11-13T12:12:45.401Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="消元法"><a href="#消元法" class="headerlink" title="消元法"></a>消元法</h1><p>有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\12\\2\end{bmatrix}$。</p><p>消元法的思路：</p><p>$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row2-3row1}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row3-2row2}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;0&amp;5\end{bmatrix}$，此矩阵记作U，对角线上的元素为三个主元。首先，主元不能为零；其次，如果在消元时遇到主元位置为零，则需要交换行，使主元不为零。当消元失效时，将不能得到三个主元。</p><p>下面进行回代，将矩阵$\begin{bmatrix}A&amp;b\end{bmatrix}$称为增广矩阵。有$\begin{bmatrix}A&amp;b\end{bmatrix}=\begin{bmatrix}1&amp;2&amp;1&amp;2\\3&amp;8&amp;1&amp;12\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;0&amp;5&amp;-10\end{bmatrix}$，此时方程组变为$\left\{\begin{aligned}x+2y+z=2\\2y-2z=6\\5z=-10\end{aligned}\right.$，很容易解出$x=2,y=1,z=-2$</p><h1 id="消元矩阵"><a href="#消元矩阵" class="headerlink" title="消元矩阵"></a>消元矩阵</h1><p>下面介绍用行来计算矩阵乘法：</p><script type="math/tex; mode=display">\begin{bmatrix}1&2&7\end{bmatrix}\begin{bmatrix}\cdots&row_1&\cdots\\\cdots&row_2&\cdots\\\cdots&row_3&\cdots\end{bmatrix}=1×row_1+2×row_2+7×row_3</script>]]></content>
+    <content type="html"><![CDATA[<h1 id="消元法"><a href="#消元法" class="headerlink" title="消元法"></a>消元法</h1><p>有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\12\\2\end{bmatrix}$</p><p>消元法的思路：</p><p>$A=\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row2-3row1}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row3-2row2}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;0&amp;5\end{bmatrix}=U$，U的对角线上的元素为三个主元。首先，主元不能为零；其次，如果在消元时遇到主元位置为零，则需要交换行，使主元不为零。当消元失效时，将不能得到三个主元。</p><p>下面进行回代，将矩阵$\begin{bmatrix}A&amp;b\end{bmatrix}$称为增广矩阵。有$\begin{bmatrix}A&amp;b\end{bmatrix}=\begin{bmatrix}1&amp;2&amp;1&amp;2\\3&amp;8&amp;1&amp;12\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;0&amp;5&amp;-10\end{bmatrix}$，此时方程组变为$\left\{\begin{aligned}x+2y+z=2\\2y-2z=6\\5z=-10\end{aligned}\right.$，很容易解出$x=2,y=1,z=-2$</p><h1 id="消元矩阵"><a href="#消元矩阵" class="headerlink" title="消元矩阵"></a>消元矩阵</h1><p>下面介绍用行来计算矩阵乘法：</p><script type="math/tex; mode=display">\begin{bmatrix}1&2&7\end{bmatrix}\begin{bmatrix}\cdots&row_1&\cdots\\\cdots&row_2&\cdots\\\cdots&row_3&\cdots\end{bmatrix}=1×row_1+2×row_2+7×row_3</script><p>从矩阵$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}$到矩阵$\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}$是第二行减去3倍的第一行，第一、三行不变，则有</p><script type="math/tex; mode=display">\begin{bmatrix}1&0&0\\-3&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&2&1\\3&8&1\\0&4&1\end{bmatrix}=\begin{bmatrix}1&2&1\\0&2&-2\\0&4&1\end{bmatrix}</script><p>将消元矩阵$\begin{bmatrix}1&amp;0&amp;0\-3&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}$记作$E_{21}$，表示第二行第一个元素变为零。同理有</p><script type="math/tex; mode=display">\begin{bmatrix}1&0&0\\0&1&0\\0&-2&1\end{bmatrix}\begin{bmatrix}1&2&1\\0&2&-2\\0&4&1\end{bmatrix}=\begin{bmatrix}1&2&1\\0&2&-2\\0&0&5\end{bmatrix}</script><p>将消元矩阵$\begin{bmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;-2&amp;1\end{bmatrix}$记作$E_{32}$，$E_{21}、E_{32}$都为初等矩阵。将上面两步综合起来有</p><script type="math/tex; mode=display">E_{32}(E_{21}A)=U</script><p>由于矩阵乘法满足结合律，又可以写成</p><script type="math/tex; mode=display">(E_{32}E_{21})A=U</script><p>下面介绍一种用于置换两行或两列的矩阵，称为置换矩阵，例如：</p><script type="math/tex; mode=display">\begin{bmatrix}0&1\\1&0\end{bmatrix}\begin{bmatrix}a&b\\c&d\end{bmatrix}=\begin{bmatrix}c&d\\a&b\end{bmatrix}</script><p>如果交换两列则有</p><script type="math/tex; mode=display">\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}0&1\\1&0\end{bmatrix}=\begin{bmatrix}b&a\\d&c\end{bmatrix}</script><p>总结：在左边用矩阵做乘法进行的是行变换，在右边用矩阵做乘法进行的是列变换。即列变换时右乘，行变换时左乘。</p><h1 id="逆"><a href="#逆" class="headerlink" title="逆"></a>逆</h1><p>通过消元可以将矩阵$A$变换为$U$，那么将$U$变回$A$的过程称为逆变换。在这里先简单提一下矩阵的逆，这里以$E_{21}$为例：</p><p>$E_{21}$将$A$的第二行减去3倍的第一行，那么其逆变换为第二行加3倍的第一行，所以逆矩阵为$\begin{bmatrix}1&amp;0&amp;0\\3&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}$，我们把$E$的逆记作$E^{-1}$，有$E^{-1}E=I$，有</p><script type="math/tex; mode=display">\begin{bmatrix}1&0&0\\3&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\-3&1&0\\0&0&1\end{bmatrix}=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}</script>]]></content>
     
     <summary type="html">
     
@@ -33,6 +33,8 @@
       
     
     </summary>
+    
+      <category term="线性代数" scheme="http://wuhainan.com/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
     
     
       <category term="线性代数" scheme="http://wuhainan.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
@@ -44,7 +46,7 @@
     <link href="http://wuhainan.com/2018/11/12/%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A/"/>
     <id>http://wuhainan.com/2018/11/12/方程组的几何解释/</id>
     <published>2018-11-12T11:21:39.000Z</published>
-    <updated>2018-11-12T13:41:45.740Z</updated>
+    <updated>2018-11-13T12:13:03.355Z</updated>
     
     <content type="html"><![CDATA[<p>从一个例子讲起：2个方程，2个未知数的方程组</p><script type="math/tex; mode=display">\left\{\begin{aligned}2x-y=0\\-x+2y=3\\\end{aligned}\right.</script><p>写成矩阵形式为</p><script type="math/tex; mode=display">\begin{bmatrix}2&-1\\-1&2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}</script><p>第一个矩阵称为系数矩阵A，第二个矩阵称为x，第三个矩阵称为b，这样方程组可写为$Ax=b$，一个行图像显示一个方程，可以画出该方程组的行图像：</p><p><img src="/2018/11/12/方程组的几何解释/3.jpg" alt="avatar"></p><p>列图像：</p><p>原方程组可写为$x\begin{bmatrix}2\-1\end{bmatrix}+y\begin{bmatrix}-1\\2\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}$，该方程是寻找如何将$\begin{bmatrix}2\-1\end{bmatrix}$和$\begin{bmatrix}-1\\2\end{bmatrix}$两个向量正确组合，来构成$\begin{bmatrix}0\\3\end{bmatrix}$，这就需要找到正确的线性组合。将$\begin{bmatrix}2\-1\end{bmatrix}$记作$col_1$，$\begin{bmatrix}-1\\2\end{bmatrix}$记作$col_2$，当x=1,y=2时，等式成立。下面画出列向量：</p><p><img src="/2018/11/12/方程组的几何解释/4.png" alt=""></p><p>如果选取所有的x和y，即所有的组合，结果会得到整个二维空间。下面来看三维空间的例子：</p><script type="math/tex; mode=display">\left\{\begin{aligned}2x-y=0\\-x+2y-z=-1\\-3y+4z=4\end{aligned}\right.</script><p>在这里$A=\begin{bmatrix}2&amp;-1&amp;0\-1&amp;2&amp;-1\\0&amp;-3&amp;4\end{bmatrix}，b=\begin{bmatrix}0\-1\\4\end{bmatrix}$。在三维空间中，每一个方程确定一个平面，而例子中的三个平面会相交于一点，这个点就是方程组的解。将方程组写成列向量的线性组合：</p><script type="math/tex; mode=display">x\begin{bmatrix}2\\-1\\0\end{bmatrix}+y\begin{bmatrix}-1\\2\\3\end{bmatrix}+z\begin{bmatrix}0\\-1\\4\end{bmatrix}=\begin{bmatrix}0\\-1\\4\end{bmatrix}</script><p>同样将这三个列向量分别称为$col_1、col_2、col_3$，显而易见，当$x=y=0,z=1$时满足该等式。但不是对于所有的右侧向量$b$都有解，当$col_1、col_2、col_3$共面时，只有当$b$在此平面内时，方程组才有解，否则无解。</p><p>最后介绍矩阵形式的$Ax=b$，举个例子，取$A=\begin{bmatrix}2&amp;5\\1&amp;3\end{bmatrix}，x=\begin{bmatrix}1\\2\end{bmatrix}$，则$Ax=\begin{bmatrix}2&amp;5\\1&amp;3\end{bmatrix}\begin{bmatrix}1\\2\end{bmatrix}=1\begin{bmatrix}2\\1\end{bmatrix}+2\begin{bmatrix}5\\3\end{bmatrix}=\begin{bmatrix}12\\7\end{bmatrix}$</p><p>总之，$A$右侧乘以一个向量可以看成$A$的各列的线性组合。</p>]]></content>
     
@@ -63,6 +65,8 @@
       
     
     </summary>
+    
+      <category term="线性代数" scheme="http://wuhainan.com/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
     
     
       <category term="线性代数" scheme="http://wuhainan.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>

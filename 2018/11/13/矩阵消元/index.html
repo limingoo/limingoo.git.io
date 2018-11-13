@@ -146,7 +146,7 @@
 <meta property="og:site_name" content="WuHainan&#39;Blog">
 <meta property="og:description" content="消元法有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-13T08:59:33.206Z">
+<meta property="og:updated_time" content="2018-11-13T12:12:45.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="矩阵消元">
 <meta name="twitter:description" content="消元法有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}">
@@ -406,6 +406,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/线性代数/" itemprop="url" rel="index">
+                    <span itemprop="name">线性代数</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -429,7 +451,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  310
+                  655
                 </span>
               
 
@@ -454,13 +476,29 @@
       
 
       
-        <h1 id="消元法"><a href="#消元法" class="headerlink" title="消元法"></a>消元法</h1><p>有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\12\\2\end{bmatrix}$。</p>
+        <h1 id="消元法"><a href="#消元法" class="headerlink" title="消元法"></a>消元法</h1><p>有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\12\\2\end{bmatrix}$</p>
 <p>消元法的思路：</p>
-<p>$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row2-3row1}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row3-2row2}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;0&amp;5\end{bmatrix}$，此矩阵记作U，对角线上的元素为三个主元。首先，主元不能为零；其次，如果在消元时遇到主元位置为零，则需要交换行，使主元不为零。当消元失效时，将不能得到三个主元。</p>
+<p>$A=\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row2-3row1}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row3-2row2}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;0&amp;5\end{bmatrix}=U$，U的对角线上的元素为三个主元。首先，主元不能为零；其次，如果在消元时遇到主元位置为零，则需要交换行，使主元不为零。当消元失效时，将不能得到三个主元。</p>
 <p>下面进行回代，将矩阵$\begin{bmatrix}A&amp;b\end{bmatrix}$称为增广矩阵。有$\begin{bmatrix}A&amp;b\end{bmatrix}=\begin{bmatrix}1&amp;2&amp;1&amp;2\\3&amp;8&amp;1&amp;12\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;0&amp;5&amp;-10\end{bmatrix}$，此时方程组变为$\left\{\begin{aligned}x+2y+z=2\\2y-2z=6\\5z=-10\end{aligned}\right.$，很容易解出$x=2,y=1,z=-2$</p>
 <h1 id="消元矩阵"><a href="#消元矩阵" class="headerlink" title="消元矩阵"></a>消元矩阵</h1><p>下面介绍用行来计算矩阵乘法：</p>
 <script type="math/tex; mode=display">
-\begin{bmatrix}1&2&7\end{bmatrix}\begin{bmatrix}\cdots&row_1&\cdots\\\cdots&row_2&\cdots\\\cdots&row_3&\cdots\end{bmatrix}=1×row_1+2×row_2+7×row_3</script>
+\begin{bmatrix}1&2&7\end{bmatrix}\begin{bmatrix}\cdots&row_1&\cdots\\\cdots&row_2&\cdots\\\cdots&row_3&\cdots\end{bmatrix}=1×row_1+2×row_2+7×row_3</script><p>从矩阵$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}$到矩阵$\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}$是第二行减去3倍的第一行，第一、三行不变，则有</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}1&0&0\\-3&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&2&1\\3&8&1\\0&4&1\end{bmatrix}=\begin{bmatrix}1&2&1\\0&2&-2\\0&4&1\end{bmatrix}</script><p>将消元矩阵$\begin{bmatrix}1&amp;0&amp;0\-3&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}$记作$E_{21}$，表示第二行第一个元素变为零。同理有</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}1&0&0\\0&1&0\\0&-2&1\end{bmatrix}\begin{bmatrix}1&2&1\\0&2&-2\\0&4&1\end{bmatrix}=\begin{bmatrix}1&2&1\\0&2&-2\\0&0&5\end{bmatrix}</script><p>将消元矩阵$\begin{bmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;-2&amp;1\end{bmatrix}$记作$E_{32}$，$E_{21}、E_{32}$都为初等矩阵。将上面两步综合起来有</p>
+<script type="math/tex; mode=display">
+E_{32}(E_{21}A)=U</script><p>由于矩阵乘法满足结合律，又可以写成</p>
+<script type="math/tex; mode=display">
+(E_{32}E_{21})A=U</script><p>下面介绍一种用于置换两行或两列的矩阵，称为置换矩阵，例如：</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}0&1\\1&0\end{bmatrix}\begin{bmatrix}a&b\\c&d\end{bmatrix}=\begin{bmatrix}c&d\\a&b\end{bmatrix}</script><p>如果交换两列则有</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}0&1\\1&0\end{bmatrix}=\begin{bmatrix}b&a\\d&c\end{bmatrix}</script><p>总结：在左边用矩阵做乘法进行的是行变换，在右边用矩阵做乘法进行的是列变换。即列变换时右乘，行变换时左乘。</p>
+<h1 id="逆"><a href="#逆" class="headerlink" title="逆"></a>逆</h1><p>通过消元可以将矩阵$A$变换为$U$，那么将$U$变回$A$的过程称为逆变换。在这里先简单提一下矩阵的逆，这里以$E_{21}$为例：</p>
+<p>$E_{21}$将$A$的第二行减去3倍的第一行，那么其逆变换为第二行加3倍的第一行，所以逆矩阵为$\begin{bmatrix}1&amp;0&amp;0\\3&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}$，我们把$E$的逆记作$E^{-1}$，有$E^{-1}E=I$，有</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}1&0&0\\3&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\-3&1&0\\0&0&1\end{bmatrix}=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}</script>
       
     </div>
     
@@ -643,7 +681,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -740,7 +778,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#消元法"><span class="nav-number">1.</span> <span class="nav-text">消元法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#消元矩阵"><span class="nav-number">2.</span> <span class="nav-text">消元矩阵</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#消元法"><span class="nav-number">1.</span> <span class="nav-text">消元法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#消元矩阵"><span class="nav-number">2.</span> <span class="nav-text">消元矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逆"><span class="nav-number">3.</span> <span class="nav-text">逆</span></a></li></ol></div>
             
 
           </div>
@@ -793,7 +831,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.6k字</span>
+  <span class="post-count">博客全站共3.0k字</span>
 </div>
 
         
