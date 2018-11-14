@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wuhainan.com/"/>
-  <updated>2018-11-13T12:16:38.754Z</updated>
+  <updated>2018-11-14T02:08:35.047Z</updated>
   <id>http://wuhainan.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>矩阵乘法和逆</title>
+    <link href="http://wuhainan.com/2018/11/14/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E5%92%8C%E9%80%86/"/>
+    <id>http://wuhainan.com/2018/11/14/矩阵乘法和逆/</id>
+    <published>2018-11-14T00:44:42.000Z</published>
+    <updated>2018-11-14T02:08:35.047Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h1><p>法一：</p><p>假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$</p><p>法二：</p><p>将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。</p><p>法三：</p><p>$A$的每一行乘以$B$得到$C$中的每一行，$C$中的各行是$B$中各行的线性组合。</p><p>法四：</p><p>$AB=A$中各列与$B$各行的乘积之和$=$列一×行一+列二×行二+$\cdots$</p><p>如$\begin{bmatrix}2&amp;7\\3&amp;8\\4&amp;9\end{bmatrix}\begin{bmatrix}1&amp;6\\0&amp;0\end{bmatrix}=\begin{bmatrix}2\\3\\4\end{bmatrix}\begin{bmatrix}1&amp;6\end{bmatrix}+\begin{bmatrix}7\\8\\9\end{bmatrix}\begin{bmatrix}0&amp;0\end{bmatrix}=\begin{bmatrix}2&amp;12\\3&amp;18\\4&amp;24\end{bmatrix}$</p><p>法五：</p><p>分块乘法</p><h1 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;矩阵乘法&quot;&gt;&lt;a href=&quot;#矩阵乘法&quot; class=&quot;headerlink&quot; title=&quot;矩阵乘法&quot;&gt;&lt;/a&gt;矩阵乘法&lt;/h1&gt;&lt;p&gt;法一：&lt;/p&gt;
+&lt;p&gt;假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{
+      
+    
+    </summary>
+    
+    
+      <category term="线性代数" scheme="http://wuhainan.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>矩阵消元</title>
