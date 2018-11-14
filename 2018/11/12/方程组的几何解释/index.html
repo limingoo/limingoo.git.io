@@ -148,7 +148,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wuhainan.com/2018/11/12/方程组的几何解释/3.jpg">
 <meta property="og:image" content="http://wuhainan.com/2018/11/12/方程组的几何解释/4.png">
-<meta property="og:updated_time" content="2018-11-13T12:13:03.355Z">
+<meta property="og:updated_time" content="2018-11-14T08:58:56.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="方程组的几何解释">
 <meta name="twitter:description" content="从一个例子讲起：2个方程，2个未知数的方程组  \left\{ \begin{aligned} 2x-y=0\\ -x+2y=3\\ \end{aligned} \right.写成矩阵形式为  \begin{bmatrix}2&amp;-1\\-1&amp;2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}">
@@ -491,7 +491,7 @@
 \begin{bmatrix}2&-1\\-1&2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}</script><p>第一个矩阵称为系数矩阵A，第二个矩阵称为x，第三个矩阵称为b，这样方程组可写为$Ax=b$，一个行图像显示一个方程，可以画出该方程组的行图像：</p>
 <p><img src="/2018/11/12/方程组的几何解释/3.jpg" alt="avatar"></p>
 <p>列图像：</p>
-<p>原方程组可写为$x\begin{bmatrix}2\-1\end{bmatrix}+y\begin{bmatrix}-1\\2\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}$，该方程是寻找如何将$\begin{bmatrix}2\-1\end{bmatrix}$和$\begin{bmatrix}-1\\2\end{bmatrix}$两个向量正确组合，来构成$\begin{bmatrix}0\\3\end{bmatrix}$，这就需要找到正确的线性组合。将$\begin{bmatrix}2\-1\end{bmatrix}$记作$col_1$，$\begin{bmatrix}-1\\2\end{bmatrix}$记作$col_2$，当x=1,y=2时，等式成立。下面画出列向量：</p>
+<p>原方程组可写为$x\begin{bmatrix}2 \\ -1\end{bmatrix}+y\begin{bmatrix}-1\\2\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}$，该方程是寻找如何将$\begin{bmatrix}2 \\ -1\end{bmatrix}$和$\begin{bmatrix}-1\\2\end{bmatrix}$两个向量正确组合，来构成$\begin{bmatrix}0\\3\end{bmatrix}$，这就需要找到正确的线性组合。将$\begin{bmatrix}2 \\ -1\end{bmatrix}$记作$col_1$，$\begin{bmatrix}-1\\2\end{bmatrix}$记作$col_2$，当x=1,y=2时，等式成立。下面画出列向量：</p>
 <p><img src="/2018/11/12/方程组的几何解释/4.png" alt=""></p>
 <p>如果选取所有的x和y，即所有的组合，结果会得到整个二维空间。下面来看三维空间的例子：</p>
 <script type="math/tex; mode=display">
@@ -501,7 +501,7 @@
 -x+2y-z=-1\\
 -3y+4z=4
 \end{aligned}
-\right.</script><p>在这里$A=\begin{bmatrix}2&amp;-1&amp;0\-1&amp;2&amp;-1\\0&amp;-3&amp;4\end{bmatrix}，b=\begin{bmatrix}0\-1\\4\end{bmatrix}$。在三维空间中，每一个方程确定一个平面，而例子中的三个平面会相交于一点，这个点就是方程组的解。将方程组写成列向量的线性组合：</p>
+\right.</script><p>在这里$A=\begin{bmatrix}2&amp;-1&amp;0 \\ -1&amp;2&amp;-1\\0&amp;-3&amp;4\end{bmatrix}，b=\begin{bmatrix}0 \\ -1\\4\end{bmatrix}$。在三维空间中，每一个方程确定一个平面，而例子中的三个平面会相交于一点，这个点就是方程组的解。将方程组写成列向量的线性组合：</p>
 <script type="math/tex; mode=display">
 x\begin{bmatrix}2\\-1\\0\end{bmatrix}+y\begin{bmatrix}-1\\2\\3\end{bmatrix}+z\begin{bmatrix}0\\-1\\4\end{bmatrix}=\begin{bmatrix}0\\-1\\4\end{bmatrix}</script><p>同样将这三个列向量分别称为$col_1、col_2、col_3$，显而易见，当$x=y=0,z=1$时满足该等式。但不是对于所有的右侧向量$b$都有解，当$col_1、col_2、col_3$共面时，只有当$b$在此平面内时，方程组才有解，否则无解。</p>
 <p>最后介绍矩阵形式的$Ax=b$，举个例子，取$A=\begin{bmatrix}2&amp;5\\1&amp;3\end{bmatrix}，x=\begin{bmatrix}1\\2\end{bmatrix}$，则$Ax=\begin{bmatrix}2&amp;5\\1&amp;3\end{bmatrix}\begin{bmatrix}1\\2\end{bmatrix}=1\begin{bmatrix}2\\1\end{bmatrix}+2\begin{bmatrix}5\\3\end{bmatrix}=\begin{bmatrix}12\\7\end{bmatrix}$</p>
