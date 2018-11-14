@@ -146,7 +146,7 @@
 <meta property="og:site_name" content="WuHainan&#39;Blog">
 <meta property="og:description" content="矩阵乘法法一： 假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$ 法二： 将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。 法三： $A$的每一行乘以$B$得到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-14T08:51:25.522Z">
+<meta property="og:updated_time" content="2018-11-14T08:54:50.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="矩阵乘法和逆">
 <meta name="twitter:description" content="矩阵乘法法一： 假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$ 法二： 将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。 法三： $A$的每一行乘以$B$得到">
@@ -406,6 +406,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/线性代数/" itemprop="url" rel="index">
+                    <span itemprop="name">线性代数</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -482,9 +504,9 @@ Ax=\begin{bmatrix}1&3\\2&6\end{bmatrix}\begin{bmatrix}-3\\1\end{bmatrix}=\begin{
 \end{aligned}
 \right.</script><p>解此方程组即可。但是该方法比较麻烦，高斯-若尔当(Gauss-Jordan)方法可以一次处理所有的方程。构造这样的方程$\left[\begin{array}{cc|cc}1&amp;3&amp;1&amp;0\\2&amp;7&amp;0&amp;1\end{array}\right]$，左侧为矩阵$A$，右侧为$I$，接下来通过消元法，将左侧变为单位阵，右侧即为$A$的逆矩阵。具体过程如下：</p>
 <script type="math/tex; mode=display">
-\left[\begin{array}{cc|cc}1&3&1&0\\2&7&0&1\end{array}\right]\underrightarrow{\text{row2-2row1}}\begin{bmatrix}1&3&1&0\\0&1&-2&1\end{bmatrix}\underrightarrow{\text{row1-3row2}}\left[\begin{array}{cc|cc}1&0&7&-3\\0&1&-2&1\end{array}\right]</script><p>所以$A^{-1}=\begin{bmatrix}7&amp;-3\-2&amp;1\end{bmatrix}$</p>
+\left[\begin{array}{cc|cc}1&3&1&0\\2&7&0&1\end{array}\right]\underrightarrow{\text{row2-2row1}}\begin{bmatrix}1&3&1&0\\0&1&-2&1\end{bmatrix}\underrightarrow{\text{row1-3row2}}\left[\begin{array}{cc|cc}1&0&7&-3\\0&1&-2&1\end{array}\right]</script><p>所以$A^{-1}=\begin{bmatrix}7&amp;-3 \\ -2&amp;1\end{bmatrix}$</p>
 <p>总结：</p>
-<p>求$A^{-1}​$的方法</p>
+<p>求$A^{-1}$的方法</p>
 <script type="math/tex; mode=display">
 \begin{bmatrix}A&I\end{bmatrix}\underrightarrow{\text{消元}}\begin{bmatrix}I&A^{-1}\end{bmatrix}</script>
       
