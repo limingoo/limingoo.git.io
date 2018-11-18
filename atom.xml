@@ -45,9 +45,9 @@
     <link href="http://wuhainan.com/2018/11/16/%E8%BD%AC%E7%BD%AE%E4%B8%8E%E7%BD%AE%E6%8D%A2/"/>
     <id>http://wuhainan.com/2018/11/16/转置与置换/</id>
     <published>2018-11-16T05:47:35.000Z</published>
-    <updated>2018-11-18T11:05:24.213Z</updated>
+    <updated>2018-11-18T11:08:53.370Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h1><p>设$A=\begin{bmatrix}1&amp;2&amp;4\\3&amp;3&amp;1\end{bmatrix}$，则$A^T=\begin{bmatrix}1&amp;3\\2&amp;3\\4&amp;1\end{bmatrix}$，即$(A^T)_{ij}=A_{ji}$，$A^TA=\begin{bmatrix}10&amp;11&amp;7\\11&amp;13&amp;11\\7&amp;11&amp;17\end{bmatrix}$，对于所有的矩阵$A$，$A^TA$都是对称的，对于对称矩阵，其转置等于其本身。</p><p>$AA^{-1}=I$，两边同时转置得，$(A^{-1})^TA^T=I$，所以有$(A^T)^{-1}=(A^{-1})^T$</p><h1 id="置换矩阵"><a href="#置换矩阵" class="headerlink" title="置换矩阵"></a>置换矩阵</h1><p>置换矩阵是用来完成行互换的矩阵，记作$P$，即单位矩阵的行重新排列后的矩阵，例如：</p><script type="math/tex; mode=display">互换行一与行二的置换矩阵P_{12}=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}\\互换行一与行三的置换矩阵P_{13}=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}\\互换行二与行三的置换矩阵P_{23}=\begin{bmatrix}1&0&0\\0&0&1\\0&1&0\end{bmatrix}</script><p>上面这两个矩阵都是行互换一次的置换矩阵，如果交换所有的行，可以得到下面的矩阵</p><script type="math/tex; mode=display">\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}、\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}</script><p>加上单位矩阵$I$本身($I$是不需做任何变换的矩阵，即任何矩阵乘以$I$等于其本身)，如果将这6个矩阵两两相乘，结果仍在这6个矩阵当中，它们的逆也在其中，我们称这6个矩阵构成一个群。</p><p>我们还可以得出一个结论：置换矩阵的逆等于其转置，即$P^{-1}=P^T​$，并且所有置换矩阵均可逆。对于$n×n​$的矩阵，总共有$n!​$种置换矩阵。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h1><p>设$A=\begin{bmatrix}1&amp;2&amp;4\\3&amp;3&amp;1\end{bmatrix}$，则$A^T=\begin{bmatrix}1&amp;3\\2&amp;3\\4&amp;1\end{bmatrix}$，即$(A^T)_{ij}=A_{ji}$，$A^TA=\begin{bmatrix}10&amp;11&amp;7\\11&amp;13&amp;11\\7&amp;11&amp;17\end{bmatrix}$，对于所有的矩阵$A$，$A^TA$都是对称的，对于对称矩阵，其转置等于其本身。</p><p>$AA^{-1}=I$，两边同时转置得，$(A^{-1})^TA^T=I$，所以有$(A^T)^{-1}=(A^{-1})^T$</p><h1 id="置换矩阵"><a href="#置换矩阵" class="headerlink" title="置换矩阵"></a>置换矩阵</h1><p>置换矩阵是用来完成行互换的矩阵，记作$P$，即单位矩阵的行重新排列后的矩阵，例如：</p><script type="math/tex; mode=display">互换行一与行二的置换矩阵P_{12}=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}\\互换行一与行三的置换矩阵P_{13}=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}\\互换行二与行三的置换矩阵P_{23}=\begin{bmatrix}1&0&0\\0&0&1\\0&1&0\end{bmatrix}</script><p>上面这两个矩阵都是行互换一次的置换矩阵，如果交换所有的行，可以得到下面的矩阵</p><script type="math/tex; mode=display">\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}、\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}</script><p>加上单位矩阵$I$本身($I$是不需做任何变换的矩阵，即任何矩阵乘以$I$等于其本身)，如果将这6个矩阵两两相乘，结果仍在这6个矩阵当中，它们的逆也在其中，我们称这6个矩阵构成一个群。</p><p>我们还可以得出一个结论：置换矩阵的逆等于其转置，即$P^{-1}=P^T$，并且所有置换矩阵均可逆。对于$n×n$的矩阵，总共有$n!$种置换矩阵。</p>]]></content>
     
     <summary type="html">
     
@@ -57,6 +57,8 @@
       
     
     </summary>
+    
+      <category term="线性代数" scheme="http://wuhainan.com/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
     
     
       <category term="线性代数" scheme="http://wuhainan.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>

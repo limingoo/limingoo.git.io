@@ -146,7 +146,7 @@
 <meta property="og:site_name" content="WuHainan&#39;Blog">
 <meta property="og:description" content="转置设$A=\begin{bmatrix}1&amp;amp;2&amp;amp;4\\3&amp;amp;3&amp;amp;1\end{bmatrix}$，则$A^T=\begin{bmatrix}1&amp;amp;3\\2&amp;amp;3\\4&amp;amp;1\end{bmatrix}$，即$(A^T)_{ij}=A_{ji}$，$A^TA=\begin{bmatrix}10&amp;amp;11&amp;amp;7\\11&amp;amp;13&amp;amp;11">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-18T11:05:24.213Z">
+<meta property="og:updated_time" content="2018-11-18T11:08:53.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="转置与置换">
 <meta name="twitter:description" content="转置设$A=\begin{bmatrix}1&amp;amp;2&amp;amp;4\\3&amp;amp;3&amp;amp;1\end{bmatrix}$，则$A^T=\begin{bmatrix}1&amp;amp;3\\2&amp;amp;3\\4&amp;amp;1\end{bmatrix}$，即$(A^T)_{ij}=A_{ji}$，$A^TA=\begin{bmatrix}10&amp;amp;11&amp;amp;7\\11&amp;amp;13&amp;amp;11">
@@ -406,6 +406,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/线性代数/" itemprop="url" rel="index">
+                    <span itemprop="name">线性代数</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -461,7 +483,7 @@
 互换行一与行二的置换矩阵P_{12}=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}\\互换行一与行三的置换矩阵P_{13}=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}\\互换行二与行三的置换矩阵P_{23}=\begin{bmatrix}1&0&0\\0&0&1\\0&1&0\end{bmatrix}</script><p>上面这两个矩阵都是行互换一次的置换矩阵，如果交换所有的行，可以得到下面的矩阵</p>
 <script type="math/tex; mode=display">
 \begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}、\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}</script><p>加上单位矩阵$I$本身($I$是不需做任何变换的矩阵，即任何矩阵乘以$I$等于其本身)，如果将这6个矩阵两两相乘，结果仍在这6个矩阵当中，它们的逆也在其中，我们称这6个矩阵构成一个群。</p>
-<p>我们还可以得出一个结论：置换矩阵的逆等于其转置，即$P^{-1}=P^T​$，并且所有置换矩阵均可逆。对于$n×n​$的矩阵，总共有$n!​$种置换矩阵。</p>
+<p>我们还可以得出一个结论：置换矩阵的逆等于其转置，即$P^{-1}=P^T$，并且所有置换矩阵均可逆。对于$n×n$的矩阵，总共有$n!$种置换矩阵。</p>
 
       
     </div>
@@ -1278,6 +1300,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
