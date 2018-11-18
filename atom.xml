@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wuhainan.com/"/>
-  <updated>2018-11-14T08:54:50.699Z</updated>
+  <updated>2018-11-18T09:27:50.491Z</updated>
   <id>http://wuhainan.com/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>转置与置换</title>
+    <link href="http://wuhainan.com/2018/11/16/A%E7%9A%84LU%E5%88%86%E8%A7%A3/"/>
+    <id>http://wuhainan.com/2018/11/16/A的LU分解/</id>
+    <published>2018-11-16T05:47:35.000Z</published>
+    <updated>2018-11-18T09:27:50.491Z</updated>
+    
+    <content type="html"><![CDATA[<p>$AA^{-1}=I$，两边同时转置得，$(A^{-1})^TA^T=I$，所以有$(A^T)^{-1}=(A^{-1})^T$</p><h1 id="置换矩阵"><a href="#置换矩阵" class="headerlink" title="置换矩阵"></a>置换矩阵</h1><p>置换矩阵是用来完成行互换的矩阵，记作$P$，即单位矩阵的行重新排列后的矩阵，例如：</p><script type="math/tex; mode=display">互换行一与行二的置换矩阵P_{12}=\begin{bmatrix}0&1&0\\0&1&0\\1&0&0\end{bmatrix}\\互换行一与行三的置换矩阵P_{13}=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}\\互换行二与行三的置换矩阵P_{23}=\begin{bmatrix}1&0&0\\0&0&1\\0&1&0\end{bmatrix}</script><p>上面这两个矩阵都是行互换一次的置换矩阵，如果交换所有的行，可以得到下面的矩阵</p><script type="math/tex; mode=display">\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}、\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}</script><p>加上单位矩阵$I$本身($I$是不需做任何变换的矩阵，即任何矩阵乘以$I$等于其本身)，如果将这6个矩阵两两相乘，结果仍在这6个矩阵当中，它们的逆也在其中，我们称这6个矩阵构成一个群。</p><p>我们还可以得出一个结论：置换矩阵的逆等于其转置，即$P^{-1}=P^T$</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;$AA^{-1}=I$，两边同时转置得，$(A^{-1})^TA^T=I$，所以有$(A^T)^{-1}=(A^{-1})^T$&lt;/p&gt;
+&lt;h1 id=&quot;置换矩阵&quot;&gt;&lt;a href=&quot;#置换矩阵&quot; class=&quot;headerlink&quot; title=&quot;置换矩阵&quot;&gt;&lt;/a&gt;置换
+      
+    
+    </summary>
+    
+    
+      <category term="线性代数" scheme="http://wuhainan.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>转置与置换</title>
+    <link href="http://wuhainan.com/2018/11/16/%E8%BD%AC%E7%BD%AE%E4%B8%8E%E7%BD%AE%E6%8D%A2/"/>
+    <id>http://wuhainan.com/2018/11/16/转置与置换/</id>
+    <published>2018-11-16T05:47:35.000Z</published>
+    <updated>2018-11-18T11:05:24.213Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h1><p>设$A=\begin{bmatrix}1&amp;2&amp;4\\3&amp;3&amp;1\end{bmatrix}$，则$A^T=\begin{bmatrix}1&amp;3\\2&amp;3\\4&amp;1\end{bmatrix}$，即$(A^T)_{ij}=A_{ji}$，$A^TA=\begin{bmatrix}10&amp;11&amp;7\\11&amp;13&amp;11\\7&amp;11&amp;17\end{bmatrix}$，对于所有的矩阵$A$，$A^TA$都是对称的，对于对称矩阵，其转置等于其本身。</p><p>$AA^{-1}=I$，两边同时转置得，$(A^{-1})^TA^T=I$，所以有$(A^T)^{-1}=(A^{-1})^T$</p><h1 id="置换矩阵"><a href="#置换矩阵" class="headerlink" title="置换矩阵"></a>置换矩阵</h1><p>置换矩阵是用来完成行互换的矩阵，记作$P$，即单位矩阵的行重新排列后的矩阵，例如：</p><script type="math/tex; mode=display">互换行一与行二的置换矩阵P_{12}=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}\\互换行一与行三的置换矩阵P_{13}=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}\\互换行二与行三的置换矩阵P_{23}=\begin{bmatrix}1&0&0\\0&0&1\\0&1&0\end{bmatrix}</script><p>上面这两个矩阵都是行互换一次的置换矩阵，如果交换所有的行，可以得到下面的矩阵</p><script type="math/tex; mode=display">\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}、\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}</script><p>加上单位矩阵$I$本身($I$是不需做任何变换的矩阵，即任何矩阵乘以$I$等于其本身)，如果将这6个矩阵两两相乘，结果仍在这6个矩阵当中，它们的逆也在其中，我们称这6个矩阵构成一个群。</p><p>我们还可以得出一个结论：置换矩阵的逆等于其转置，即$P^{-1}=P^T​$，并且所有置换矩阵均可逆。对于$n×n​$的矩阵，总共有$n!​$种置换矩阵。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;转置&quot;&gt;&lt;a href=&quot;#转置&quot; class=&quot;headerlink&quot; title=&quot;转置&quot;&gt;&lt;/a&gt;转置&lt;/h1&gt;&lt;p&gt;设$A=\begin{bmatrix}1&amp;amp;2&amp;amp;4\\3&amp;amp;3&amp;amp;1\end{bmatrix}$，则$A^T=\b
+      
+    
+    </summary>
+    
+    
+      <category term="线性代数" scheme="http://wuhainan.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>矩阵乘法和逆</title>
@@ -47,7 +94,7 @@
     <link href="http://wuhainan.com/2018/11/13/%E7%9F%A9%E9%98%B5%E6%B6%88%E5%85%83/"/>
     <id>http://wuhainan.com/2018/11/13/矩阵消元/</id>
     <published>2018-11-13T07:57:59.000Z</published>
-    <updated>2018-11-13T12:16:38.754Z</updated>
+    <updated>2018-11-14T09:00:35.571Z</updated>
     
     <content type="html"><![CDATA[<h1 id="消元法"><a href="#消元法" class="headerlink" title="消元法"></a>消元法</h1><p>有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\12\\2\end{bmatrix}$</p><p>消元法的思路：</p><p>$A=\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row2-3row1}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row3-2row2}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;0&amp;5\end{bmatrix}=U$，U的对角线上的元素为三个主元。首先，主元不能为零；其次，如果在消元时遇到主元位置为零，则需要交换行，使主元不为零。当消元失效时，将不能得到三个主元。</p><p>下面进行回代，将矩阵$\begin{bmatrix}A&amp;b\end{bmatrix}$称为增广矩阵。有$\begin{bmatrix}A&amp;b\end{bmatrix}=\begin{bmatrix}1&amp;2&amp;1&amp;2\\3&amp;8&amp;1&amp;12\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;0&amp;5&amp;-10\end{bmatrix}$，此时方程组变为$\left\{\begin{aligned}x+2y+z=2\\2y-2z=6\\5z=-10\end{aligned}\right.$，很容易解出$x=2,y=1,z=-2$</p><h1 id="消元矩阵"><a href="#消元矩阵" class="headerlink" title="消元矩阵"></a>消元矩阵</h1><p>下面介绍用行来计算矩阵乘法：</p><script type="math/tex; mode=display">\begin{bmatrix}1&2&7\end{bmatrix}\begin{bmatrix}\cdots&row_1&\cdots\\\cdots&row_2&\cdots\\\cdots&row_3&\cdots\end{bmatrix}=1×row_1+2×row_2+7×row_3</script><p>从矩阵$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}$到矩阵$\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}$是第二行减去3倍的第一行，第一、三行不变，则有</p><script type="math/tex; mode=display">\begin{bmatrix}1&0&0\\-3&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&2&1\\3&8&1\\0&4&1\end{bmatrix}=\begin{bmatrix}1&2&1\\0&2&-2\\0&4&1\end{bmatrix}</script><p>将消元矩阵$\begin{bmatrix}1&amp;0&amp;0\-3&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}$记作$E_{21}​$，表示第二行第一个元素变为零。同理有</p><script type="math/tex; mode=display">\begin{bmatrix}1&0&0\\0&1&0\\0&-2&1\end{bmatrix}\begin{bmatrix}1&2&1\\0&2&-2\\0&4&1\end{bmatrix}=\begin{bmatrix}1&2&1\\0&2&-2\\0&0&5\end{bmatrix}</script><p>将消元矩阵$\begin{bmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;-2&amp;1\end{bmatrix}$记作$E_{32}$，$E_{21}、E_{32}$都为初等矩阵。将上面两步综合起来有</p><script type="math/tex; mode=display">E_{32}(E_{21}A)=U</script><p>由于矩阵乘法满足结合律，又可以写成</p><script type="math/tex; mode=display">(E_{32}E_{21})A=U</script><p>下面介绍一种用于置换两行或两列的矩阵，称为置换矩阵，例如：</p><script type="math/tex; mode=display">\begin{bmatrix}0&1\\1&0\end{bmatrix}\begin{bmatrix}a&b\\c&d\end{bmatrix}=\begin{bmatrix}c&d\\a&b\end{bmatrix}</script><p>如果交换两列则有</p><script type="math/tex; mode=display">\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}0&1\\1&0\end{bmatrix}=\begin{bmatrix}b&a\\d&c\end{bmatrix}</script><p>总结：在左边用矩阵做乘法进行的是行变换，在右边用矩阵做乘法进行的是列变换。即列变换时右乘，行变换时左乘。</p><h1 id="逆"><a href="#逆" class="headerlink" title="逆"></a>逆</h1><p>通过消元可以将矩阵$A$变换为$U$，那么将$U$变回$A$的过程称为逆变换。在这里先简单提一下矩阵的逆，这里以$E_{21}$为例：</p><p>$E_{21}$将$A$的第二行减去3倍的第一行，那么其逆变换为第二行加3倍的第一行，所以逆矩阵为$\begin{bmatrix}1&amp;0&amp;0\\3&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}$，我们把$E$的逆记作$E^{-1}$，有$E^{-1}E=I$，有</p><script type="math/tex; mode=display">\begin{bmatrix}1&0&0\\3&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\-3&1&0\\0&0&1\end{bmatrix}=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}</script>]]></content>
     
