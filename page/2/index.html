@@ -125,7 +125,7 @@
 
 
 
-  <meta name="keywords" content="线性代数," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -138,18 +138,13 @@
 
 
 
-<meta name="description" content="向量空间①所有向量空间都必须包含零向量，即包含原点。 ②向量空间中任意向量的数乘、求和运算得到的向量也在该空间中，即向量空间要满足加法封闭和数乘封闭。 ③向量空间$R^n$包含所有的n维向量，分量均为实数。 子空间向量空间的子空间也必须满足加法封闭和数乘封闭，并且也包含零向量。 $R^2$的子空间：①$R^2本身$；②过原点的直线；③零向量(即原点)； $R^3$的子空间：①$R^3本身$；②过原">
-<meta name="keywords" content="线性代数">
-<meta property="og:type" content="article">
-<meta property="og:title" content="向量空间、列空间和零空间">
-<meta property="og:url" content="http://wuhainan.com/2018/11/18/向量空间、列空间和零空间/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WuHainan&#39;Blog">
+<meta property="og:url" content="http://wuhainan.com/page/2/index.html">
 <meta property="og:site_name" content="WuHainan&#39;Blog">
-<meta property="og:description" content="向量空间①所有向量空间都必须包含零向量，即包含原点。 ②向量空间中任意向量的数乘、求和运算得到的向量也在该空间中，即向量空间要满足加法封闭和数乘封闭。 ③向量空间$R^n$包含所有的n维向量，分量均为实数。 子空间向量空间的子空间也必须满足加法封闭和数乘封闭，并且也包含零向量。 $R^2$的子空间：①$R^2本身$；②过原点的直线；③零向量(即原点)； $R^3$的子空间：①$R^3本身$；②过原">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-19T01:02:46.131Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="向量空间、列空间和零空间">
-<meta name="twitter:description" content="向量空间①所有向量空间都必须包含零向量，即包含原点。 ②向量空间中任意向量的数乘、求和运算得到的向量也在该空间中，即向量空间要满足加法封闭和数乘封闭。 ③向量空间$R^n$包含所有的n维向量，分量均为实数。 子空间向量空间的子空间也必须满足加法封闭和数乘封闭，并且也包含零向量。 $R^2$的子空间：①$R^2本身$；②过原点的直线；③零向量(即原点)； $R^3$的子空间：①$R^3本身$；②过原">
+<meta name="twitter:title" content="WuHainan&#39;Blog">
 
 
 
@@ -179,13 +174,13 @@
 
 
 
-  <link rel="canonical" href="http://wuhainan.com/2018/11/18/向量空间、列空间和零空间/"/>
+  <link rel="canonical" href="http://wuhainan.com/page/2/"/>
 
 
 
 
 
-  <title>向量空间、列空间和零空间 | WuHainan'Blog</title>
+  <title>WuHainan'Blog</title>
   
 
 
@@ -204,7 +199,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 <a href="https://github.com/wuhainan" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -351,9 +347,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -366,7 +362,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wuhainan.com/2018/11/18/向量空间、列空间和零空间/">
+    <link itemprop="mainEntityOfPage" href="http://wuhainan.com/2018/10/16/k-近邻/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="天道酬勤whn">
@@ -383,7 +379,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">向量空间、列空间和零空间</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/16/k-近邻/" itemprop="url">k-近邻</a></h1>
         
 
         <div class="post-meta">
@@ -395,8 +393,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-18T19:13:39+08:00">
-                2018-11-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-16T15:34:15+08:00">
+                2018-10-16
               </time>
             
 
@@ -418,8 +416,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/线性代数/" itemprop="url" rel="index">
-                    <span itemprop="name">线性代数</span>
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
                   </a>
                 </span>
 
@@ -451,7 +449,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  807
+                  996
                 </span>
               
 
@@ -476,30 +474,20 @@
       
 
       
-        <h1 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a>向量空间</h1><p>①所有向量空间都必须包含零向量，即包含原点。</p>
-<p>②向量空间中任意向量的数乘、求和运算得到的向量也在该空间中，即向量空间要满足加法封闭和数乘封闭。</p>
-<p>③向量空间$R^n$包含所有的n维向量，分量均为实数。</p>
-<h1 id="子空间"><a href="#子空间" class="headerlink" title="子空间"></a>子空间</h1><p>向量空间的子空间也必须满足加法封闭和数乘封闭，并且也包含零向量。</p>
-<p>$R^2$的子空间：①$R^2本身$；②过原点的直线；③零向量(即原点)；</p>
-<p>$R^3$的子空间：①$R^3本身$；②过原点的平面；③过原点的直线；④零向量。</p>
-<h1 id="列空间"><a href="#列空间" class="headerlink" title="列空间"></a>列空间</h1><p>设$A=\begin{bmatrix}1&amp;3\\2&amp;3\\4&amp;1\end{bmatrix}$，其中各列属于$R^3$，那么所有列的所有线性组合构成$R^3$的一个子空间，在这里为过原点的一个平面，称该子空间为$A$的列空间，记作$C(A)$。如果$A$的两列共线，则列空间为一条直线。</p>
-<p>构造矩阵列空间的方法：取出各列，然后线性组合，则所有的线性组合构成列空间。</p>
-<p>假设$P$为三维空间中过原点的平面，$L$为过原点的直线($L$不在$P$内)，$P、L$都为子空间，而$P∪L$不是子空间，因为加法不封闭，$P∩L$是子空间，因为只含零向量。一般情况下，若$S、T$均为子空间，则$S∩T$也为子空间。</p>
-<p>$Ax=b$并不是对任意的$b$都有解，只有$b$属于$A$的列空间时才有解。例如：</p>
-<script type="math/tex; mode=display">
-Ax=\begin{bmatrix}1&1&2\\2&1&3\\3&1&4\\4&1&5\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}b_1\\b_2\\b_3\\b_4\end{bmatrix}</script><p>$A$的三个列向量的线性组合无法充满整个四维空间，所以可能有些$b$不是这三个列向量的线性组合。</p>
-<p>在$A$中，其实第三列可以去掉，是前两列的线性组合，对结果没有影响。</p>
-<h1 id="零空间"><a href="#零空间" class="headerlink" title="零空间"></a>零空间</h1><p>$A$的零空间为$Ax=0$中所有的解$x$组成的集合，记作$N(A)$。不管$A$是什么矩阵，其零空间必然含有零向量。例如：</p>
-<script type="math/tex; mode=display">
-Ax=\begin{bmatrix}1&1&2\\2&1&3\\3&1&4\\4&1&5\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}0\\0\\0\\0\end{bmatrix}</script><p>$\begin{bmatrix}0\\0\\0\end{bmatrix}、\begin{bmatrix}1\\1 \\ -1\end{bmatrix}\cdots\begin{bmatrix}c\\c \\ -c\end{bmatrix}$，即$c\begin{bmatrix}1\\1 \\ -1\end{bmatrix}$为$A$的零空间，为三维空间中过原点的直线。</p>
-<p>验证：$A$的零空间为子空间。</p>
-<p>证明如下：①如果$Ax=0并且Ay=0$，那么$A(ax+by)=aAx+bAy=0$，也就是说$v$和$w$都在零空间，那么其和$v$和$w$的线性组合也在零空间内。②如果$Av=0$，那么$A(av)=aAv=0$，即如果$v$在零空间，那么其数乘$av$也在零空间内。综上所述，零空间满足加法和数乘封闭，并且包含零向量，所以为子空间。</p>
-<p>如果$Ax=\begin{bmatrix}1&amp;1&amp;2\\2&amp;1&amp;3\\3&amp;1&amp;4\\4&amp;1&amp;5\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}1\\2\\3\\4\end{bmatrix}$，其所有的解构成子空间吗？</p>
-<p>答案是否定的，因为解中不包含零向量，这里的解其实为三维空间中不过原点的直线。</p>
-<p>构造子空间的两种方法：</p>
-<p>①取各列的线性组合；</p>
-<p>②从方程组中通过让$x$满足特定条件来得到子空间。</p>
-
+        
+          
+          概述k近邻法是一种基本的分类与回归算法，它的输入为实例的特征向量，通过计算新数据与训练数据特征值之间的距离，然后选取与该实例最邻近的k个实例，这k个实例的多数属于哪一类，就把该输入实例分到这个类。对于分类问题，输出为实例的类别，对于新的实例，根据其k个最近邻的训练实例的类别，通过多数表决等方式进行预测；对于回归问题，输出为实例的值，对于新的实例，取其k个最近邻的训练实例的平均值作为预测值。
+kNN三要素k近邻法不具有显式的学习过程，它是直接预测，实际上是利用训练数据集对特征向量空间划分，作为其分类的模型，模型由距离度量、k值的选择、分类决策规则三要素决定。
+距离度量特征空间中两个实例点的距离是
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/16/k-近邻/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -509,98 +497,21 @@ Ax=\begin{bmatrix}1&1&2\\2&1&3\\3&1&4\\4&1&5\end{bmatrix}\begin{bmatrix}x_1\\x_2
     
 
     
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="天道酬勤whn 微信支付"/>
-        <p>微信支付</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="天道酬勤whn 支付宝"/>
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
 
 
       
-      <div>
-        
-      </div>
-      
 
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    天道酬勤whn
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="http://wuhainan.com/2018/11/18/向量空间、列空间和零空间/" title="向量空间、列空间和零空间">http://wuhainan.com/2018/11/18/向量空间、列空间和零空间/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-
-      </div>
     
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/线性代数/" rel="tag"> <i class="fa fa-tag"></i> 线性代数</a>
-          
-        </div>
-      
-      
-      
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/11/16/A的LU分解/" rel="next" title="转置与置换">
-                <i class="fa fa-chevron-left"></i> 转置与置换
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/19/求解Ax=0/" rel="prev" title="求解Ax=0">
-                求解Ax=0 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
       
+      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -610,11 +521,14 @@ Ax=\begin{bmatrix}1&1&2\\2&1&3\\3&1&4\\4&1&5\end{bmatrix}\begin{bmatrix}x_1\\x_2
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -622,10 +536,6 @@ Ax=\begin{bmatrix}1&1&2\\2&1&3\\3&1&4\\4&1&5\end{bmatrix}\begin{bmatrix}x_1\\x_2
 
 
           
-
-  
-
-
 
         </div>
         
@@ -646,17 +556,8 @@ Ax=\begin{bmatrix}1&1&2\\2&1&3\\3&1&4\\4&1&5\end{bmatrix}\begin{bmatrix}x_1\\x_2
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -773,22 +674,6 @@ Ax=\begin{bmatrix}1&1&2\\2&1&3\\3&1&4\\4&1&5\end{bmatrix}\begin{bmatrix}x_1\\x_2
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#向量空间"><span class="nav-number">1.</span> <span class="nav-text">向量空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#子空间"><span class="nav-number">2.</span> <span class="nav-text">子空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#列空间"><span class="nav-number">3.</span> <span class="nav-text">列空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#零空间"><span class="nav-number">4.</span> <span class="nav-text">零空间</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -937,10 +822,6 @@ Ax=\begin{bmatrix}1&1&2\\2&1&3\\3&1&4\\4&1&5\end{bmatrix}\begin{bmatrix}x_1\\x_2
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
