@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[1]]></title>
+    <url>%2F2018%2F12%2F23%2F1%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[求解Ax=0]]></title>
     <url>%2F2018%2F11%2F19%2F%E6%B1%82%E8%A7%A3Ax%3D0%2F</url>
     <content type="text"></content>
@@ -76,7 +81,7 @@
   <entry>
     <title><![CDATA[逻辑回归]]></title>
     <url>%2F2018%2F11%2F02%2F%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%2F</url>
-    <content type="text"><![CDATA[百度]]></content>
+    <content type="text"></content>
       <tags>
         <tag>分类</tag>
       </tags>
