@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://wuhainan.com">
   <title>矩阵乘法和逆 | WuHainan&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="矩阵乘法法一： 假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$ 法二： 将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。 法三： $A$的每一行乘以$B$得到">
+  <meta name="description" content="矩阵乘法法一： 假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$ 法二： 将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。">
 <meta name="keywords" content="线性代数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="矩阵乘法和逆">
 <meta property="og:url" content="http://wuhainan.com/2018/11/14/矩阵乘法和逆/index.html">
 <meta property="og:site_name" content="WuHainan&#39;Blog">
-<meta property="og:description" content="矩阵乘法法一： 假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$ 法二： 将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。 法三： $A$的每一行乘以$B$得到">
+<meta property="og:description" content="矩阵乘法法一： 假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$ 法二： 将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-14T08:54:50.699Z">
+<meta property="og:updated_time" content="2018-12-24T06:54:21.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="矩阵乘法和逆">
-<meta name="twitter:description" content="矩阵乘法法一： 假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$ 法二： 将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。 法三： $A$的每一行乘以$B$得到">
+<meta name="twitter:description" content="矩阵乘法法一： 假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$ 法二： 将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。">
   
     <link rel="alternative" href="/atom.xml" title="WuHainan&#39;Blog" type="application/atom+xml">
   
@@ -187,6 +187,7 @@
 <p>假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$</p>
 <p>法二：</p>
 <p>将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。</p>
+<a id="more"></a>
 <p>法三：</p>
 <p>$A$的每一行乘以$B$得到$C$中的每一行，$C$中的各行是$B$中各行的线性组合。</p>
 <p>法四：</p>

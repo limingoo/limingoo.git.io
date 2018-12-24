@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="WuHainan&#39;Blog">
 <meta property="og:description" content="消元法有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-14T09:00:35.571Z">
+<meta property="og:updated_time" content="2018-12-24T06:53:45.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="矩阵消元">
 <meta name="twitter:description" content="消元法有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}">
@@ -185,6 +185,7 @@
       
         <h1 id="消元法"><a href="#消元法" class="headerlink" title="消元法"></a>消元法</h1><p>有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\12\\2\end{bmatrix}$</p>
 <p>消元法的思路：</p>
+<a id="more"></a>
 <p>$A=\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row2-3row1}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row3-2row2}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;0&amp;5\end{bmatrix}=U$，U的对角线上的元素为三个主元。首先，主元不能为零；其次，如果在消元时遇到主元位置为零，则需要交换行，使主元不为零。当消元失效时，将不能得到三个主元。</p>
 <p>下面进行回代，将矩阵$\begin{bmatrix}A&amp;b\end{bmatrix}$称为增广矩阵。有$\begin{bmatrix}A&amp;b\end{bmatrix}=\begin{bmatrix}1&amp;2&amp;1&amp;2\\3&amp;8&amp;1&amp;12\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;0&amp;5&amp;-10\end{bmatrix}$，此时方程组变为$\left\{\begin{aligned}x+2y+z=2\\2y-2z=6\\5z=-10\end{aligned}\right.$，很容易解出$x=2,y=1,z=-2$</p>
 <h1 id="消元矩阵"><a href="#消元矩阵" class="headerlink" title="消元矩阵"></a>消元矩阵</h1><p>下面介绍用行来计算矩阵乘法：</p>

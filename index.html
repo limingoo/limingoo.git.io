@@ -411,13 +411,7 @@
       
         <h1 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h1><p>设$A=\begin{bmatrix}1&amp;2&amp;4\\3&amp;3&amp;1\end{bmatrix}$，则$A^T=\begin{bmatrix}1&amp;3\\2&amp;3\\4&amp;1\end{bmatrix}$，即$(A^T)_{ij}=A_{ji}$，$A^TA=\begin{bmatrix}10&amp;11&amp;7\\11&amp;13&amp;11\\7&amp;11&amp;17\end{bmatrix}$，对于所有的矩阵$A$，$A^TA$都是对称的，对于对称矩阵，其转置等于其本身。</p>
 <p>$AA^{-1}=I$，两边同时转置得，$(A^{-1})^TA^T=I$，所以有$(A^T)^{-1}=(A^{-1})^T$</p>
-<h1 id="置换矩阵"><a href="#置换矩阵" class="headerlink" title="置换矩阵"></a>置换矩阵</h1><p>置换矩阵是用来完成行互换的矩阵，记作$P$，即单位矩阵的行重新排列后的矩阵，例如：</p>
-<script type="math/tex; mode=display">
-互换行一与行二的置换矩阵P_{12}=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}\\互换行一与行三的置换矩阵P_{13}=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}\\互换行二与行三的置换矩阵P_{23}=\begin{bmatrix}1&0&0\\0&0&1\\0&1&0\end{bmatrix}</script><p>上面这两个矩阵都是行互换一次的置换矩阵，如果交换所有的行，可以得到下面的矩阵</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}、\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}</script><p>加上单位矩阵$I$本身($I$是不需做任何变换的矩阵，即任何矩阵乘以$I$等于其本身)，如果将这6个矩阵两两相乘，结果仍在这6个矩阵当中，它们的逆也在其中，我们称这6个矩阵构成一个群。</p>
-<p>我们还可以得出一个结论：置换矩阵的逆等于其转置，即$P^{-1}=P^T$，并且所有置换矩阵均可逆。对于$n×n$的矩阵，总共有$n!$种置换矩阵。</p>
-
+        
       
 
       
@@ -505,35 +499,7 @@
 <p>假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$</p>
 <p>法二：</p>
 <p>将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。</p>
-<p>法三：</p>
-<p>$A$的每一行乘以$B$得到$C$中的每一行，$C$中的各行是$B$中各行的线性组合。</p>
-<p>法四：</p>
-<p>$AB=A$中各列与$B$各行的乘积之和$=$列一×行一+列二×行二+$\cdots$</p>
-<p>如$\begin{bmatrix}2&amp;7\\3&amp;8\\4&amp;9\end{bmatrix}\begin{bmatrix}1&amp;6\\0&amp;0\end{bmatrix}=\begin{bmatrix}2\\3\\4\end{bmatrix}\begin{bmatrix}1&amp;6\end{bmatrix}+\begin{bmatrix}7\\8\\9\end{bmatrix}\begin{bmatrix}0&amp;0\end{bmatrix}=\begin{bmatrix}2&amp;12\\3&amp;18\\4&amp;24\end{bmatrix}$</p>
-<p>法五：</p>
-<p>分块乘法</p>
-<h1 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h1><p>首先不是所有的矩阵都存在逆，假设$A$为方阵，并且逆存在，则有</p>
-<script type="math/tex; mode=display">
-A^{-1}A=AA^{-1}=I</script><p>对于方阵而言，左逆等于右逆，但是如果$A$为非方阵，左逆就不等于右逆。通常我们称不可逆矩阵为奇异矩阵。下面看看不可逆的情况：$A=\begin{bmatrix}1&amp;3\\2&amp;6\end{bmatrix}$</p>
-<p>为什么$A$不可逆呢？首先$A$对应的行列式$|A|=0$，这个可以用于判断$n$阶方阵$A$是否可逆。其次，如果存在非零向量$x$，使$Ax=0$，则$A$不可逆。在这里取$x=\begin{bmatrix}-3\\1\end{bmatrix}$，有</p>
-<script type="math/tex; mode=display">
-Ax=\begin{bmatrix}1&3\\2&6\end{bmatrix}\begin{bmatrix}-3\\1\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}</script><p>即奇异矩阵的各列通过线性组合能够得到零向量。</p>
-<h2 id="高斯-若尔当消元"><a href="#高斯-若尔当消元" class="headerlink" title="高斯-若尔当消元"></a>高斯-若尔当消元</h2><p>设$A=\begin{bmatrix}1&amp;3\\2&amp;7\end{bmatrix}$，那么如何求$A^{-1}$呢？按照逆的定义，有</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}1&3\\2&7\end{bmatrix}\begin{bmatrix}a&c\\b&d\end{bmatrix}=\begin{bmatrix}1&0\\0&1\end{bmatrix}</script><p>按照矩阵乘法，有</p>
-<script type="math/tex; mode=display">
-\left\{
-\begin{aligned}
-\begin{bmatrix}1&3\\2&7\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}1\\0\end{bmatrix}\\
-\begin{bmatrix}1&3\\2&7\end{bmatrix}\begin{bmatrix}c\\d\end{bmatrix}=\begin{bmatrix}0\\1\end{bmatrix}\\
-\end{aligned}
-\right.</script><p>解此方程组即可。但是该方法比较麻烦，高斯-若尔当(Gauss-Jordan)方法可以一次处理所有的方程。构造这样的方程$\left[\begin{array}{cc|cc}1&amp;3&amp;1&amp;0\\2&amp;7&amp;0&amp;1\end{array}\right]$，左侧为矩阵$A$，右侧为$I$，接下来通过消元法，将左侧变为单位阵，右侧即为$A$的逆矩阵。具体过程如下：</p>
-<script type="math/tex; mode=display">
-\left[\begin{array}{cc|cc}1&3&1&0\\2&7&0&1\end{array}\right]\underrightarrow{\text{row2-2row1}}\begin{bmatrix}1&3&1&0\\0&1&-2&1\end{bmatrix}\underrightarrow{\text{row1-3row2}}\left[\begin{array}{cc|cc}1&0&7&-3\\0&1&-2&1\end{array}\right]</script><p>所以$A^{-1}=\begin{bmatrix}7&amp;-3 \\ -2&amp;1\end{bmatrix}$</p>
-<p>总结：</p>
-<p>求$A^{-1}$的方法</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}A&I\end{bmatrix}\underrightarrow{\text{消元}}\begin{bmatrix}I&A^{-1}\end{bmatrix}</script>
+        
       
 
       
@@ -619,27 +585,7 @@ Ax=\begin{bmatrix}1&3\\2&6\end{bmatrix}\begin{bmatrix}-3\\1\end{bmatrix}=\begin{
       
         <h1 id="消元法"><a href="#消元法" class="headerlink" title="消元法"></a>消元法</h1><p>有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\12\\2\end{bmatrix}$</p>
 <p>消元法的思路：</p>
-<p>$A=\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row2-3row1}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row3-2row2}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;0&amp;5\end{bmatrix}=U$，U的对角线上的元素为三个主元。首先，主元不能为零；其次，如果在消元时遇到主元位置为零，则需要交换行，使主元不为零。当消元失效时，将不能得到三个主元。</p>
-<p>下面进行回代，将矩阵$\begin{bmatrix}A&amp;b\end{bmatrix}$称为增广矩阵。有$\begin{bmatrix}A&amp;b\end{bmatrix}=\begin{bmatrix}1&amp;2&amp;1&amp;2\\3&amp;8&amp;1&amp;12\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;0&amp;5&amp;-10\end{bmatrix}$，此时方程组变为$\left\{\begin{aligned}x+2y+z=2\\2y-2z=6\\5z=-10\end{aligned}\right.$，很容易解出$x=2,y=1,z=-2$</p>
-<h1 id="消元矩阵"><a href="#消元矩阵" class="headerlink" title="消元矩阵"></a>消元矩阵</h1><p>下面介绍用行来计算矩阵乘法：</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}1&2&7\end{bmatrix}\begin{bmatrix}\cdots&row_1&\cdots\\\cdots&row_2&\cdots\\\cdots&row_3&\cdots\end{bmatrix}=1×row_1+2×row_2+7×row_3</script><p>从矩阵$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}$到矩阵$\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}$是第二行减去3倍的第一行，第一、三行不变，则有</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}1&0&0\\-3&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&2&1\\3&8&1\\0&4&1\end{bmatrix}=\begin{bmatrix}1&2&1\\0&2&-2\\0&4&1\end{bmatrix}</script><p>将消元矩阵$\begin{bmatrix}1&amp;0&amp;0\-3&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}$记作$E_{21}​$，表示第二行第一个元素变为零。同理有</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}1&0&0\\0&1&0\\0&-2&1\end{bmatrix}\begin{bmatrix}1&2&1\\0&2&-2\\0&4&1\end{bmatrix}=\begin{bmatrix}1&2&1\\0&2&-2\\0&0&5\end{bmatrix}</script><p>将消元矩阵$\begin{bmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;-2&amp;1\end{bmatrix}$记作$E_{32}$，$E_{21}、E_{32}$都为初等矩阵。将上面两步综合起来有</p>
-<script type="math/tex; mode=display">
-E_{32}(E_{21}A)=U</script><p>由于矩阵乘法满足结合律，又可以写成</p>
-<script type="math/tex; mode=display">
-(E_{32}E_{21})A=U</script><p>下面介绍一种用于置换两行或两列的矩阵，称为置换矩阵，例如：</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}0&1\\1&0\end{bmatrix}\begin{bmatrix}a&b\\c&d\end{bmatrix}=\begin{bmatrix}c&d\\a&b\end{bmatrix}</script><p>如果交换两列则有</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}0&1\\1&0\end{bmatrix}=\begin{bmatrix}b&a\\d&c\end{bmatrix}</script><p>总结：在左边用矩阵做乘法进行的是行变换，在右边用矩阵做乘法进行的是列变换。即列变换时右乘，行变换时左乘。</p>
-<h1 id="逆"><a href="#逆" class="headerlink" title="逆"></a>逆</h1><p>通过消元可以将矩阵$A$变换为$U$，那么将$U$变回$A$的过程称为逆变换。在这里先简单提一下矩阵的逆，这里以$E_{21}$为例：</p>
-<p>$E_{21}$将$A$的第二行减去3倍的第一行，那么其逆变换为第二行加3倍的第一行，所以逆矩阵为$\begin{bmatrix}1&amp;0&amp;0\\3&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}$，我们把$E$的逆记作$E^{-1}$，有$E^{-1}E=I$，有</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}1&0&0\\3&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\-3&1&0\\0&0&1\end{bmatrix}=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}</script>
+        
       
 
       
@@ -733,24 +679,7 @@ E_{32}(E_{21}A)=U</script><p>由于矩阵乘法满足结合律，又可以写成
 \right.</script><p>写成矩阵形式为</p>
 <script type="math/tex; mode=display">
 \begin{bmatrix}2&-1\\-1&2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}</script><p>第一个矩阵称为系数矩阵A，第二个矩阵称为x，第三个矩阵称为b，这样方程组可写为$Ax=b$，一个行图像显示一个方程，可以画出该方程组的行图像：</p>
-<p><img src="/2018/11/12/方程组的几何解释/3.jpg" alt="avatar"></p>
-<p>列图像：</p>
-<p>原方程组可写为$x\begin{bmatrix}2 \\ -1\end{bmatrix}+y\begin{bmatrix}-1\\2\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}$，该方程是寻找如何将$\begin{bmatrix}2 \\ -1\end{bmatrix}$和$\begin{bmatrix}-1\\2\end{bmatrix}$两个向量正确组合，来构成$\begin{bmatrix}0\\3\end{bmatrix}$，这就需要找到正确的线性组合。将$\begin{bmatrix}2 \\ -1\end{bmatrix}$记作$col_1$，$\begin{bmatrix}-1\\2\end{bmatrix}$记作$col_2$，当x=1,y=2时，等式成立。下面画出列向量：</p>
-<p><img src="/2018/11/12/方程组的几何解释/4.png" alt=""></p>
-<p>如果选取所有的x和y，即所有的组合，结果会得到整个二维空间。下面来看三维空间的例子：</p>
-<script type="math/tex; mode=display">
-\left\{
-\begin{aligned}
-2x-y=0\\
--x+2y-z=-1\\
--3y+4z=4
-\end{aligned}
-\right.</script><p>在这里$A=\begin{bmatrix}2&amp;-1&amp;0 \\ -1&amp;2&amp;-1\\0&amp;-3&amp;4\end{bmatrix}，b=\begin{bmatrix}0 \\ -1\\4\end{bmatrix}$。在三维空间中，每一个方程确定一个平面，而例子中的三个平面会相交于一点，这个点就是方程组的解。将方程组写成列向量的线性组合：</p>
-<script type="math/tex; mode=display">
-x\begin{bmatrix}2\\-1\\0\end{bmatrix}+y\begin{bmatrix}-1\\2\\3\end{bmatrix}+z\begin{bmatrix}0\\-1\\4\end{bmatrix}=\begin{bmatrix}0\\-1\\4\end{bmatrix}</script><p>同样将这三个列向量分别称为$col_1、col_2、col_3$，显而易见，当$x=y=0,z=1$时满足该等式。但不是对于所有的右侧向量$b$都有解，当$col_1、col_2、col_3$共面时，只有当$b$在此平面内时，方程组才有解，否则无解。</p>
-<p>最后介绍矩阵形式的$Ax=b$，举个例子，取$A=\begin{bmatrix}2&amp;5\\1&amp;3\end{bmatrix}，x=\begin{bmatrix}1\\2\end{bmatrix}$，则$Ax=\begin{bmatrix}2&amp;5\\1&amp;3\end{bmatrix}\begin{bmatrix}1\\2\end{bmatrix}=1\begin{bmatrix}2\\1\end{bmatrix}+2\begin{bmatrix}5\\3\end{bmatrix}=\begin{bmatrix}12\\7\end{bmatrix}$</p>
-<p>总之，$A$右侧乘以一个向量可以看成$A$的各列的线性组合。</p>
-
+        
       
 
       
