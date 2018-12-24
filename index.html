@@ -87,8 +87,6 @@
 		        
 					<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/c4b95022557e" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
-					<a class="mail" target="_blank" href="mailto:2710984631@qq.com" title="mail"><i class="icon-mail"></i></a>
-		        
 			</div>
 		</nav>
 	</header>		
@@ -131,8 +129,6 @@
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/wu-hai-nan-16/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 						<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/c4b95022557e" title="jianshu"><i class="icon-jianshu"></i></a>
-			        
-						<a class="mail" target="_blank" href="mailto:2710984631@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -412,6 +408,86 @@
 
 
   
+    <article id="post-A的LU分解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/16/A的LU分解/">转置与置换</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/16/A的LU分解/" class="archive-article-date">
+  	<time datetime="2018-11-16T05:47:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>$AA^{-1}=I$，两边同时转置得，$(A^{-1})^TA^T=I$，所以有$(A^T)^{-1}=(A^{-1})^T$</p>
+<h1 id="置换矩阵"><a href="#置换矩阵" class="headerlink" title="置换矩阵"></a>置换矩阵</h1><p>置换矩阵是用来完成行互换的矩阵，记作$P$，即单位矩阵的行重新排列后的矩阵，例如：</p>
+<script type="math/tex; mode=display">
+互换行一与行二的置换矩阵P_{12}=\begin{bmatrix}0&1&0\\0&1&0\\1&0&0\end{bmatrix}\\互换行一与行三的置换矩阵P_{13}=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}\\互换行二与行三的置换矩阵P_{23}=\begin{bmatrix}1&0&0\\0&0&1\\0&1&0\end{bmatrix}</script><p>上面这两个矩阵都是行互换一次的置换矩阵，如果交换所有的行，可以得到下面的矩阵</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}、\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}</script><p>加上单位矩阵$I$本身($I$是不需做任何变换的矩阵，即任何矩阵乘以$I$等于其本身)，如果将这6个矩阵两两相乘，结果仍在这6个矩阵当中，它们的逆也在其中，我们称这6个矩阵构成一个群。</p>
+<p>我们还可以得出一个结论：置换矩阵的逆等于其转置，即$P^{-1}=P^T$</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">线性代数</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/16/A的LU分解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-转置与置换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -469,86 +545,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/16/转置与置换/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-A的LU分解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/16/A的LU分解/">转置与置换</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/16/A的LU分解/" class="archive-article-date">
-  	<time datetime="2018-11-16T05:47:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>$AA^{-1}=I$，两边同时转置得，$(A^{-1})^TA^T=I$，所以有$(A^T)^{-1}=(A^{-1})^T$</p>
-<h1 id="置换矩阵"><a href="#置换矩阵" class="headerlink" title="置换矩阵"></a>置换矩阵</h1><p>置换矩阵是用来完成行互换的矩阵，记作$P$，即单位矩阵的行重新排列后的矩阵，例如：</p>
-<script type="math/tex; mode=display">
-互换行一与行二的置换矩阵P_{12}=\begin{bmatrix}0&1&0\\0&1&0\\1&0&0\end{bmatrix}\\互换行一与行三的置换矩阵P_{13}=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}\\互换行二与行三的置换矩阵P_{23}=\begin{bmatrix}1&0&0\\0&0&1\\0&1&0\end{bmatrix}</script><p>上面这两个矩阵都是行互换一次的置换矩阵，如果交换所有的行，可以得到下面的矩阵</p>
-<script type="math/tex; mode=display">
-\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}、\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}</script><p>加上单位矩阵$I$本身($I$是不需做任何变换的矩阵，即任何矩阵乘以$I$等于其本身)，如果将这6个矩阵两两相乘，结果仍在这6个矩阵当中，它们的逆也在其中，我们称这6个矩阵构成一个群。</p>
-<p>我们还可以得出一个结论：置换矩阵的逆等于其转置，即$P^{-1}=P^T$</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">线性代数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/16/A的LU分解/">展开全文 >></a>
         </p>
       
 
@@ -1099,6 +1095,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">线性代数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">kNN</a>
               </li>
              
@@ -1112,10 +1112,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">线性代数</a>
               </li>
             
             <div class="clearfix"></div>
