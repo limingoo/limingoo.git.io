@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux常用命令总结]]></title>
+    <url>%2F2018%2F12%2F24%2FLinux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[目录相关命令查看目录内容ls是英文单词 list的简写，其功能为列出目录的内容。 ls常用选项: 参数 含义 -a 显示指定目录下所有子目录与文件，包括隐藏文件 -l 以列表方式显示文件的详细信息 -h 配合 -l 以人性化的方式显示文件大小 ls通配符的使用: 通配符 含义 * 任意个数个字符 ? 任意一个字符,至少一个 [] 可以匹配字符组中的任一一个 [abc] 匹配 a、b、c 中的任意一个 [a-f] 匹配从 a 到 f 范围内的的任意一个字符 切换目录cd是英文单词 change directory 的简写，其功能为更改当前的工作目录 命令 含义 cd(cd ~) 切换到当前用户的主目录(/home/用户名) cd . 保持在当前目录不变 cd .. 切换到上级目录 cd - 在最近两次工作目录之间来回切换 文件相关命令创建和删除操作touch 创建文件或修改文件时间 如果文件 不存在，可以创建一个空白文件 如果文件 已经存在，可以修改文件的末次修改日期 mkdir创建一个新的目录 选项 含义 -p 递归创建目录 如:mkdir -p a/b/c 新建目录的名称不能与当前目录中已有的目录或文件同名 rm删除文件或目录 选项 含义 -f 强制删除，忽略不存在的文件，无需提示 -r 递归地删除目录下的内容，删除文件夹时必须加此参数 用rm删除文件后不能恢复 拷贝和移动文件 命令 作用 tree [目录名] 以树状图列出文件目录结构 cp 源文件 目标文件 复制文件或者目录 mv 源文件 目标文件 移动文件或者目录／文件或者目录重命名 tree 选项 含义 -d 只显示目录 cp 选项 含义 -i 覆盖文件前提示 -r 若给出的源文件是目录文件，则 cp 将递归复制该目录下的所有子目录和文件，目标文件必须为一个目录名]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[求解Ax=0]]></title>
     <url>%2F2018%2F11%2F19%2F%E6%B1%82%E8%A7%A3Ax%3D0%2F</url>
     <content type="text"></content>
@@ -100,8 +109,8 @@
         <category>机器学习</category>
       </categories>
       <tags>
-        <tag>机器学习</tag>
         <tag>kNN</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
 </search>
