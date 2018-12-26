@@ -15,13 +15,13 @@
 
 
 
-<meta name="description" content="方向导数方向导数本质上研究的是函数在某点处沿某特定方向上的变化率问题，即某个方向上的导数。 定义$z=f(x,y)((x,y)\in D)，M_0(x_0,y_0)\in D，在$$D$中过$M_0$作射线$l$，取$M(x_0+\Delta x，y_0+\Delta y)\in l，\Delta z=f(x_0+\Delta x，y_0+\Delta y)-f(x_0,y_0)，$令$|M_0M">
+<meta name="description" content="方向导数方向导数本质上研究的是函数在某点处沿某特定方向上的变化率问题，即某个方向上的导数。 定义">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="梯度下降法">
 <meta property="og:url" content="http://wuhainan.com/2018/12/26/梯度下降法/index.html">
 <meta property="og:site_name" content="WuHainan&#39;Blog">
-<meta property="og:description" content="方向导数方向导数本质上研究的是函数在某点处沿某特定方向上的变化率问题，即某个方向上的导数。 定义$z=f(x,y)((x,y)\in D)，M_0(x_0,y_0)\in D，在$$D$中过$M_0$作射线$l$，取$M(x_0+\Delta x，y_0+\Delta y)\in l，\Delta z=f(x_0+\Delta x，y_0+\Delta y)-f(x_0,y_0)，$令$|M_0M">
+<meta property="og:description" content="方向导数方向导数本质上研究的是函数在某点处沿某特定方向上的变化率问题，即某个方向上的导数。 定义">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wuhainan.com/2018/12/26/梯度下降法/1.png">
 <meta property="og:image" content="http://wuhainan.com/2018/12/26/梯度下降法/2.jpeg">
@@ -32,10 +32,10 @@
 <meta property="og:image" content="http://wuhainan.com/2018/12/26/梯度下降法/7.png">
 <meta property="og:image" content="http://wuhainan.com/2018/12/26/梯度下降法/8.png">
 <meta property="og:image" content="http://wuhainan.com/2018/12/26/梯度下降法/9.png">
-<meta property="og:updated_time" content="2018-12-26T10:40:08.817Z">
+<meta property="og:updated_time" content="2018-12-26T10:41:16.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梯度下降法">
-<meta name="twitter:description" content="方向导数方向导数本质上研究的是函数在某点处沿某特定方向上的变化率问题，即某个方向上的导数。 定义$z=f(x,y)((x,y)\in D)，M_0(x_0,y_0)\in D，在$$D$中过$M_0$作射线$l$，取$M(x_0+\Delta x，y_0+\Delta y)\in l，\Delta z=f(x_0+\Delta x，y_0+\Delta y)-f(x_0,y_0)，$令$|M_0M">
+<meta name="twitter:description" content="方向导数方向导数本质上研究的是函数在某点处沿某特定方向上的变化率问题，即某个方向上的导数。 定义">
 <meta name="twitter:image" content="http://wuhainan.com/2018/12/26/梯度下降法/1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -326,7 +326,8 @@
       
           
         <h1 id="方向导数"><a href="#方向导数" class="headerlink" title="方向导数"></a>方向导数</h1><p><strong>方向导数本质上研究的是函数在某点处沿某特定方向上的变化率问题，即某个方向上的导数。</strong></p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>$z=f(x,y)((x,y)\in D)，M_0(x_0,y_0)\in D，在$$D$中过$M_0$作射线$l$，取$M(x_0+\Delta x，y_0+\Delta y)\in l，\Delta z=f(x_0+\Delta x，y_0+\Delta y)-f(x_0,y_0)，$令$|M_0M|=\rho=\sqrt{(\Delta x)^2+(\Delta y)^2}，$如果$\lim\limits_{\rho\to0}\frac{\Delta z}{\rho}$存在，称此极限为$z=f(x,y)$在$M_0$处沿$l$的方向导数，记作$\frac{\partial z}{\partial l}|_{M_0}$</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><a id="more"></a>
+<p>$z=f(x,y)((x,y)\in D)，M_0(x_0,y_0)\in D，在$$D$中过$M_0$作射线$l$，取$M(x_0+\Delta x，y_0+\Delta y)\in l，\Delta z=f(x_0+\Delta x，y_0+\Delta y)-f(x_0,y_0)，$令$|M_0M|=\rho=\sqrt{(\Delta x)^2+(\Delta y)^2}，$如果$\lim\limits_{\rho\to0}\frac{\Delta z}{\rho}$存在，称此极限为$z=f(x,y)$在$M_0$处沿$l$的方向导数，记作$\frac{\partial z}{\partial l}|_{M_0}$</p>
 <h2 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h2><p>设$z=f(x,y)$连续可偏导(可微)，$l$的方向角为$\alpha，\beta$，射线$l$的单位向量为$e=\{cos\alpha，cos\beta\}$，则</p>
 <script type="math/tex; mode=display">
 \frac{\partial z}{\partial l}|_{M_0}=\frac{\partial z}{\partial x}|_{M_0}\cdot cos\alpha+\frac{\partial z}{\partial y}|_{M_0}\cdot cos\beta</script><h2 id="几何意义"><a href="#几何意义" class="headerlink" title="几何意义"></a>几何意义</h2><p>在一元函数中，$A$点的导数是$A$点切线的斜率</p>
@@ -366,7 +367,7 @@
         <p><span>本文标题:</span><a href="/2018/12/26/梯度下降法/">梯度下降法</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
         <p><span>发布时间:</span>2018-12-26, 18:10:54</p>
-        <p><span>最后更新:</span>2018-12-26, 18:40:08</p>
+        <p><span>最后更新:</span>2018-12-26, 18:41:16</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/12/26/梯度下降法/" title="梯度下降法">http://wuhainan.com/2018/12/26/梯度下降法/</a>
             <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/12/26/梯度下降法/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
