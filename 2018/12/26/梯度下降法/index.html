@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://wuhainan.com/2018/12/26/梯度下降法/7.png">
 <meta property="og:image" content="http://wuhainan.com/2018/12/26/梯度下降法/8.png">
 <meta property="og:image" content="http://wuhainan.com/2018/12/26/梯度下降法/9.png">
-<meta property="og:updated_time" content="2018-12-26T10:35:47.969Z">
+<meta property="og:updated_time" content="2018-12-26T10:40:08.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梯度下降法">
 <meta name="twitter:description" content="方向导数方向导数本质上研究的是函数在某点处沿某特定方向上的变化率问题，即某个方向上的导数。 定义$z=f(x,y)((x,y)\in D)，M_0(x_0,y_0)\in D，在$$D$中过$M_0$作射线$l$，取$M(x_0+\Delta x，y_0+\Delta y)\in l，\Delta z=f(x_0+\Delta x，y_0+\Delta y)-f(x_0,y_0)，$令$|M_0M">
@@ -336,7 +336,9 @@
 <p><img src="/2018/12/26/梯度下降法/3.png" alt=""></p>
 <script type="math/tex; mode=display">
 \begin{equation}\begin{split}\frac{\partial z}{\partial l}|_{M_0}&=\frac{\partial z}{\partial x}|_{M_0}\cdot cos\alpha+\frac{\partial z}{\partial y}|_{M_0}\cdot cos\beta\\&=\{\frac{\partial z}{\partial x}，\frac{\partial z}{\partial y}\}_{M_0}\cdot\{cos\alpha，cos\beta\}\\&=|\{\frac{\partial z}{\partial x}，\frac{\partial z}{\partial y}\}_{M_0}|\cdot cos\theta\end{split}\end{equation}</script><p>$\theta$为射线$l$与向量$\{\frac{\partial z}{\partial x}，\frac{\partial z}{\partial y}\}_{M_0}$间的夹角，$l$的方向是变化的，$\{\frac{\partial z}{\partial x}，\frac{\partial z}{\partial y}\}_{M_0}$的方向是固定的。很明显，当$\theta=0$，即$l$与$\{\frac{\partial z}{\partial x}，\frac{\partial z}{\partial y}\}_{M_0}$方向一致时，方向导数取最大值，函数增加最快。由此引出梯度的定义：</p>
+<blockquote>
 <p>向量$(\frac{\partial z}{\partial x}，\frac{\partial z}{\partial y})^T$称为$z=f(x,y)$的梯度，记作<strong>grad</strong> $f(x,y)$或$\nabla\ f(x,y)$</p>
+</blockquote>
 <p>显然，梯度是一个矢量，其方向上的方向导数最大，其大小正好是此最大方向导数。当$\theta=\pi$，即$l$与梯度的方向相反时，方向导数取最小值，函数减少最快。</p>
 <p><img src="/2018/12/26/梯度下降法/4.jpg" alt=""></p>
 <h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><p>有了以上的铺垫，就可以更好地理解梯度下降法(Gradient Descent)了。</p>
@@ -364,7 +366,7 @@
         <p><span>本文标题:</span><a href="/2018/12/26/梯度下降法/">梯度下降法</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
         <p><span>发布时间:</span>2018-12-26, 18:10:54</p>
-        <p><span>最后更新:</span>2018-12-26, 18:35:47</p>
+        <p><span>最后更新:</span>2018-12-26, 18:40:08</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/12/26/梯度下降法/" title="梯度下降法">http://wuhainan.com/2018/12/26/梯度下降法/</a>
             <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/12/26/梯度下降法/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
