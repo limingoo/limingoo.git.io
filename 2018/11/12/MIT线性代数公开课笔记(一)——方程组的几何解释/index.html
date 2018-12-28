@@ -15,13 +15,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="WuHainan&#39;Blog">
-<meta property="og:url" content="http://wuhainan.com/categories/线性代数/index.html">
+<meta name="description" content="从一个例子讲起：2个方程，2个未知数的方程组  \left\{ \begin{aligned} 2x-y=0\\ -x+2y=3\\ \end{aligned} \right.写成矩阵形式为  \begin{bmatrix}2&amp;-1\\-1&amp;2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}">
+<meta name="keywords" content="线性代数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIT线性代数公开课笔记(一)——方程组的几何解释">
+<meta property="og:url" content="http://wuhainan.com/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/index.html">
 <meta property="og:site_name" content="WuHainan&#39;Blog">
+<meta property="og:description" content="从一个例子讲起：2个方程，2个未知数的方程组  \left\{ \begin{aligned} 2x-y=0\\ -x+2y=3\\ \end{aligned} \right.写成矩阵形式为  \begin{bmatrix}2&amp;-1\\-1&amp;2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wuhainan.com/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/MIT线性代数公开课笔记(一">
+<meta property="og:image" content="http://wuhainan.com/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/MIT线性代数公开课笔记(一">
+<meta property="og:updated_time" content="2018-12-28T02:03:47.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WuHainan&#39;Blog">
+<meta name="twitter:title" content="MIT线性代数公开课笔记(一)——方程组的几何解释">
+<meta name="twitter:description" content="从一个例子讲起：2个方程，2个未知数的方程组  \left\{ \begin{aligned} 2x-y=0\\ -x+2y=3\\ \end{aligned} \right.写成矩阵形式为  \begin{bmatrix}2&amp;-1\\-1&amp;2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}">
+<meta name="twitter:image" content="http://wuhainan.com/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/MIT线性代数公开课笔记(一">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -50,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Category: 线性代数 | WuHainan&#39;Blog</title>
+<title>MIT线性代数公开课笔记(一)——方程组的几何解释 | WuHainan&#39;Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -60,10 +68,10 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
-        isCategory: true,
+        isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
         search: false
@@ -270,208 +278,203 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-MIT线性代数公开课笔记(一)——方程组的几何解释" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/" class="article-date">
+      <time datetime="2018-11-12T11:21:39.000Z" itemprop="datePublished">2018-11-12</time>
+</a>
+
+
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MIT线性代数公开课笔记(一)——方程组的几何解释
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/11/18/向量空间、列空间和零空间/" class="archive-article-date">
-      <time datetime="2018-11-18T11:13:39.000Z" itemprop="datePublished">11-18</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/18/向量空间、列空间和零空间/">向量空间、列空间和零空间</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
+        <p>从一个例子讲起：2个方程，2个未知数的方程组</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+2x-y=0\\
+-x+2y=3\\
+\end{aligned}
+\right.</script><p>写成矩阵形式为</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}2&-1\\-1&2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}</script><p>第一个矩阵称为系数矩阵A，第二个矩阵称为x，第三个矩阵称为b，这样方程组可写为$Ax=b$，一个行图像显示一个方程，可以画出该方程组的行图像：</p>
+<a id="more"></a>
+<p><img src="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/MIT线性代数公开课笔记(一" alt="avatar">——方程组的几何解释/3.jpg)</p>
+<p>列图像：</p>
+<p>原方程组可写为$x\begin{bmatrix}2 \\ -1\end{bmatrix}+y\begin{bmatrix}-1\\2\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}$，该方程是寻找如何将$\begin{bmatrix}2 \\ -1\end{bmatrix}$和$\begin{bmatrix}-1\\2\end{bmatrix}$两个向量正确组合，来构成$\begin{bmatrix}0\\3\end{bmatrix}$，这就需要找到正确的线性组合。将$\begin{bmatrix}2 \\ -1\end{bmatrix}$记作$col_1$，$\begin{bmatrix}-1\\2\end{bmatrix}$记作$col_2$，当x=1,y=2时，等式成立。下面画出列向量：</p>
+<p><img src="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/MIT线性代数公开课笔记(一" alt="">——方程组的几何解释\4.png)</p>
+<p>如果选取所有的x和y，即所有的组合，结果会得到整个二维空间。下面来看三维空间的例子：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+2x-y=0\\
+-x+2y-z=-1\\
+-3y+4z=4
+\end{aligned}
+\right.</script><p>在这里$A=\begin{bmatrix}2&amp;-1&amp;0 \\ -1&amp;2&amp;-1\\0&amp;-3&amp;4\end{bmatrix}，b=\begin{bmatrix}0 \\ -1\\4\end{bmatrix}$。在三维空间中，每一个方程确定一个平面，而例子中的三个平面会相交于一点，这个点就是方程组的解。将方程组写成列向量的线性组合：</p>
+<script type="math/tex; mode=display">
+x\begin{bmatrix}2\\-1\\0\end{bmatrix}+y\begin{bmatrix}-1\\2\\3\end{bmatrix}+z\begin{bmatrix}0\\-1\\4\end{bmatrix}=\begin{bmatrix}0\\-1\\4\end{bmatrix}</script><p>同样将这三个列向量分别称为$col_1、col_2、col_3$，显而易见，当$x=y=0,z=1$时满足该等式。但不是对于所有的右侧向量$b$都有解，当$col_1、col_2、col_3$共面时，只有当$b$在此平面内时，方程组才有解，否则无解。</p>
+<p>最后介绍矩阵形式的$Ax=b$，举个例子，取$A=\begin{bmatrix}2&amp;5\\1&amp;3\end{bmatrix}，x=\begin{bmatrix}1\\2\end{bmatrix}$，则$Ax=\begin{bmatrix}2&amp;5\\1&amp;3\end{bmatrix}\begin{bmatrix}1\\2\end{bmatrix}=1\begin{bmatrix}2\\1\end{bmatrix}+2\begin{bmatrix}5\\3\end{bmatrix}=\begin{bmatrix}12\\7\end{bmatrix}$</p>
+<p>总之，$A$右侧乘以一个向量可以看成$A$的各列的线性组合。</p>
+
+      
     </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">MIT线性代数公开课笔记(一)——方程组的几何解释</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
+        <p><span>发布时间:</span>2018-11-12, 19:21:39</p>
+        <p><span>最后更新:</span>2018-12-28, 10:03:47</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/" title="MIT线性代数公开课笔记(一)——方程组的几何解释">http://wuhainan.com/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/11/13/矩阵消元/">
+                    矩阵消元
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/11/08/朴素贝叶斯/">
+                    朴素贝叶斯
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/11/16/转置与置换/" class="archive-article-date">
-      <time datetime="2018-11-16T05:47:35.000Z" itemprop="datePublished">11-16</time>
-</a>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/16/转置与置换/">转置与置换</a>
-    </h1>
-  
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"MIT线性代数公开课笔记(一)——方程组的几何解释　| WuHainan'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/11/13/矩阵消元/" title="上一篇: 矩阵消元">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/11/08/朴素贝叶斯/" title="下一篇: 朴素贝叶斯">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/11/14/矩阵乘法和逆/" class="archive-article-date">
-      <time datetime="2018-11-14T00:44:42.000Z" itemprop="datePublished">11-14</time>
-</a>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/26/梯度下降法/">梯度下降法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/24/Linux常用命令总结/">Linux常用命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/19/求解Ax=0/">求解Ax=0</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/18/向量空间、列空间和零空间/">向量空间、列空间和零空间</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/16/转置与置换/">转置与置换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/14/矩阵乘法和逆/">矩阵乘法和逆</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/13/矩阵消元/">矩阵消元</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">MIT线性代数公开课笔记(一)——方程组的几何解释</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/08/朴素贝叶斯/">朴素贝叶斯</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/02/逻辑回归/">逻辑回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/29/线性模型/">线性模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/16/k-近邻/">k-近邻</a></li></ul>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/14/矩阵乘法和逆/">矩阵乘法和逆</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
-    </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/11/13/矩阵消元/" class="archive-article-date">
-      <time datetime="2018-11-13T07:57:59.000Z" itemprop="datePublished">11-13</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/13/矩阵消元/">矩阵消元</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/" class="archive-article-date">
-      <time datetime="2018-11-12T11:21:39.000Z" itemprop="datePublished">11-12</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">MIT线性代数公开课笔记(一)——方程组的几何解释</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
