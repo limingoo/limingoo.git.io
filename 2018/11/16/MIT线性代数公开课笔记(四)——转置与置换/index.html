@@ -15,14 +15,18 @@
 
 
 
+<meta name="description" content="转置设$A=\begin{bmatrix}1&amp;amp;2&amp;amp;4\\3&amp;amp;3&amp;amp;1\end{bmatrix}$，则$A^T=\begin{bmatrix}1&amp;amp;3\\2&amp;amp;3\\4&amp;amp;1\end{bmatrix}$，即$(A^T)_{ij}=A_{ji}$，$A^TA=\begin{bmatrix}10&amp;amp;11&amp;amp;7\\11&amp;amp;13&amp;amp;11">
+<meta name="keywords" content="线性代数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="朴素贝叶斯">
-<meta property="og:url" content="http://wuhainan.com/2018/11/08/朴素贝叶斯/index.html">
+<meta property="og:title" content="MIT线性代数公开课笔记(四)——转置与置换">
+<meta property="og:url" content="http://wuhainan.com/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/index.html">
 <meta property="og:site_name" content="WuHainan&#39;Blog">
+<meta property="og:description" content="转置设$A=\begin{bmatrix}1&amp;amp;2&amp;amp;4\\3&amp;amp;3&amp;amp;1\end{bmatrix}$，则$A^T=\begin{bmatrix}1&amp;amp;3\\2&amp;amp;3\\4&amp;amp;1\end{bmatrix}$，即$(A^T)_{ij}=A_{ji}$，$A^TA=\begin{bmatrix}10&amp;amp;11&amp;amp;7\\11&amp;amp;13&amp;amp;11">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T13:13:42.758Z">
+<meta property="og:updated_time" content="2019-01-01T02:10:15.111Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="朴素贝叶斯">
+<meta name="twitter:title" content="MIT线性代数公开课笔记(四)——转置与置换">
+<meta name="twitter:description" content="转置设$A=\begin{bmatrix}1&amp;amp;2&amp;amp;4\\3&amp;amp;3&amp;amp;1\end{bmatrix}$，则$A^T=\begin{bmatrix}1&amp;amp;3\\2&amp;amp;3\\4&amp;amp;1\end{bmatrix}$，即$(A^T)_{ij}=A_{ji}$，$A^TA=\begin{bmatrix}10&amp;amp;11&amp;amp;7\\11&amp;amp;13&amp;amp;11">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -51,7 +55,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>朴素贝叶斯 | WuHainan&#39;Blog</title>
+<title>MIT线性代数公开课笔记(四)——转置与置换 | WuHainan&#39;Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -271,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-朴素贝叶斯" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MIT线性代数公开课笔记(四)——转置与置换" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/08/朴素贝叶斯/" class="article-date">
-      <time datetime="2018-11-08T13:12:19.000Z" itemprop="datePublished">2018-11-08</time>
+      <a href="/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/" class="article-date">
+      <time datetime="2018-11-16T05:47:35.000Z" itemprop="datePublished">2018-11-16</time>
 </a>
 
 
@@ -290,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      朴素贝叶斯
+      MIT线性代数公开课笔记(四)——转置与置换
     </h1>
   
 
@@ -298,8 +302,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -307,7 +319,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h1 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h1><p>设$A=\begin{bmatrix}1&amp;2&amp;4\\3&amp;3&amp;1\end{bmatrix}$，则$A^T=\begin{bmatrix}1&amp;3\\2&amp;3\\4&amp;1\end{bmatrix}$，即$(A^T)_{ij}=A_{ji}$，$A^TA=\begin{bmatrix}10&amp;11&amp;7\\11&amp;13&amp;11\\7&amp;11&amp;17\end{bmatrix}$，对于所有的矩阵$A$，$A^TA$都是对称的，对于对称矩阵，其转置等于其本身。</p>
+<p>$AA^{-1}=I$，两边同时转置得，$(A^{-1})^TA^T=I$，所以有$(A^T)^{-1}=(A^{-1})^T$</p>
+<a id="more"></a>
+<h1 id="置换矩阵"><a href="#置换矩阵" class="headerlink" title="置换矩阵"></a>置换矩阵</h1><p>置换矩阵是用来完成行互换的矩阵，记作$P$，即单位矩阵的行重新排列后的矩阵，例如：</p>
+<script type="math/tex; mode=display">
+互换行一与行二的置换矩阵P_{12}=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}\\互换行一与行三的置换矩阵P_{13}=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}\\互换行二与行三的置换矩阵P_{23}=\begin{bmatrix}1&0&0\\0&0&1\\0&1&0\end{bmatrix}</script><p>上面这两个矩阵都是行互换一次的置换矩阵，如果交换所有的行，可以得到下面的矩阵</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}0&1&0\\0&0&1\\1&0&0\end{bmatrix}、\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}</script><p>加上单位矩阵$I$本身($I$是不需做任何变换的矩阵，即任何矩阵乘以$I$等于其本身)，如果将这6个矩阵两两相乘，结果仍在这6个矩阵当中，它们的逆也在其中，我们称这6个矩阵构成一个群。</p>
+<p>我们还可以得出一个结论：置换矩阵的逆等于其转置，即$P^{-1}=P^T$，并且所有置换矩阵均可逆。对于$n×n$的矩阵，总共有$n!$种置换矩阵。</p>
+
       
     </div>
     
@@ -315,13 +336,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/11/08/朴素贝叶斯/">朴素贝叶斯</a></p>
+        <p><span>本文标题:</span><a href="/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/">MIT线性代数公开课笔记(四)——转置与置换</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
-        <p><span>发布时间:</span>2018-11-08, 21:12:19</p>
-        <p><span>最后更新:</span>2018-11-08, 21:13:42</p>
+        <p><span>发布时间:</span>2018-11-16, 13:47:35</p>
+        <p><span>最后更新:</span>2019-01-01, 10:10:15</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/11/08/朴素贝叶斯/" title="朴素贝叶斯">http://wuhainan.com/2018/11/08/朴素贝叶斯/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/11/08/朴素贝叶斯/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/" title="MIT线性代数公开课笔记(四)——转置与置换">http://wuhainan.com/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -334,15 +355,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">
-                    MIT线性代数公开课笔记(一)——方程组的几何解释
+                <a href="/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/">
+                    MIT线性代数公开课笔记(五)——向量空间、列空间和零空间
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/11/02/逻辑回归/">
-                    逻辑回归
+                <a href="/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/">
+                    MIT线性代数公开课笔记(二)——矩阵消元
                 </a>
             </div>
         
@@ -354,7 +375,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#转置"><span class="toc-number">1.</span> <span class="toc-text">转置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#置换矩阵"><span class="toc-number">2.</span> <span class="toc-text">置换矩阵</span></a></li></ol>
         
     </div>
     <style>
@@ -390,7 +411,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"朴素贝叶斯　| WuHainan'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"MIT线性代数公开课笔记(四)——转置与置换　| WuHainan'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -410,7 +431,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/" title="上一篇: MIT线性代数公开课笔记(一)——方程组的几何解释">
+            <a href="/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/" title="上一篇: MIT线性代数公开课笔记(五)——向量空间、列空间和零空间">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -418,7 +439,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/11/02/逻辑回归/" title="下一篇: 逻辑回归">
+            <a href="/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/" title="下一篇: MIT线性代数公开课笔记(二)——矩阵消元">
                 <i class="fa fa-angle-right"></i>
             </a>
         

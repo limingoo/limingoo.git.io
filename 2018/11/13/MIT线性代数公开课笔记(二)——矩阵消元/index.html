@@ -15,14 +15,18 @@
 
 
 
+<meta name="description" content="消元法有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}">
+<meta name="keywords" content="线性代数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="朴素贝叶斯">
-<meta property="og:url" content="http://wuhainan.com/2018/11/08/朴素贝叶斯/index.html">
+<meta property="og:title" content="MIT线性代数公开课笔记(二)——矩阵消元">
+<meta property="og:url" content="http://wuhainan.com/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/index.html">
 <meta property="og:site_name" content="WuHainan&#39;Blog">
+<meta property="og:description" content="消元法有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T13:13:42.758Z">
+<meta property="og:updated_time" content="2019-01-01T02:07:16.399Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="朴素贝叶斯">
+<meta name="twitter:title" content="MIT线性代数公开课笔记(二)——矩阵消元">
+<meta name="twitter:description" content="消元法有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;amp;2&amp;amp;1\\3&amp;amp;8&amp;amp;1\\0&amp;amp;4&amp;amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -51,7 +55,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>朴素贝叶斯 | WuHainan&#39;Blog</title>
+<title>MIT线性代数公开课笔记(二)——矩阵消元 | WuHainan&#39;Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -271,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-朴素贝叶斯" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MIT线性代数公开课笔记(二)——矩阵消元" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/08/朴素贝叶斯/" class="article-date">
-      <time datetime="2018-11-08T13:12:19.000Z" itemprop="datePublished">2018-11-08</time>
+      <a href="/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/" class="article-date">
+      <time datetime="2018-11-13T07:57:59.000Z" itemprop="datePublished">2018-11-13</time>
 </a>
 
 
@@ -290,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      朴素贝叶斯
+      MIT线性代数公开课笔记(二)——矩阵消元
     </h1>
   
 
@@ -298,8 +302,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -307,7 +319,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h1 id="消元法"><a href="#消元法" class="headerlink" title="消元法"></a>消元法</h1><p>有方程组$\left\{\begin{aligned}x+2y+z=2\\3x+8y+z=12\\4y+z=2\end{aligned}\right.$，写成矩阵形式$Ax=b$为$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\12\\2\end{bmatrix}$</p>
+<p>消元法的思路：</p>
+<a id="more"></a>
+<p>$A=\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row2-3row1}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}\underrightarrow{\text{row3-2row2}}\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;0&amp;5\end{bmatrix}=U$，U的对角线上的元素为三个主元。首先，主元不能为零；其次，如果在消元时遇到主元位置为零，则需要交换行，使主元不为零。当消元失效时，将不能得到三个主元。</p>
+<p>下面进行回代，将矩阵$\begin{bmatrix}A&amp;b\end{bmatrix}$称为增广矩阵。有$\begin{bmatrix}A&amp;b\end{bmatrix}=\begin{bmatrix}1&amp;2&amp;1&amp;2\\3&amp;8&amp;1&amp;12\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;4&amp;1&amp;2\end{bmatrix}\to\begin{bmatrix}1&amp;2&amp;1&amp;2\\0&amp;2&amp;-2&amp;6\\0&amp;0&amp;5&amp;-10\end{bmatrix}$，此时方程组变为$\left\{\begin{aligned}x+2y+z=2\\2y-2z=6\\5z=-10\end{aligned}\right.$，很容易解出$x=2,y=1,z=-2$</p>
+<h1 id="消元矩阵"><a href="#消元矩阵" class="headerlink" title="消元矩阵"></a>消元矩阵</h1><p>下面介绍用行来计算矩阵乘法：</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}1&2&7\end{bmatrix}\begin{bmatrix}\cdots&row_1&\cdots\\\cdots&row_2&\cdots\\\cdots&row_3&\cdots\end{bmatrix}=1×row_1+2×row_2+7×row_3</script><p>从矩阵$\begin{bmatrix}1&amp;2&amp;1\\3&amp;8&amp;1\\0&amp;4&amp;1\end{bmatrix}$到矩阵$\begin{bmatrix}1&amp;2&amp;1\\0&amp;2&amp;-2\\0&amp;4&amp;1\end{bmatrix}$是第二行减去3倍的第一行，第一、三行不变，则有</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}1&0&0\\-3&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&2&1\\3&8&1\\0&4&1\end{bmatrix}=\begin{bmatrix}1&2&1\\0&2&-2\\0&4&1\end{bmatrix}</script><p>将消元矩阵$\begin{bmatrix}1&amp;0&amp;0\-3&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}$记作$E_{21}​$，表示第二行第一个元素变为零。同理有</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}1&0&0\\0&1&0\\0&-2&1\end{bmatrix}\begin{bmatrix}1&2&1\\0&2&-2\\0&4&1\end{bmatrix}=\begin{bmatrix}1&2&1\\0&2&-2\\0&0&5\end{bmatrix}</script><p>将消元矩阵$\begin{bmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;-2&amp;1\end{bmatrix}$记作$E_{32}$，$E_{21}、E_{32}$都为初等矩阵。将上面两步综合起来有</p>
+<script type="math/tex; mode=display">
+E_{32}(E_{21}A)=U</script><p>由于矩阵乘法满足结合律，又可以写成</p>
+<script type="math/tex; mode=display">
+(E_{32}E_{21})A=U</script><p>下面介绍一种用于置换两行或两列的矩阵，称为置换矩阵，例如：</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}0&1\\1&0\end{bmatrix}\begin{bmatrix}a&b\\c&d\end{bmatrix}=\begin{bmatrix}c&d\\a&b\end{bmatrix}</script><p>如果交换两列则有</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}0&1\\1&0\end{bmatrix}=\begin{bmatrix}b&a\\d&c\end{bmatrix}</script><p>总结：在左边用矩阵做乘法进行的是行变换，在右边用矩阵做乘法进行的是列变换。即列变换时右乘，行变换时左乘。</p>
+<h1 id="逆"><a href="#逆" class="headerlink" title="逆"></a>逆</h1><p>通过消元可以将矩阵$A$变换为$U$，那么将$U$变回$A$的过程称为逆变换。在这里先简单提一下矩阵的逆，这里以$E_{21}$为例：</p>
+<p>$E_{21}$将$A$的第二行减去3倍的第一行，那么其逆变换为第二行加3倍的第一行，所以逆矩阵为$\begin{bmatrix}1&amp;0&amp;0\\3&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}$，我们把$E$的逆记作$E^{-1}$，有$E^{-1}E=I$，有</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}1&0&0\\3&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\-3&1&0\\0&0&1\end{bmatrix}=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}</script>
       
     </div>
     
@@ -315,13 +350,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/11/08/朴素贝叶斯/">朴素贝叶斯</a></p>
+        <p><span>本文标题:</span><a href="/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/">MIT线性代数公开课笔记(二)——矩阵消元</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
-        <p><span>发布时间:</span>2018-11-08, 21:12:19</p>
-        <p><span>最后更新:</span>2018-11-08, 21:13:42</p>
+        <p><span>发布时间:</span>2018-11-13, 15:57:59</p>
+        <p><span>最后更新:</span>2019-01-01, 10:07:16</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/11/08/朴素贝叶斯/" title="朴素贝叶斯">http://wuhainan.com/2018/11/08/朴素贝叶斯/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/11/08/朴素贝叶斯/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/" title="MIT线性代数公开课笔记(二)——矩阵消元">http://wuhainan.com/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -334,15 +369,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">
-                    MIT线性代数公开课笔记(一)——方程组的几何解释
+                <a href="/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/">
+                    MIT线性代数公开课笔记(二)——矩阵消元
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/11/02/逻辑回归/">
-                    逻辑回归
+                <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">
+                    MIT线性代数公开课笔记(一)——方程组的几何解释
                 </a>
             </div>
         
@@ -354,7 +389,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#消元法"><span class="toc-number">1.</span> <span class="toc-text">消元法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#消元矩阵"><span class="toc-number">2.</span> <span class="toc-text">消元矩阵</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#逆"><span class="toc-number">3.</span> <span class="toc-text">逆</span></a></li></ol>
         
     </div>
     <style>
@@ -390,7 +425,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"朴素贝叶斯　| WuHainan'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"MIT线性代数公开课笔记(二)——矩阵消元　| WuHainan'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -410,7 +445,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/" title="上一篇: MIT线性代数公开课笔记(一)——方程组的几何解释">
+            <a href="/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/" title="上一篇: MIT线性代数公开课笔记(二)——矩阵消元">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -418,7 +453,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/11/02/逻辑回归/" title="下一篇: 逻辑回归">
+            <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/" title="下一篇: MIT线性代数公开课笔记(一)——方程组的几何解释">
                 <i class="fa fa-angle-right"></i>
             </a>
         

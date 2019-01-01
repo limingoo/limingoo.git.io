@@ -15,14 +15,18 @@
 
 
 
+<meta name="description" content="矩阵乘法法一： 假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$ 法二： 将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。">
+<meta name="keywords" content="线性代数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="朴素贝叶斯">
-<meta property="og:url" content="http://wuhainan.com/2018/11/08/朴素贝叶斯/index.html">
+<meta property="og:title" content="MIT线性代数公开课笔记(二)——矩阵消元">
+<meta property="og:url" content="http://wuhainan.com/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/index.html">
 <meta property="og:site_name" content="WuHainan&#39;Blog">
+<meta property="og:description" content="矩阵乘法法一： 假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$ 法二： 将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T13:13:42.758Z">
+<meta property="og:updated_time" content="2019-01-01T02:09:15.639Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="朴素贝叶斯">
+<meta name="twitter:title" content="MIT线性代数公开课笔记(二)——矩阵消元">
+<meta name="twitter:description" content="矩阵乘法法一： 假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$ 法二： 将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -51,7 +55,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>朴素贝叶斯 | WuHainan&#39;Blog</title>
+<title>MIT线性代数公开课笔记(二)——矩阵消元 | WuHainan&#39;Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -271,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-朴素贝叶斯" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MIT线性代数公开课笔记(三)——矩阵乘法和逆" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/08/朴素贝叶斯/" class="article-date">
-      <time datetime="2018-11-08T13:12:19.000Z" itemprop="datePublished">2018-11-08</time>
+      <a href="/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/" class="article-date">
+      <time datetime="2018-11-14T00:44:42.000Z" itemprop="datePublished">2018-11-14</time>
 </a>
 
 
@@ -290,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      朴素贝叶斯
+      MIT线性代数公开课笔记(二)——矩阵消元
     </h1>
   
 
@@ -298,8 +302,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -307,7 +319,40 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h1 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h1><p>法一：</p>
+<p>假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$</p>
+<p>法二：</p>
+<p>将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。</p>
+<a id="more"></a>
+<p>法三：</p>
+<p>$A$的每一行乘以$B$得到$C$中的每一行，$C$中的各行是$B$中各行的线性组合。</p>
+<p>法四：</p>
+<p>$AB=A$中各列与$B$各行的乘积之和$=$列一×行一+列二×行二+$\cdots$</p>
+<p>如$\begin{bmatrix}2&amp;7\\3&amp;8\\4&amp;9\end{bmatrix}\begin{bmatrix}1&amp;6\\0&amp;0\end{bmatrix}=\begin{bmatrix}2\\3\\4\end{bmatrix}\begin{bmatrix}1&amp;6\end{bmatrix}+\begin{bmatrix}7\\8\\9\end{bmatrix}\begin{bmatrix}0&amp;0\end{bmatrix}=\begin{bmatrix}2&amp;12\\3&amp;18\\4&amp;24\end{bmatrix}$</p>
+<p>法五：</p>
+<p>分块乘法</p>
+<h1 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h1><p>首先不是所有的矩阵都存在逆，假设$A$为方阵，并且逆存在，则有</p>
+<script type="math/tex; mode=display">
+A^{-1}A=AA^{-1}=I</script><p>对于方阵而言，左逆等于右逆，但是如果$A$为非方阵，左逆就不等于右逆。通常我们称不可逆矩阵为奇异矩阵。下面看看不可逆的情况：$A=\begin{bmatrix}1&amp;3\\2&amp;6\end{bmatrix}$</p>
+<p>为什么$A$不可逆呢？首先$A$对应的行列式$|A|=0$，这个可以用于判断$n$阶方阵$A$是否可逆。其次，如果存在非零向量$x$，使$Ax=0$，则$A$不可逆。在这里取$x=\begin{bmatrix}-3\\1\end{bmatrix}$，有</p>
+<script type="math/tex; mode=display">
+Ax=\begin{bmatrix}1&3\\2&6\end{bmatrix}\begin{bmatrix}-3\\1\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}</script><p>即奇异矩阵的各列通过线性组合能够得到零向量。</p>
+<h2 id="高斯-若尔当消元"><a href="#高斯-若尔当消元" class="headerlink" title="高斯-若尔当消元"></a>高斯-若尔当消元</h2><p>设$A=\begin{bmatrix}1&amp;3\\2&amp;7\end{bmatrix}$，那么如何求$A^{-1}$呢？按照逆的定义，有</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}1&3\\2&7\end{bmatrix}\begin{bmatrix}a&c\\b&d\end{bmatrix}=\begin{bmatrix}1&0\\0&1\end{bmatrix}</script><p>按照矩阵乘法，有</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+\begin{bmatrix}1&3\\2&7\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}1\\0\end{bmatrix}\\
+\begin{bmatrix}1&3\\2&7\end{bmatrix}\begin{bmatrix}c\\d\end{bmatrix}=\begin{bmatrix}0\\1\end{bmatrix}\\
+\end{aligned}
+\right.</script><p>解此方程组即可。但是该方法比较麻烦，高斯-若尔当(Gauss-Jordan)方法可以一次处理所有的方程。构造这样的方程$\left[\begin{array}{cc|cc}1&amp;3&amp;1&amp;0\\2&amp;7&amp;0&amp;1\end{array}\right]$，左侧为矩阵$A$，右侧为$I$，接下来通过消元法，将左侧变为单位阵，右侧即为$A$的逆矩阵。具体过程如下：</p>
+<script type="math/tex; mode=display">
+\left[\begin{array}{cc|cc}1&3&1&0\\2&7&0&1\end{array}\right]\underrightarrow{\text{row2-2row1}}\begin{bmatrix}1&3&1&0\\0&1&-2&1\end{bmatrix}\underrightarrow{\text{row1-3row2}}\left[\begin{array}{cc|cc}1&0&7&-3\\0&1&-2&1\end{array}\right]</script><p>所以$A^{-1}=\begin{bmatrix}7&amp;-3 \\ -2&amp;1\end{bmatrix}$</p>
+<p>总结：</p>
+<p>求$A^{-1}$的方法</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}A&I\end{bmatrix}\underrightarrow{\text{消元}}\begin{bmatrix}I&A^{-1}\end{bmatrix}</script>
       
     </div>
     
@@ -315,13 +360,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/11/08/朴素贝叶斯/">朴素贝叶斯</a></p>
+        <p><span>本文标题:</span><a href="/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/">MIT线性代数公开课笔记(二)——矩阵消元</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
-        <p><span>发布时间:</span>2018-11-08, 21:12:19</p>
-        <p><span>最后更新:</span>2018-11-08, 21:13:42</p>
+        <p><span>发布时间:</span>2018-11-14, 08:44:42</p>
+        <p><span>最后更新:</span>2019-01-01, 10:09:15</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/11/08/朴素贝叶斯/" title="朴素贝叶斯">http://wuhainan.com/2018/11/08/朴素贝叶斯/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/11/08/朴素贝叶斯/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/" title="MIT线性代数公开课笔记(二)——矩阵消元">http://wuhainan.com/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -334,15 +379,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">
-                    MIT线性代数公开课笔记(一)——方程组的几何解释
+                <a href="/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/">
+                    MIT线性代数公开课笔记(四)——转置与置换
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/11/02/逻辑回归/">
-                    逻辑回归
+                <a href="/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/">
+                    MIT线性代数公开课笔记(二)——矩阵消元
                 </a>
             </div>
         
@@ -354,7 +399,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#矩阵乘法"><span class="toc-number">1.</span> <span class="toc-text">矩阵乘法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#矩阵的逆"><span class="toc-number">2.</span> <span class="toc-text">矩阵的逆</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#高斯-若尔当消元"><span class="toc-number">2.1.</span> <span class="toc-text">高斯-若尔当消元</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -390,7 +435,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"朴素贝叶斯　| WuHainan'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"MIT线性代数公开课笔记(二)——矩阵消元　| WuHainan'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -410,7 +455,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/" title="上一篇: MIT线性代数公开课笔记(一)——方程组的几何解释">
+            <a href="/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/" title="上一篇: MIT线性代数公开课笔记(四)——转置与置换">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -418,7 +463,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/11/02/逻辑回归/" title="下一篇: 逻辑回归">
+            <a href="/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/" title="下一篇: MIT线性代数公开课笔记(二)——矩阵消元">
                 <i class="fa fa-angle-right"></i>
             </a>
         

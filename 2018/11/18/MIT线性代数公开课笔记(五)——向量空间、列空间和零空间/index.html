@@ -15,14 +15,18 @@
 
 
 
+<meta name="description" content="向量空间①所有向量空间都必须包含零向量，即包含原点。 ②向量空间中任意向量的数乘、求和运算得到的向量也在该空间中，即向量空间要满足加法封闭和数乘封闭。 ③向量空间$R^n$包含所有的n维向量，分量均为实数。">
+<meta name="keywords" content="线性代数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="朴素贝叶斯">
-<meta property="og:url" content="http://wuhainan.com/2018/11/08/朴素贝叶斯/index.html">
+<meta property="og:title" content="MIT线性代数公开课笔记(五)——向量空间、列空间和零空间">
+<meta property="og:url" content="http://wuhainan.com/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/index.html">
 <meta property="og:site_name" content="WuHainan&#39;Blog">
+<meta property="og:description" content="向量空间①所有向量空间都必须包含零向量，即包含原点。 ②向量空间中任意向量的数乘、求和运算得到的向量也在该空间中，即向量空间要满足加法封闭和数乘封闭。 ③向量空间$R^n$包含所有的n维向量，分量均为实数。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T13:13:42.758Z">
+<meta property="og:updated_time" content="2019-01-01T02:13:19.375Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="朴素贝叶斯">
+<meta name="twitter:title" content="MIT线性代数公开课笔记(五)——向量空间、列空间和零空间">
+<meta name="twitter:description" content="向量空间①所有向量空间都必须包含零向量，即包含原点。 ②向量空间中任意向量的数乘、求和运算得到的向量也在该空间中，即向量空间要满足加法封闭和数乘封闭。 ③向量空间$R^n$包含所有的n维向量，分量均为实数。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -51,7 +55,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>朴素贝叶斯 | WuHainan&#39;Blog</title>
+<title>MIT线性代数公开课笔记(五)——向量空间、列空间和零空间 | WuHainan&#39;Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -271,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-朴素贝叶斯" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MIT线性代数公开课笔记(五)——向量空间、列空间和零空间" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/08/朴素贝叶斯/" class="article-date">
-      <time datetime="2018-11-08T13:12:19.000Z" itemprop="datePublished">2018-11-08</time>
+      <a href="/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/" class="article-date">
+      <time datetime="2018-11-18T11:13:39.000Z" itemprop="datePublished">2018-11-18</time>
 </a>
 
 
@@ -290,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      朴素贝叶斯
+      MIT线性代数公开课笔记(五)——向量空间、列空间和零空间
     </h1>
   
 
@@ -298,8 +302,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/线性代数/">线性代数</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线性代数/">线性代数</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -307,7 +319,31 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h1 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a>向量空间</h1><p>①所有向量空间都必须包含零向量，即包含原点。</p>
+<p>②向量空间中任意向量的数乘、求和运算得到的向量也在该空间中，即向量空间要满足加法封闭和数乘封闭。</p>
+<p>③向量空间$R^n$包含所有的n维向量，分量均为实数。</p>
+<a id="more"></a>
+<h1 id="子空间"><a href="#子空间" class="headerlink" title="子空间"></a>子空间</h1><p>向量空间的子空间也必须满足加法封闭和数乘封闭，并且也包含零向量。</p>
+<p>$R^2$的子空间：①$R^2本身$；②过原点的直线；③零向量(即原点)；</p>
+<p>$R^3$的子空间：①$R^3本身$；②过原点的平面；③过原点的直线；④零向量。</p>
+<h1 id="列空间"><a href="#列空间" class="headerlink" title="列空间"></a>列空间</h1><p>设$A=\begin{bmatrix}1&amp;3\\2&amp;3\\4&amp;1\end{bmatrix}$，其中各列属于$R^3$，那么所有列的所有线性组合构成$R^3$的一个子空间，在这里为过原点的一个平面，称该子空间为$A$的列空间，记作$C(A)$。如果$A$的两列共线，则列空间为一条直线。</p>
+<p>构造矩阵列空间的方法：取出各列，然后线性组合，则所有的线性组合构成列空间。</p>
+<p>假设$P$为三维空间中过原点的平面，$L$为过原点的直线($L$不在$P$内)，$P、L$都为子空间，而$P∪L$不是子空间，因为加法不封闭，$P∩L$是子空间，因为只含零向量。一般情况下，若$S、T$均为子空间，则$S∩T$也为子空间。</p>
+<p>$Ax=b$并不是对任意的$b$都有解，只有$b$属于$A$的列空间时才有解。例如：</p>
+<script type="math/tex; mode=display">
+Ax=\begin{bmatrix}1&1&2\\2&1&3\\3&1&4\\4&1&5\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}b_1\\b_2\\b_3\\b_4\end{bmatrix}</script><p>$A$的三个列向量的线性组合无法充满整个四维空间，所以可能有些$b$不是这三个列向量的线性组合。</p>
+<p>在$A$中，其实第三列可以去掉，是前两列的线性组合，对结果没有影响。</p>
+<h1 id="零空间"><a href="#零空间" class="headerlink" title="零空间"></a>零空间</h1><p>$A$的零空间为$Ax=0$中所有的解$x$组成的集合，记作$N(A)$。不管$A$是什么矩阵，其零空间必然含有零向量。例如：</p>
+<script type="math/tex; mode=display">
+Ax=\begin{bmatrix}1&1&2\\2&1&3\\3&1&4\\4&1&5\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}0\\0\\0\\0\end{bmatrix}</script><p>$\begin{bmatrix}0\\0\\0\end{bmatrix}、\begin{bmatrix}1\\1 \\ -1\end{bmatrix}\cdots\begin{bmatrix}c\\c \\ -c\end{bmatrix}$，即$c\begin{bmatrix}1\\1 \\ -1\end{bmatrix}$为$A$的零空间，为三维空间中过原点的直线。</p>
+<p>验证：$A$的零空间为子空间。</p>
+<p>证明如下：①如果$Ax=0并且Ay=0$，那么$A(ax+by)=aAx+bAy=0$，也就是说$v$和$w$都在零空间，那么其和$v$和$w$的线性组合也在零空间内。②如果$Av=0$，那么$A(av)=aAv=0$，即如果$v$在零空间，那么其数乘$av$也在零空间内。综上所述，零空间满足加法和数乘封闭，并且包含零向量，所以为子空间。</p>
+<p>如果$Ax=\begin{bmatrix}1&amp;1&amp;2\\2&amp;1&amp;3\\3&amp;1&amp;4\\4&amp;1&amp;5\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}1\\2\\3\\4\end{bmatrix}$，其所有的解构成子空间吗？</p>
+<p>答案是否定的，因为解中不包含零向量，这里的解其实为三维空间中不过原点的直线。</p>
+<p>构造子空间的两种方法：</p>
+<p>①取各列的线性组合；</p>
+<p>②从方程组中通过让$x$满足特定条件来得到子空间。</p>
+
       
     </div>
     
@@ -315,13 +351,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/11/08/朴素贝叶斯/">朴素贝叶斯</a></p>
+        <p><span>本文标题:</span><a href="/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/">MIT线性代数公开课笔记(五)——向量空间、列空间和零空间</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
-        <p><span>发布时间:</span>2018-11-08, 21:12:19</p>
-        <p><span>最后更新:</span>2018-11-08, 21:13:42</p>
+        <p><span>发布时间:</span>2018-11-18, 19:13:39</p>
+        <p><span>最后更新:</span>2019-01-01, 10:13:19</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/11/08/朴素贝叶斯/" title="朴素贝叶斯">http://wuhainan.com/2018/11/08/朴素贝叶斯/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/11/08/朴素贝叶斯/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/" title="MIT线性代数公开课笔记(五)——向量空间、列空间和零空间">http://wuhainan.com/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -334,15 +370,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">
-                    MIT线性代数公开课笔记(一)——方程组的几何解释
+                <a href="/2018/11/19/求解Ax=0/">
+                    求解Ax=0
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/11/02/逻辑回归/">
-                    逻辑回归
+                <a href="/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/">
+                    MIT线性代数公开课笔记(四)——转置与置换
                 </a>
             </div>
         
@@ -354,7 +390,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#向量空间"><span class="toc-number">1.</span> <span class="toc-text">向量空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#子空间"><span class="toc-number">2.</span> <span class="toc-text">子空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#列空间"><span class="toc-number">3.</span> <span class="toc-text">列空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#零空间"><span class="toc-number">4.</span> <span class="toc-text">零空间</span></a></li></ol>
         
     </div>
     <style>
@@ -390,7 +426,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"朴素贝叶斯　| WuHainan'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"MIT线性代数公开课笔记(五)——向量空间、列空间和零空间　| WuHainan'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -410,7 +446,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/" title="上一篇: MIT线性代数公开课笔记(一)——方程组的几何解释">
+            <a href="/2018/11/19/求解Ax=0/" title="上一篇: 求解Ax=0">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -418,7 +454,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/11/02/逻辑回归/" title="下一篇: 逻辑回归">
+            <a href="/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/" title="下一篇: MIT线性代数公开课笔记(四)——转置与置换">
                 <i class="fa fa-angle-right"></i>
             </a>
         
