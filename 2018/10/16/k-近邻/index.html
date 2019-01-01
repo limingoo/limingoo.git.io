@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="WuHainan&#39;Blog">
 <meta property="og:description" content="概述k近邻法是一种基本的分类与回归算法，它的输入为实例的特征向量，通过计算新数据与训练数据特征值之间的距离，然后选取与该实例最邻近的k个实例，这k个实例的多数属于哪一类，就把该输入实例分到这个类。对于分类问题，输出为实例的类别，对于新的实例，根据其k个最近邻的训练实例的类别，通过多数表决等方式进行预测；对于回归问题，输出为实例的值，对于新的实例，取其k个最近邻的训练实例的平均值作为预测值。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-24T07:55:45.720Z">
+<meta property="og:updated_time" content="2019-01-01T02:21:12.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k-近邻">
 <meta name="twitter:description" content="概述k近邻法是一种基本的分类与回归算法，它的输入为实例的特征向量，通过计算新数据与训练数据特征值之间的距离，然后选取与该实例最邻近的k个实例，这k个实例的多数属于哪一类，就把该输入实例分到这个类。对于分类问题，输出为实例的类别，对于新的实例，根据其k个最近邻的训练实例的类别，通过多数表决等方式进行预测；对于回归问题，输出为实例的值，对于新的实例，取其k个最近邻的训练实例的平均值作为预测值。">
@@ -342,7 +342,7 @@ f：\mathbb{R}^n\to\{c_1,c_2,\cdots,c_K\}</script><p>那么误分类的概率为
 P(Y\ne f(X))=1-P(Y=f(X))</script><p>对给定的实例$x\in\mathcal{X}$，其最近邻的k个训练实例点构成集合$N_k(x)$。如果涵盖$N_k(x)$的区域的类别是$c_j$，那么误分类率是</p>
 <script type="math/tex; mode=display">
 \frac{1}{k}\sum_{x_i\in N_k(x)}I(y_i\ne c_j)=1-\frac{1}{k}\sum_{x_i\in N_k(x)}I(y_i=c_j)</script><p>要使误分类率最小即经验风险最小，就要使$\sum_\limits{x_i\in N_k(x)}I(y_i=c_j)$最大，所以多数表决规则等价于经验风险最化。</p>
-<h1 id="kd树"><a href="#kd树" class="headerlink" title="kd树"></a>kd树</h1><h1 id="sklearn代码"><a href="#sklearn代码" class="headerlink" title="sklearn代码"></a>sklearn代码</h1>
+
       
     </div>
     
@@ -353,7 +353,7 @@ P(Y\ne f(X))=1-P(Y=f(X))</script><p>对给定的实例$x\in\mathcal{X}$，其最
         <p><span>本文标题:</span><a href="/2018/10/16/k-近邻/">k-近邻</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
         <p><span>发布时间:</span>2018-10-16, 15:34:15</p>
-        <p><span>最后更新:</span>2018-12-24, 15:55:45</p>
+        <p><span>最后更新:</span>2019-01-01, 10:21:12</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/16/k-近邻/" title="k-近邻">http://wuhainan.com/2018/10/16/k-近邻/</a>
             <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/10/16/k-近邻/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -383,7 +383,7 @@ P(Y\ne f(X))=1-P(Y=f(X))</script><p>对给定的实例$x\in\mathcal{X}$，其最
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#kNN三要素"><span class="toc-number">2.</span> <span class="toc-text">kNN三要素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#距离度量"><span class="toc-number">2.1.</span> <span class="toc-text">距离度量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#k值的选择"><span class="toc-number">2.2.</span> <span class="toc-text">k值的选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类决策规则"><span class="toc-number">2.3.</span> <span class="toc-text">分类决策规则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#kd树"><span class="toc-number">3.</span> <span class="toc-text">kd树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sklearn代码"><span class="toc-number">4.</span> <span class="toc-text">sklearn代码</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#kNN三要素"><span class="toc-number">2.</span> <span class="toc-text">kNN三要素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#距离度量"><span class="toc-number">2.1.</span> <span class="toc-text">距离度量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#k值的选择"><span class="toc-number">2.2.</span> <span class="toc-text">k值的选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类决策规则"><span class="toc-number">2.3.</span> <span class="toc-text">分类决策规则</span></a></li></ol></li></ol>
         
     </div>
     <style>
