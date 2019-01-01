@@ -146,11 +146,11 @@
   </entry>
   
   <entry>
-    <title>MIT线性代数公开课笔记(二)——矩阵消元</title>
+    <title>MIT线性代数公开课笔记(三)——矩阵乘法和逆</title>
     <link href="http://wuhainan.com/2018/11/14/MIT%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%85%AC%E5%BC%80%E8%AF%BE%E7%AC%94%E8%AE%B0(%E4%B8%89)%E2%80%94%E2%80%94%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E5%92%8C%E9%80%86/"/>
     <id>http://wuhainan.com/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/</id>
     <published>2018-11-14T00:44:42.000Z</published>
-    <updated>2019-01-01T02:09:15.639Z</updated>
+    <updated>2019-01-01T02:19:19.995Z</updated>
     
     <content type="html"><![CDATA[<h1 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h1><p>法一：</p><p>假设$A$是$m×n$矩阵，$B$是$n×p$矩阵，$AB=C$，则$c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}=\sum_{k=1}^na_{ik}b_{kj}$</p><p>法二：</p><p>将乘法考虑为矩阵乘以向量，将$B$看成$p$个单独的列向量，然后用$A$乘以每个列向量，得到$C$中的每一列。</p><a id="more"></a><p>法三：</p><p>$A$的每一行乘以$B$得到$C$中的每一行，$C$中的各行是$B$中各行的线性组合。</p><p>法四：</p><p>$AB=A$中各列与$B$各行的乘积之和$=$列一×行一+列二×行二+$\cdots$</p><p>如$\begin{bmatrix}2&amp;7\\3&amp;8\\4&amp;9\end{bmatrix}\begin{bmatrix}1&amp;6\\0&amp;0\end{bmatrix}=\begin{bmatrix}2\\3\\4\end{bmatrix}\begin{bmatrix}1&amp;6\end{bmatrix}+\begin{bmatrix}7\\8\\9\end{bmatrix}\begin{bmatrix}0&amp;0\end{bmatrix}=\begin{bmatrix}2&amp;12\\3&amp;18\\4&amp;24\end{bmatrix}$</p><p>法五：</p><p>分块乘法</p><h1 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h1><p>首先不是所有的矩阵都存在逆，假设$A$为方阵，并且逆存在，则有</p><script type="math/tex; mode=display">A^{-1}A=AA^{-1}=I</script><p>对于方阵而言，左逆等于右逆，但是如果$A$为非方阵，左逆就不等于右逆。通常我们称不可逆矩阵为奇异矩阵。下面看看不可逆的情况：$A=\begin{bmatrix}1&amp;3\\2&amp;6\end{bmatrix}$</p><p>为什么$A$不可逆呢？首先$A$对应的行列式$|A|=0$，这个可以用于判断$n$阶方阵$A$是否可逆。其次，如果存在非零向量$x$，使$Ax=0$，则$A$不可逆。在这里取$x=\begin{bmatrix}-3\\1\end{bmatrix}$，有</p><script type="math/tex; mode=display">Ax=\begin{bmatrix}1&3\\2&6\end{bmatrix}\begin{bmatrix}-3\\1\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}</script><p>即奇异矩阵的各列通过线性组合能够得到零向量。</p><h2 id="高斯-若尔当消元"><a href="#高斯-若尔当消元" class="headerlink" title="高斯-若尔当消元"></a>高斯-若尔当消元</h2><p>设$A=\begin{bmatrix}1&amp;3\\2&amp;7\end{bmatrix}$，那么如何求$A^{-1}$呢？按照逆的定义，有</p><script type="math/tex; mode=display">\begin{bmatrix}1&3\\2&7\end{bmatrix}\begin{bmatrix}a&c\\b&d\end{bmatrix}=\begin{bmatrix}1&0\\0&1\end{bmatrix}</script><p>按照矩阵乘法，有</p><script type="math/tex; mode=display">\left\{\begin{aligned}\begin{bmatrix}1&3\\2&7\end{bmatrix}\begin{bmatrix}a\\b\end{bmatrix}=\begin{bmatrix}1\\0\end{bmatrix}\\\begin{bmatrix}1&3\\2&7\end{bmatrix}\begin{bmatrix}c\\d\end{bmatrix}=\begin{bmatrix}0\\1\end{bmatrix}\\\end{aligned}\right.</script><p>解此方程组即可。但是该方法比较麻烦，高斯-若尔当(Gauss-Jordan)方法可以一次处理所有的方程。构造这样的方程$\left[\begin{array}{cc|cc}1&amp;3&amp;1&amp;0\\2&amp;7&amp;0&amp;1\end{array}\right]$，左侧为矩阵$A$，右侧为$I$，接下来通过消元法，将左侧变为单位阵，右侧即为$A$的逆矩阵。具体过程如下：</p><script type="math/tex; mode=display">\left[\begin{array}{cc|cc}1&3&1&0\\2&7&0&1\end{array}\right]\underrightarrow{\text{row2-2row1}}\begin{bmatrix}1&3&1&0\\0&1&-2&1\end{bmatrix}\underrightarrow{\text{row1-3row2}}\left[\begin{array}{cc|cc}1&0&7&-3\\0&1&-2&1\end{array}\right]</script><p>所以$A^{-1}=\begin{bmatrix}7&amp;-3 \\ -2&amp;1\end{bmatrix}$</p><p>总结：</p><p>求$A^{-1}$的方法</p><script type="math/tex; mode=display">\begin{bmatrix}A&I\end{bmatrix}\underrightarrow{\text{消元}}\begin{bmatrix}I&A^{-1}\end{bmatrix}</script>]]></content>
     
@@ -198,7 +198,7 @@
     <link href="http://wuhainan.com/2018/11/12/MIT%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%85%AC%E5%BC%80%E8%AF%BE%E7%AC%94%E8%AE%B0(%E4%B8%80)%E2%80%94%E2%80%94%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A/"/>
     <id>http://wuhainan.com/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/</id>
     <published>2018-11-12T11:21:39.000Z</published>
-    <updated>2018-12-28T08:41:33.629Z</updated>
+    <updated>2018-12-28T08:50:49.963Z</updated>
     
     <content type="html"><![CDATA[<p>从一个例子讲起：2个方程，2个未知数的方程组</p><script type="math/tex; mode=display">\left\{\begin{aligned}2x-y=0\\-x+2y=3\\\end{aligned}\right.</script><p>写成矩阵形式为</p><script type="math/tex; mode=display">\begin{bmatrix}2&-1\\-1&2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}</script><p>第一个矩阵称为系数矩阵A，第二个矩阵称为x，第三个矩阵称为b，这样方程组可写为$Ax=b$，一个行图像显示一个方程，可以画出该方程组的行图像：</p><a id="more"></a><p><img src="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/MIT线性代数公开课笔记(一" alt="">——方程组的几何解释/3.jpg)</p><p>列图像：</p><p>原方程组可写为$x\begin{bmatrix}2 \\ -1\end{bmatrix}+y\begin{bmatrix}-1\\2\end{bmatrix}=\begin{bmatrix}0\\3\end{bmatrix}$，该方程是寻找如何将$\begin{bmatrix}2 \\ -1\end{bmatrix}$和$\begin{bmatrix}-1\\2\end{bmatrix}$两个向量正确组合，来构成$\begin{bmatrix}0\\3\end{bmatrix}$，这就需要找到正确的线性组合。将$\begin{bmatrix}2 \\ -1\end{bmatrix}$记作$col_1$，$\begin{bmatrix}-1\\2\end{bmatrix}$记作$col_2$，当x=1,y=2时，等式成立。下面画出列向量：</p><p><img src="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/MIT线性代数公开课笔记(一" alt="">——方程组的几何解释\4.png)</p><p>如果选取所有的x和y，即所有的组合，结果会得到整个二维空间。下面来看三维空间的例子：</p><script type="math/tex; mode=display">\left\{\begin{aligned}2x-y=0\\-x+2y-z=-1\\-3y+4z=4\end{aligned}\right.</script><p>在这里$A=\begin{bmatrix}2&amp;-1&amp;0 \\ -1&amp;2&amp;-1\\0&amp;-3&amp;4\end{bmatrix}，b=\begin{bmatrix}0 \\ -1\\4\end{bmatrix}$。在三维空间中，每一个方程确定一个平面，而例子中的三个平面会相交于一点，这个点就是方程组的解。将方程组写成列向量的线性组合：</p><script type="math/tex; mode=display">x\begin{bmatrix}2\\-1\\0\end{bmatrix}+y\begin{bmatrix}-1\\2\\3\end{bmatrix}+z\begin{bmatrix}0\\-1\\4\end{bmatrix}=\begin{bmatrix}0\\-1\\4\end{bmatrix}</script><p>同样将这三个列向量分别称为$col_1、col_2、col_3$，显而易见，当$x=y=0,z=1$时满足该等式。但不是对于所有的右侧向量$b$都有解，当$col_1、col_2、col_3$共面时，只有当$b$在此平面内时，方程组才有解，否则无解。</p><p>最后介绍矩阵形式的$Ax=b$，举个例子，取$A=\begin{bmatrix}2&amp;5\\1&amp;3\end{bmatrix}，x=\begin{bmatrix}1\\2\end{bmatrix}$，则$Ax=\begin{bmatrix}2&amp;5\\1&amp;3\end{bmatrix}\begin{bmatrix}1\\2\end{bmatrix}=1\begin{bmatrix}2\\1\end{bmatrix}+2\begin{bmatrix}5\\3\end{bmatrix}=\begin{bmatrix}12\\7\end{bmatrix}$</p><p>总之，$A$右侧乘以一个向量可以看成$A$的各列的线性组合。</p>]]></content>
     
@@ -221,36 +221,6 @@
     
     
       <category term="线性代数" scheme="http://wuhainan.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>朴素贝叶斯</title>
-    <link href="http://wuhainan.com/2018/11/08/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
-    <id>http://wuhainan.com/2018/11/08/朴素贝叶斯/</id>
-    <published>2018-11-08T13:12:19.000Z</published>
-    <updated>2018-11-08T13:13:42.758Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>逻辑回归</title>
-    <link href="http://wuhainan.com/2018/11/02/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/"/>
-    <id>http://wuhainan.com/2018/11/02/逻辑回归/</id>
-    <published>2018-11-02T07:58:20.000Z</published>
-    <updated>2018-12-24T07:41:47.280Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://wuhainan.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
