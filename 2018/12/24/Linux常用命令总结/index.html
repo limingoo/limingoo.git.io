@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="目录相关命令查看目录内容ls是英文单词 list的简写，其功能为列出目录的内容。 ls常用选项:     参数 含义     -a 显示指定目录下所有子目录与文件，包括隐藏文件   -l 以列表方式显示文件的详细信息   -h 配合 -l 以人性化的方式显示文件大小">
+<meta name="description" content="目录相关命令查看目录内容ls是英文单词 list的简写，其功能为列出目录的内容。 ls常用选项:     参数 含义     -a 显示指定目录下所有子目录与文件，包括隐藏文件   -l 以列表方式显示文件的详细信息   -h 配合 -l 以人性化的方式显示文件大小   -d 配合 -l 查询某个目录的详细信息">
 <meta name="keywords" content="Linux,操作系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux常用命令总结">
 <meta property="og:url" content="http://wuhainan.com/2018/12/24/Linux常用命令总结/index.html">
 <meta property="og:site_name" content="WuHainan&#39;Blog">
-<meta property="og:description" content="目录相关命令查看目录内容ls是英文单词 list的简写，其功能为列出目录的内容。 ls常用选项:     参数 含义     -a 显示指定目录下所有子目录与文件，包括隐藏文件   -l 以列表方式显示文件的详细信息   -h 配合 -l 以人性化的方式显示文件大小">
+<meta property="og:description" content="目录相关命令查看目录内容ls是英文单词 list的简写，其功能为列出目录的内容。 ls常用选项:     参数 含义     -a 显示指定目录下所有子目录与文件，包括隐藏文件   -l 以列表方式显示文件的详细信息   -h 配合 -l 以人性化的方式显示文件大小   -d 配合 -l 查询某个目录的详细信息">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-24T08:05:27.864Z">
+<meta property="og:updated_time" content="2019-01-03T12:46:51.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令总结">
-<meta name="twitter:description" content="目录相关命令查看目录内容ls是英文单词 list的简写，其功能为列出目录的内容。 ls常用选项:     参数 含义     -a 显示指定目录下所有子目录与文件，包括隐藏文件   -l 以列表方式显示文件的详细信息   -h 配合 -l 以人性化的方式显示文件大小">
+<meta name="twitter:description" content="目录相关命令查看目录内容ls是英文单词 list的简写，其功能为列出目录的内容。 ls常用选项:     参数 含义     -a 显示指定目录下所有子目录与文件，包括隐藏文件   -l 以列表方式显示文件的详细信息   -h 配合 -l 以人性化的方式显示文件大小   -d 配合 -l 查询某个目录的详细信息">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -338,6 +338,10 @@
 <td style="text-align:center">-h</td>
 <td style="text-align:center">配合 -l 以人性化的方式显示文件大小</td>
 </tr>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">配合 -l 查询某个目录的详细信息</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -404,14 +408,14 @@
 </tbody>
 </table>
 </div>
-<h1 id="文件相关命令"><a href="#文件相关命令" class="headerlink" title="文件相关命令"></a>文件相关命令</h1><h2 id="创建和删除操作"><a href="#创建和删除操作" class="headerlink" title="创建和删除操作"></a>创建和删除操作</h2><h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a><code>touch</code></h3><ul>
+<h1 id="文件相关命令"><a href="#文件相关命令" class="headerlink" title="文件相关命令"></a>文件相关命令</h1><h2 id="创建和删除操作"><a href="#创建和删除操作" class="headerlink" title="创建和删除操作"></a>创建和删除操作</h2><h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><ul>
 <li>创建文件或修改文件时间<ul>
 <li>如果文件 <strong>不存在</strong>，可以创建一个空白文件</li>
 <li>如果文件 <strong>已经存在</strong>，可以修改文件的末次修改日期</li>
 </ul>
 </li>
 </ul>
-<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a><code>mkdir</code></h3><p>创建一个新的目录</p>
+<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>创建一个新的目录</p>
 <div class="table-container">
 <table>
 <thead>
@@ -432,7 +436,7 @@
 <blockquote>
 <p>新建目录的名称不能与当前目录中已有的目录或文件同名</p>
 </blockquote>
-<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a><code>rm</code></h3><p>删除文件或目录</p>
+<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>删除文件或目录</p>
 <div class="table-container">
 <table>
 <thead>
@@ -480,7 +484,7 @@
 </tbody>
 </table>
 </div>
-<h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a><code>tree</code></h3><div class="table-container">
+<h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -496,7 +500,7 @@
 </tbody>
 </table>
 </div>
-<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a><code>cp</code></h3><div class="table-container">
+<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -516,6 +520,66 @@
 </tbody>
 </table>
 </div>
+<h2 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h2><h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p><code>cat</code>命令用来 <strong>查看文件内容</strong>、<strong>创建文件</strong>、<strong>文件合并</strong>、<strong>追加文件内容</strong> 等功能，<code>cat</code> 会一次显示所有的内容，适合查看内容较少的文本文件</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选项</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-b</td>
+<td style="text-align:center">对非空输出进行行编号</td>
+</tr>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:center">对输出的所有进行行编号</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>tac可以反向查看文件内容</p>
+</blockquote>
+<h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><p><code>more</code>命令可以用于分屏显示文件内容，每次只显示一页内容，适合于查看内容较多的文本文件</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作键</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">空格键或f</td>
+<td style="text-align:center">翻页</td>
+</tr>
+<tr>
+<td style="text-align:center">回车</td>
+<td style="text-align:center">换行</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:center">回滚一页</td>
+</tr>
+<tr>
+<td style="text-align:center">q或Q</td>
+<td style="text-align:center">退出</td>
+</tr>
+<tr>
+<td style="text-align:center">/关键词</td>
+<td style="text-align:center">搜索关键词</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>less和more有相同的功能，但是less可以用PgUp键往前翻一页，向上的箭头回滚一行，向下的箭头往下换行，n进行翻页</p>
+</blockquote>
 
       
     </div>
@@ -527,7 +591,7 @@
         <p><span>本文标题:</span><a href="/2018/12/24/Linux常用命令总结/">Linux常用命令总结</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
         <p><span>发布时间:</span>2018-12-24, 15:59:39</p>
-        <p><span>最后更新:</span>2018-12-24, 16:05:27</p>
+        <p><span>最后更新:</span>2019-01-03, 20:46:51</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/12/24/Linux常用命令总结/" title="Linux常用命令总结">http://wuhainan.com/2018/12/24/Linux常用命令总结/</a>
             <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/12/24/Linux常用命令总结/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -563,7 +627,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#目录相关命令"><span class="toc-number">1.</span> <span class="toc-text">目录相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看目录内容"><span class="toc-number">1.1.</span> <span class="toc-text">查看目录内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换目录"><span class="toc-number">1.2.</span> <span class="toc-text">切换目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件相关命令"><span class="toc-number">2.</span> <span class="toc-text">文件相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建和删除操作"><span class="toc-number">2.1.</span> <span class="toc-text">创建和删除操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#touch"><span class="toc-number">2.1.1.</span> <span class="toc-text">touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir"><span class="toc-number">2.1.2.</span> <span class="toc-text">mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm"><span class="toc-number">2.1.3.</span> <span class="toc-text">rm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拷贝和移动文件"><span class="toc-number">2.2.</span> <span class="toc-text">拷贝和移动文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tree"><span class="toc-number">2.2.1.</span> <span class="toc-text">tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp"><span class="toc-number">2.2.2.</span> <span class="toc-text">cp</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#目录相关命令"><span class="toc-number">1.</span> <span class="toc-text">目录相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看目录内容"><span class="toc-number">1.1.</span> <span class="toc-text">查看目录内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换目录"><span class="toc-number">1.2.</span> <span class="toc-text">切换目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件相关命令"><span class="toc-number">2.</span> <span class="toc-text">文件相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建和删除操作"><span class="toc-number">2.1.</span> <span class="toc-text">创建和删除操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#touch"><span class="toc-number">2.1.1.</span> <span class="toc-text">touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir"><span class="toc-number">2.1.2.</span> <span class="toc-text">mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm"><span class="toc-number">2.1.3.</span> <span class="toc-text">rm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拷贝和移动文件"><span class="toc-number">2.2.</span> <span class="toc-text">拷贝和移动文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tree"><span class="toc-number">2.2.1.</span> <span class="toc-text">tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp"><span class="toc-number">2.2.2.</span> <span class="toc-text">cp</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看文件内容"><span class="toc-number">2.3.</span> <span class="toc-text">查看文件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cat"><span class="toc-number">2.3.1.</span> <span class="toc-text">cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#more"><span class="toc-number">2.3.2.</span> <span class="toc-text">more</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
