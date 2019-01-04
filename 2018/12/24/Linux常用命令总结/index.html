@@ -24,7 +24,7 @@
 <meta property="og:description" content="目录相关命令查看目录内容ls是英文单词 list的简写，其功能为列出目录的内容。 ls常用选项:     参数 含义     -a 显示指定目录下所有子目录与文件，包括隐藏文件   -l 以列表方式显示文件的详细信息   -h 配合 -l 以人性化的方式显示文件大小   -d 配合 -l 查询某个目录的详细信息">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wuhainan.com/2018/12/24/Linux常用命令总结/文件软硬链接示意图.png">
-<meta property="og:updated_time" content="2019-01-03T14:05:36.164Z">
+<meta property="og:updated_time" content="2019-01-04T12:32:00.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令总结">
 <meta name="twitter:description" content="目录相关命令查看目录内容ls是英文单词 list的简写，其功能为列出目录的内容。 ls常用选项:     参数 含义     -a 显示指定目录下所有子目录与文件，包括隐藏文件   -l 以列表方式显示文件的详细信息   -h 配合 -l 以人性化的方式显示文件大小   -d 配合 -l 查询某个目录的详细信息">
@@ -582,6 +582,53 @@
 <blockquote>
 <p>less和more有相同的功能，但是less可以用PgUp键往前翻一页，向上的箭头回滚一行，向下的箭头往下换行，n进行翻页</p>
 </blockquote>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><blockquote>
+<p><code>grep</code> 是一个强大的文本搜索命令，允许对文本文件进行模式查找，即通过正则表达式查找</p>
+</blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选项</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:center">显示匹配行及行号</td>
+</tr>
+<tr>
+<td style="text-align:center">-v</td>
+<td style="text-align:center">显示不包含匹配文本的所有行（相当于求反）</td>
+</tr>
+<tr>
+<td style="text-align:center">-i</td>
+<td style="text-align:center">忽略大小写</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">^a</td>
+<td style="text-align:center">搜索以 <strong>a</strong> 开头的行</td>
+</tr>
+<tr>
+<td style="text-align:center">b$</td>
+<td style="text-align:center">s搜索以<strong>b</strong>结尾的行</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="链接命令"><a href="#链接命令" class="headerlink" title="链接命令"></a>链接命令</h2><h3 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h3><ul>
 <li>命令：ln -s 被链接的源文件 链接文件</li>
 <li>作用：建立文件的软链接，类似于Windows下的快捷方式</li>
@@ -596,6 +643,13 @@
 <blockquote>
 <p>在 Linux 中，文件名和文件的数据是分开存储的，软链接存放的是链接文件的完整路径，当链接的源文件删除时，就不能通过软链接访问文件的数据。硬链接相当于文件的另一个文件名，文件名删除时，仍能通过硬链接访问文件数据，只有把一个文件的所有文件名，即所有硬链接删除之后，文件数据才会从磁盘中删除。</p>
 </blockquote>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><blockquote>
+<p><code>echo</code> 会在终端中显示参数指定的文字，通常和重定向联合使用</p>
+</blockquote>
+<h3 id="重定向-gt-和-gt-gt"><a href="#重定向-gt-和-gt-gt" class="headerlink" title="重定向 &gt; 和 &gt;&gt;"></a>重定向 <code>&gt;</code> 和 <code>&gt;&gt;</code></h3><blockquote>
+<p>将命令本应显示在终端上的内容输出或者追加到指定文件中，<code>&gt;</code>表示输出，会覆盖原文件的内容，<code>&gt;&gt;</code>表示重定向，会将内容追加到指定文件的末尾。</p>
+</blockquote>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道 |"></a>管道 <code>|</code></h3><p>管道可以将一个命令的输出作为另一个命令的输入，常用的管道命令有：<code>more</code>和<code>grep</code></p>
 
       
     </div>
@@ -607,7 +661,7 @@
         <p><span>本文标题:</span><a href="/2018/12/24/Linux常用命令总结/">Linux常用命令总结</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
         <p><span>发布时间:</span>2018-12-24, 15:59:39</p>
-        <p><span>最后更新:</span>2019-01-03, 22:05:36</p>
+        <p><span>最后更新:</span>2019-01-04, 20:32:00</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/12/24/Linux常用命令总结/" title="Linux常用命令总结">http://wuhainan.com/2018/12/24/Linux常用命令总结/</a>
             <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2018/12/24/Linux常用命令总结/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -643,7 +697,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#目录相关命令"><span class="toc-number">1.</span> <span class="toc-text">目录相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看目录内容"><span class="toc-number">1.1.</span> <span class="toc-text">查看目录内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换目录"><span class="toc-number">1.2.</span> <span class="toc-text">切换目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件相关命令"><span class="toc-number">2.</span> <span class="toc-text">文件相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建和删除操作"><span class="toc-number">2.1.</span> <span class="toc-text">创建和删除操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#touch"><span class="toc-number">2.1.1.</span> <span class="toc-text">touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir"><span class="toc-number">2.1.2.</span> <span class="toc-text">mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm"><span class="toc-number">2.1.3.</span> <span class="toc-text">rm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拷贝和移动文件"><span class="toc-number">2.2.</span> <span class="toc-text">拷贝和移动文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tree"><span class="toc-number">2.2.1.</span> <span class="toc-text">tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp"><span class="toc-number">2.2.2.</span> <span class="toc-text">cp</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看文件内容"><span class="toc-number">2.3.</span> <span class="toc-text">查看文件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cat"><span class="toc-number">2.3.1.</span> <span class="toc-text">cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#more"><span class="toc-number">2.3.2.</span> <span class="toc-text">more</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链接命令"><span class="toc-number">2.4.</span> <span class="toc-text">链接命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软链接"><span class="toc-number">2.4.1.</span> <span class="toc-text">软链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件软硬链接的示意图"><span class="toc-number">2.4.2.</span> <span class="toc-text">文件软硬链接的示意图</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#目录相关命令"><span class="toc-number">1.</span> <span class="toc-text">目录相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看目录内容"><span class="toc-number">1.1.</span> <span class="toc-text">查看目录内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换目录"><span class="toc-number">1.2.</span> <span class="toc-text">切换目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件相关命令"><span class="toc-number">2.</span> <span class="toc-text">文件相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建和删除操作"><span class="toc-number">2.1.</span> <span class="toc-text">创建和删除操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#touch"><span class="toc-number">2.1.1.</span> <span class="toc-text">touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir"><span class="toc-number">2.1.2.</span> <span class="toc-text">mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm"><span class="toc-number">2.1.3.</span> <span class="toc-text">rm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拷贝和移动文件"><span class="toc-number">2.2.</span> <span class="toc-text">拷贝和移动文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tree"><span class="toc-number">2.2.1.</span> <span class="toc-text">tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp"><span class="toc-number">2.2.2.</span> <span class="toc-text">cp</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看文件内容"><span class="toc-number">2.3.</span> <span class="toc-text">查看文件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cat"><span class="toc-number">2.3.1.</span> <span class="toc-text">cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#more"><span class="toc-number">2.3.2.</span> <span class="toc-text">more</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grep"><span class="toc-number">2.3.3.</span> <span class="toc-text">grep</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链接命令"><span class="toc-number">2.4.</span> <span class="toc-text">链接命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软链接"><span class="toc-number">2.4.1.</span> <span class="toc-text">软链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件软硬链接的示意图"><span class="toc-number">2.4.2.</span> <span class="toc-text">文件软硬链接的示意图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">2.5.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#echo"><span class="toc-number">2.5.1.</span> <span class="toc-text">echo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重定向-gt-和-gt-gt"><span class="toc-number">2.5.2.</span> <span class="toc-text">重定向 &gt; 和 &gt;&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管道"><span class="toc-number">2.5.3.</span> <span class="toc-text">管道 |</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
