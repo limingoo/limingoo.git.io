@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wuhainan.com/"/>
-  <updated>2018-12-26T10:41:16.845Z</updated>
+  <updated>2019-01-05T10:13:44.225Z</updated>
   <id>http://wuhainan.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一张图总结Git</title>
+    <link href="http://wuhainan.com/2019/01/05/%E4%B8%80%E5%BC%A0%E5%9B%BE%E6%80%BB%E7%BB%93Git/"/>
+    <id>http://wuhainan.com/2019/01/05/一张图总结Git/</id>
+    <published>2019-01-05T10:05:27.000Z</published>
+    <updated>2019-01-05T10:13:44.225Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2019/01/05/一张图总结Git/thumbnail.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/2019/01/05/一张图总结Git/thumbnail.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://wuhainan.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>梯度下降法</title>
@@ -254,9 +278,9 @@
       <category term="机器学习" scheme="http://wuhainan.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="kNN" scheme="http://wuhainan.com/tags/kNN/"/>
-    
       <category term="机器学习" scheme="http://wuhainan.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="kNN" scheme="http://wuhainan.com/tags/kNN/"/>
     
   </entry>
   
