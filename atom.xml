@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wuhainan.com/"/>
-  <updated>2019-01-05T10:35:40.181Z</updated>
+  <updated>2019-01-05T10:50:33.277Z</updated>
   <id>http://wuhainan.com/</id>
   
   <author>
@@ -21,40 +21,15 @@
     <link href="http://wuhainan.com/2019/01/05/Git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
     <id>http://wuhainan.com/2019/01/05/Git学习总结/</id>
     <published>2019-01-05T10:26:59.000Z</published>
-    <updated>2019-01-05T10:35:40.181Z</updated>
+    <updated>2019-01-05T10:50:33.277Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="git基本操作"><a href="#git基本操作" class="headerlink" title="git基本操作"></a>git基本操作</h2><h3 id="创建版本仓库"><a href="#创建版本仓库" class="headerlink" title="创建版本仓库"></a>创建版本仓库</h3><ul><li>git init</li></ul><a id="more"></a><h3 id="版本创建"><a href="#版本创建" class="headerlink" title="版本创建"></a>版本创建</h3><ol><li>git  add  文件或目录</li><li>git  commit  -m  ‘说明信息’ <h3 id="查看版本记录"><a href="#查看版本记录" class="headerlink" title="查看版本记录"></a>查看版本记录</h3></li></ol><ul><li>git  log<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3></li><li>git  reset  —hard  HEAD^</li><li>git  reset  —hard  版本序列号<h3 id="查看操作记录"><a href="#查看操作记录" class="headerlink" title="查看操作记录"></a>查看操作记录</h3></li><li>git  reflog<h3 id="工作区、版本库和暂存区"><a href="#工作区、版本库和暂存区" class="headerlink" title="工作区、版本库和暂存区"></a>工作区、版本库和暂存区</h3></li><li>git  add是把工作区的修改放入暂存区</li><li>git  commit是把暂存区的所有修改一次性提交<h3 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h3></li><li>git  commit只会把暂存区的修改提交到版本记录中<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3></li></ul><ol><li>直接丢弃工作区的改动<ul><li>git  checkout  —  文件名</li></ul></li><li>修改已经添加到暂存区，但未commit<ul><li>a.  首先git  reset  HEAD  文件名</li><li>b.  然后git  checkout  —  文件名</li></ul></li><li>已经commit<ul><li>版本回退<h3 id="对比文件的不同"><a href="#对比文件的不同" class="headerlink" title="对比文件的不同"></a>对比文件的不同</h3>对比工作区和版本库的某个文件<br>​    <em> git  diff  HEAD  —  文件名<br>对比两个版本的文件<br>​    </em> git diff  HEAD  HEAD^  —  文件名<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3></li></ul></li></ol><ul><li>rm  文件名</li><li>git  rm  文件名</li><li>git  commit</li></ul><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="git基本操作"><a href="#git基本操作" class="headerlink" title="git基本操作"></a>git基本操作</h2><h3 id="创建版本仓库"><a href="#创建版本仓库" class="headerlink" title="创建版本仓库"></a>创建版本仓库</h3><ul><li><code>git init</code></li></ul><a id="more"></a><h3 id="版本创建"><a href="#版本创建" class="headerlink" title="版本创建"></a>版本创建</h3><p>分两步：</p><ol><li><code>git add 文件名或目录名</code></li><li><code>git commit -m &#39;说明信息&#39;</code><h3 id="查看版本记录"><a href="#查看版本记录" class="headerlink" title="查看版本记录"></a>查看版本记录</h3></li></ol><ul><li><code>git log</code></li></ul><h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><ul><li><code>git reset --hard HEAD^</code></li><li><code>git reset --hard 版本序列号</code></li></ul><h3 id="查看操作记录"><a href="#查看操作记录" class="headerlink" title="查看操作记录"></a>查看操作记录</h3><ul><li><code>git reflog</code></li></ul><h3 id="工作区、版本库和暂存区"><a href="#工作区、版本库和暂存区" class="headerlink" title="工作区、版本库和暂存区"></a>工作区、版本库和暂存区</h3><ul><li><code>git add</code>是把工作区的修改放入暂存区</li><li><code>git commit</code>是把暂存区的所有修改一次性提交</li></ul><h3 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h3><ul><li><code>git commit</code>只会把暂存区的修改提交到版本记录中</li></ul><h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><ol><li><p>直接丢弃工作区的改动</p><ul><li><code>git checkout -- 文件名</code></li></ul></li><li><p>修改已经添加到暂存区，但未<code>commit</code></p><ul><li><p>a.  首先<code>git reset HEAD 文件名</code></p></li><li><p>b.  然后<code>git checkout -- 文件名</code></p></li></ul></li><li><p>已经<code>commit</code></p><ul><li>版本回退<h3 id="对比文件的不同"><a href="#对比文件的不同" class="headerlink" title="对比文件的不同"></a>对比文件的不同</h3>对比工作区和版本库的某个文件</li></ul></li></ol><ul><li><code>git diff HEAD -- 文件名</code></li></ul><p>对比两个版本的文件</p><ul><li><code>git diff HEAD HEAD^ --文件名</code></li></ul><h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><ul><li><p><code>rm 文件名</code></p></li><li><p><code>git rm 文件名</code></p></li><li><p><code>git commit</code></p></li></ul><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;git基本操作&quot;&gt;&lt;a href=&quot;#git基本操作&quot; class=&quot;headerlink&quot; title=&quot;git基本操作&quot;&gt;&lt;/a&gt;git基本操作&lt;/h2&gt;&lt;h3 id=&quot;创建版本仓库&quot;&gt;&lt;a href=&quot;#创建版本仓库&quot; class=&quot;headerlink&quot; title=&quot;创建版本仓库&quot;&gt;&lt;/a&gt;创建版本仓库&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;git init&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://wuhainan.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一张图总结Git</title>
-    <link href="http://wuhainan.com/2019/01/05/%E4%B8%80%E5%BC%A0%E5%9B%BE%E6%80%BB%E7%BB%93Git/"/>
-    <id>http://wuhainan.com/2019/01/05/一张图总结Git/</id>
-    <published>2019-01-05T10:05:27.000Z</published>
-    <updated>2019-01-05T10:31:09.013Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><p><img src="/2019/01/05/一张图总结Git/thumbnail.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;img src=&quot;/2019/01/05/一张图总结Git/thumbnail.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-
-      
     
     </summary>
     
