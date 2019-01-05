@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="WuHainan&#39;Blog">
 <meta property="og:description" content="git基本操作创建版本仓库 git init">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-05T10:27:52.761Z">
+<meta property="og:updated_time" content="2019-01-05T10:35:40.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git学习总结">
 <meta name="twitter:description" content="git基本操作创建版本仓库 git init">
@@ -319,15 +319,11 @@
 <li>git init</li>
 </ul>
 <a id="more"></a>
-<h3 id="版本创建"><a href="#版本创建" class="headerlink" title="版本创建"></a>版本创建</h3><ul>
-<li><ol>
+<h3 id="版本创建"><a href="#版本创建" class="headerlink" title="版本创建"></a>版本创建</h3><ol>
 <li>git  add  文件或目录</li>
-</ol>
-</li>
-<li><ol>
 <li>git  commit  -m  ‘说明信息’ <h3 id="查看版本记录"><a href="#查看版本记录" class="headerlink" title="查看版本记录"></a>查看版本记录</h3></li>
 </ol>
-</li>
+<ul>
 <li>git  log<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3></li>
 <li>git  reset  —hard  HEAD^</li>
 <li>git  reset  —hard  版本序列号<h3 id="查看操作记录"><a href="#查看操作记录" class="headerlink" title="查看操作记录"></a>查看操作记录</h3></li>
@@ -335,36 +331,23 @@
 <li>git  add是把工作区的修改放入暂存区</li>
 <li>git  commit是把暂存区的所有修改一次性提交<h3 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h3></li>
 <li>git  commit只会把暂存区的修改提交到版本记录中<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3></li>
-<li><ol>
+</ul>
+<ol>
 <li>直接丢弃工作区的改动<ul>
 <li>git  checkout  —  文件名</li>
 </ul>
 </li>
-</ol>
-</li>
-<li><ol>
 <li>修改已经添加到暂存区，但未commit<ul>
 <li>a.  首先git  reset  HEAD  文件名</li>
 <li>b.  然后git  checkout  —  文件名</li>
 </ul>
 </li>
-</ol>
-</li>
-<li><ol>
 <li>已经commit<ul>
-<li>版本回退<h3 id="对比文件的不同"><a href="#对比文件的不同" class="headerlink" title="对比文件的不同"></a>对比文件的不同</h3></li>
+<li>版本回退<h3 id="对比文件的不同"><a href="#对比文件的不同" class="headerlink" title="对比文件的不同"></a>对比文件的不同</h3>对比工作区和版本库的某个文件<br>​    <em> git  diff  HEAD  —  文件名<br>对比两个版本的文件<br>​    </em> git diff  HEAD  HEAD^  —  文件名<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3></li>
 </ul>
 </li>
 </ol>
-</li>
-<li>对比工作区和版本库的某个文件<ul>
-<li>git  diff  HEAD  —  文件名</li>
-</ul>
-</li>
-<li>对比两个版本的文件<ul>
-<li>git diff  HEAD  HEAD^  —  文件名<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3></li>
-</ul>
-</li>
+<ul>
 <li>rm  文件名</li>
 <li>git  rm  文件名</li>
 <li>git  commit</li>
@@ -380,7 +363,7 @@
         <p><span>本文标题:</span><a href="/2019/01/05/Git学习总结/">Git学习总结</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
         <p><span>发布时间:</span>2019-01-05, 18:26:59</p>
-        <p><span>最后更新:</span>2019-01-05, 18:27:52</p>
+        <p><span>最后更新:</span>2019-01-05, 18:35:40</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/01/05/Git学习总结/" title="Git学习总结">http://wuhainan.com/2019/01/05/Git学习总结/</a>
             <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2019/01/05/Git学习总结/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -397,8 +380,8 @@
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/12/26/梯度下降法/">
-                    梯度下降法
+                <a href="/2019/01/05/一张图总结Git/">
+                    一张图总结Git
                 </a>
             </div>
         
@@ -472,13 +455,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/12/26/梯度下降法/" title="下一篇: 梯度下降法">
+            <a href="/2019/01/05/一张图总结Git/" title="下一篇: 一张图总结Git">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/05/Git学习总结/">Git学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/26/梯度下降法/">梯度下降法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/24/Linux常用命令总结/">Linux常用命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/">MIT线性代数公开课笔记(五)——向量空间、列空间和零空间</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/">MIT线性代数公开课笔记(四)——转置与置换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/">MIT线性代数公开课笔记(三)——矩阵乘法和逆</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/">MIT线性代数公开课笔记(二)——矩阵消元</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">MIT线性代数公开课笔记(一)——方程组的几何解释</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/29/线性模型/">线性模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/16/k-近邻/">k-近邻</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/01/05/Git学习总结/">Git学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/05/一张图总结Git/">一张图总结Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/26/梯度下降法/">梯度下降法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/24/Linux常用命令总结/">Linux常用命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/">MIT线性代数公开课笔记(五)——向量空间、列空间和零空间</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/">MIT线性代数公开课笔记(四)——转置与置换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/">MIT线性代数公开课笔记(三)——矩阵乘法和逆</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/">MIT线性代数公开课笔记(二)——矩阵消元</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">MIT线性代数公开课笔记(一)——方程组的几何解释</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/29/线性模型/">线性模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/16/k-近邻/">k-近邻</a></li></ul>
 
 
 

@@ -3,7 +3,15 @@
   <entry>
     <title><![CDATA[Git学习总结]]></title>
     <url>%2F2019%2F01%2F05%2FGit%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[git基本操作创建版本仓库 git init 版本创建 git add 文件或目录 git commit -m ‘说明信息’ 查看版本记录 git log版本回退 git reset —hard HEAD^ git reset —hard 版本序列号查看操作记录 git reflog工作区、版本库和暂存区 git add是把工作区的修改放入暂存区 git commit是把暂存区的所有修改一次性提交管理修改 git commit只会把暂存区的修改提交到版本记录中撤销修改 直接丢弃工作区的改动 git checkout — 文件名 修改已经添加到暂存区，但未commit a. 首先git reset HEAD 文件名 b. 然后git checkout — 文件名 已经commit 版本回退对比文件的不同 对比工作区和版本库的某个文件 git diff HEAD — 文件名 对比两个版本的文件 git diff HEAD HEAD^ — 文件名删除文件 rm 文件名 git rm 文件名 git commit 分支管理]]></content>
+    <content type="text"><![CDATA[git基本操作创建版本仓库 git init 版本创建 git add 文件或目录 git commit -m ‘说明信息’ 查看版本记录 git log版本回退 git reset —hard HEAD^ git reset —hard 版本序列号查看操作记录 git reflog工作区、版本库和暂存区 git add是把工作区的修改放入暂存区 git commit是把暂存区的所有修改一次性提交管理修改 git commit只会把暂存区的修改提交到版本记录中撤销修改 直接丢弃工作区的改动 git checkout — 文件名 修改已经添加到暂存区，但未commit a. 首先git reset HEAD 文件名 b. 然后git checkout — 文件名 已经commit 版本回退对比文件的不同对比工作区和版本库的某个文件​ git diff HEAD — 文件名对比两个版本的文件​ git diff HEAD HEAD^ — 文件名删除文件 rm 文件名 git rm 文件名 git commit 分支管理]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[一张图总结Git]]></title>
+    <url>%2F2019%2F01%2F05%2F%E4%B8%80%E5%BC%A0%E5%9B%BE%E6%80%BB%E7%BB%93Git%2F</url>
+    <content type="text"><![CDATA[]]></content>
       <tags>
         <tag>git</tag>
       </tags>
