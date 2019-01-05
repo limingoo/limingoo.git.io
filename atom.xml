@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wuhainan.com/"/>
-  <updated>2019-01-05T10:13:44.225Z</updated>
+  <updated>2019-01-05T10:16:23.253Z</updated>
   <id>http://wuhainan.com/</id>
   
   <author>
@@ -21,15 +21,16 @@
     <link href="http://wuhainan.com/2019/01/05/%E4%B8%80%E5%BC%A0%E5%9B%BE%E6%80%BB%E7%BB%93Git/"/>
     <id>http://wuhainan.com/2019/01/05/一张图总结Git/</id>
     <published>2019-01-05T10:05:27.000Z</published>
-    <updated>2019-01-05T10:13:44.225Z</updated>
+    <updated>2019-01-05T10:16:23.253Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/2019/01/05/一张图总结Git/thumbnail.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<a id="more"></a><p><img src="/2019/01/05/一张图总结Git/thumbnail.png" alt=""></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;/2019/01/05/一张图总结Git/thumbnail.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/01/05/一张图总结Git/thumbnail.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
       
     
@@ -278,9 +279,9 @@
       <category term="机器学习" scheme="http://wuhainan.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="机器学习" scheme="http://wuhainan.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="kNN" scheme="http://wuhainan.com/tags/kNN/"/>
+    
+      <category term="机器学习" scheme="http://wuhainan.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
