@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wuhainan.com/"/>
-  <updated>2019-03-10T08:54:29.737Z</updated>
+  <updated>2019-03-10T08:56:04.421Z</updated>
   <id>http://wuhainan.com/</id>
   
   <author>
@@ -21,16 +21,24 @@
     <link href="http://wuhainan.com/2019/03/10/Shell%E5%9F%BA%E7%A1%80/"/>
     <id>http://wuhainan.com/2019/03/10/Shell基础/</id>
     <published>2019-03-10T08:27:36.000Z</published>
-    <updated>2019-03-10T08:54:29.737Z</updated>
+    <updated>2019-03-10T08:56:04.421Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Shell脚本执行方式"><a href="#Shell脚本执行方式" class="headerlink" title="Shell脚本执行方式"></a>Shell脚本执行方式</h1><h2 id="第一个脚本hello-sh"><a href="#第一个脚本hello-sh" class="headerlink" title="第一个脚本hello.sh"></a>第一个脚本hello.sh</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">echo "hello world"</span><br></pre></td></tr></table></figure><h2 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h2><ul><li>赋予执行权限，直接运行<ul><li><code>chmod 755 hello.sh</code></li><li><code>./hello.sh</code></li></ul></li><li>通过Bash调用执行脚本<ul><li><code>bash hello.sh</code></li></ul></li></ul><h1 id="查看历史命令"><a href="#查看历史命令" class="headerlink" title="查看历史命令"></a>查看历史命令</h1><h2 id="命令格式："><a href="#命令格式：" class="headerlink" title="命令格式："></a>命令格式：</h2><p><code>history [选项] [历史命令保存文件]</code></p><h2 id="选项："><a href="#选项：" class="headerlink" title="选项："></a>选项：</h2><ul><li>-c：清空历史命令</li><li>-w：把缓存中的历史命令写入历史命令保存文件中。历史命令保存文件默认放在~/.bash_history中。</li></ul><h2 id="历史命令的调用："><a href="#历史命令的调用：" class="headerlink" title="历史命令的调用："></a>历史命令的调用：</h2><ul><li>使用”!n”重复执行第 n 条历史命令</li><li>使用“!!”重复执行上一条命令</li><li>使用“!字串”重复执行最后一条以该字串开头的命令</li></ul><h1 id="给命令设置别名及bash常用快捷键"><a href="#给命令设置别名及bash常用快捷键" class="headerlink" title="给命令设置别名及bash常用快捷键"></a>给命令设置别名及bash常用快捷键</h1><p>命令格式：</p><p><code>[root@localhost ~]# alias</code></p><p><code>#查询命令别名</code></p><p><code>[root@1ocalhost ~] # alias 别名=&#39;原命令&#39;</code></p><p><code>#设定命令别名</code></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Shell脚本执行方式"><a href="#Shell脚本执行方式" class="headerlink" title="Shell脚本执行方式"></a>Shell脚本执行方式</h1><h2 id="第一个脚本hello-sh"><a href="#第一个脚本hello-sh" class="headerlink" title="第一个脚本hello.sh"></a>第一个脚本hello.sh</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">echo "hello world"</span><br></pre></td></tr></table></figure><h2 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h2><ul><li>赋予执行权限，直接运行<ul><li><code>chmod 755 hello.sh</code></li><li><code>./hello.sh</code></li></ul></li><li>通过Bash调用执行脚本<ul><li><code>bash hello.sh</code></li></ul></li></ul><a id="more"></a><h1 id="查看历史命令"><a href="#查看历史命令" class="headerlink" title="查看历史命令"></a>查看历史命令</h1><h2 id="命令格式："><a href="#命令格式：" class="headerlink" title="命令格式："></a>命令格式：</h2><p><code>history [选项] [历史命令保存文件]</code></p><h2 id="选项："><a href="#选项：" class="headerlink" title="选项："></a>选项：</h2><ul><li>-c：清空历史命令</li><li>-w：把缓存中的历史命令写入历史命令保存文件中。历史命令保存文件默认放在~/.bash_history中。</li></ul><h2 id="历史命令的调用："><a href="#历史命令的调用：" class="headerlink" title="历史命令的调用："></a>历史命令的调用：</h2><ul><li>使用”!n”重复执行第 n 条历史命令</li><li>使用“!!”重复执行上一条命令</li><li>使用“!字串”重复执行最后一条以该字串开头的命令</li></ul><h1 id="给命令设置别名及bash常用快捷键"><a href="#给命令设置别名及bash常用快捷键" class="headerlink" title="给命令设置别名及bash常用快捷键"></a>给命令设置别名及bash常用快捷键</h1><p>命令格式：</p><p><code>[root@localhost ~]# alias</code></p><p><code>#查询命令别名</code></p><p><code>[root@1ocalhost ~] # alias 别名=&#39;原命令&#39;</code></p><p><code>#设定命令别名</code></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;Shell脚本执行方式&quot;&gt;&lt;a href=&quot;#Shell脚本执行方式&quot; class=&quot;headerlink&quot; title=&quot;Shell脚本执行方式&quot;&gt;&lt;/a&gt;Shell脚本执行方式&lt;/h1&gt;&lt;h2 id=&quot;第一个脚本hello-sh&quot;&gt;&lt;a href=&quot;#第一个脚
-      
+      &lt;h1 id=&quot;Shell脚本执行方式&quot;&gt;&lt;a href=&quot;#Shell脚本执行方式&quot; class=&quot;headerlink&quot; title=&quot;Shell脚本执行方式&quot;&gt;&lt;/a&gt;Shell脚本执行方式&lt;/h1&gt;&lt;h2 id=&quot;第一个脚本hello-sh&quot;&gt;&lt;a href=&quot;#第一个脚本hello-sh&quot; class=&quot;headerlink&quot; title=&quot;第一个脚本hello.sh&quot;&gt;&lt;/a&gt;第一个脚本hello.sh&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;!/bin/bash&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &quot;hello world&quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;执行脚本&quot;&gt;&lt;a href=&quot;#执行脚本&quot; class=&quot;headerlink&quot; title=&quot;执行脚本&quot;&gt;&lt;/a&gt;执行脚本&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;赋予执行权限，直接运行&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;chmod 755 hello.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./hello.sh&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;通过Bash调用执行脚本&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bash hello.sh&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -297,9 +305,9 @@
       <category term="机器学习" scheme="http://wuhainan.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="机器学习" scheme="http://wuhainan.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="kNN" scheme="http://wuhainan.com/tags/kNN/"/>
+    
+      <category term="机器学习" scheme="http://wuhainan.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
