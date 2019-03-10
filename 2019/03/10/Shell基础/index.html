@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="WuHainan&#39;Blog">
 <meta property="og:description" content="Shell脚本执行方式第一个脚本hello.sh12#!/bin/bashecho &quot;hello world&quot; 执行脚本 赋予执行权限，直接运行 chmod 755 hello.sh ./hello.sh   通过Bash调用执行脚本 bash hello.sh">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-10T08:56:04.421Z">
+<meta property="og:updated_time" content="2019-03-10T09:13:27.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell基础">
 <meta name="twitter:description" content="Shell脚本执行方式第一个脚本hello.sh12#!/bin/bashecho &quot;hello world&quot; 执行脚本 赋予执行权限，直接运行 chmod 755 hello.sh ./hello.sh   通过Bash调用执行脚本 bash hello.sh">
@@ -333,11 +333,18 @@
 <li>使用“!!”重复执行上一条命令</li>
 <li>使用“!字串”重复执行最后一条以该字串开头的命令</li>
 </ul>
-<h1 id="给命令设置别名及bash常用快捷键"><a href="#给命令设置别名及bash常用快捷键" class="headerlink" title="给命令设置别名及bash常用快捷键"></a>给命令设置别名及bash常用快捷键</h1><p>命令格式：</p>
-<p><code>[root@localhost ~]# alias</code></p>
+<h1 id="给命令设置别名"><a href="#给命令设置别名" class="headerlink" title="给命令设置别名"></a>给命令设置别名</h1><h2 id="命令格式：-1"><a href="#命令格式：-1" class="headerlink" title="命令格式："></a>命令格式：</h2><p><code>[root@localhost ~]# alias</code></p>
 <p><code>#查询命令别名</code></p>
 <p><code>[root@1ocalhost ~] # alias 别名=&#39;原命令&#39;</code></p>
 <p><code>#设定命令别名</code></p>
+<h2 id="命令执行时的顺序"><a href="#命令执行时的顺序" class="headerlink" title="命令执行时的顺序"></a>命令执行时的顺序</h2><ol>
+<li>第一顺位执行用绝对路径或相对路径执行的命令。</li>
+<li>第二顺位执行别名。</li>
+<li>第三顺位执行 Bash 的内部命令。</li>
+<li>第四顺位执行按照 $PATH 环境变量定义的目录査找的第一条命令。</li>
+</ol>
+<h2 id="让别名永久生效"><a href="#让别名永久生效" class="headerlink" title="让别名永久生效"></a>让别名永久生效</h2><p>把别名写入环境变量配置文件 ~/.bashrc 中</p>
+<h2 id="删除别名"><a href="#删除别名" class="headerlink" title="删除别名"></a>删除别名</h2><p><code>[root@localhost ~]# unalias 别名</code></p>
 
       
     </div>
@@ -349,7 +356,7 @@
         <p><span>本文标题:</span><a href="/2019/03/10/Shell基础/">Shell基础</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
         <p><span>发布时间:</span>2019-03-10, 16:27:36</p>
-        <p><span>最后更新:</span>2019-03-10, 16:56:04</p>
+        <p><span>最后更新:</span>2019-03-10, 17:13:27</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/03/10/Shell基础/" title="Shell基础">http://wuhainan.com/2019/03/10/Shell基础/</a>
             <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2019/03/10/Shell基础/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -379,7 +386,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell脚本执行方式"><span class="toc-number">1.</span> <span class="toc-text">Shell脚本执行方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一个脚本hello-sh"><span class="toc-number">1.1.</span> <span class="toc-text">第一个脚本hello.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行脚本"><span class="toc-number">1.2.</span> <span class="toc-text">执行脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看历史命令"><span class="toc-number">2.</span> <span class="toc-text">查看历史命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令格式："><span class="toc-number">2.1.</span> <span class="toc-text">命令格式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选项："><span class="toc-number">2.2.</span> <span class="toc-text">选项：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#历史命令的调用："><span class="toc-number">2.3.</span> <span class="toc-text">历史命令的调用：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#给命令设置别名及bash常用快捷键"><span class="toc-number">3.</span> <span class="toc-text">给命令设置别名及bash常用快捷键</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell脚本执行方式"><span class="toc-number">1.</span> <span class="toc-text">Shell脚本执行方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一个脚本hello-sh"><span class="toc-number">1.1.</span> <span class="toc-text">第一个脚本hello.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行脚本"><span class="toc-number">1.2.</span> <span class="toc-text">执行脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看历史命令"><span class="toc-number">2.</span> <span class="toc-text">查看历史命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令格式："><span class="toc-number">2.1.</span> <span class="toc-text">命令格式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选项："><span class="toc-number">2.2.</span> <span class="toc-text">选项：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#历史命令的调用："><span class="toc-number">2.3.</span> <span class="toc-text">历史命令的调用：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#给命令设置别名"><span class="toc-number">3.</span> <span class="toc-text">给命令设置别名</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令格式：-1"><span class="toc-number">3.1.</span> <span class="toc-text">命令格式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令执行时的顺序"><span class="toc-number">3.2.</span> <span class="toc-text">命令执行时的顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#让别名永久生效"><span class="toc-number">3.3.</span> <span class="toc-text">让别名永久生效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除别名"><span class="toc-number">3.4.</span> <span class="toc-text">删除别名</span></a></li></ol></li></ol>
         
     </div>
     <style>
