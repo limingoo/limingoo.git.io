@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="Shell脚本执行方式第一个脚本hello.sh12#!/bin/bashecho &quot;hello world&quot; 执行脚本 赋予执行权限，直接运行 chmod 755 hello.sh ./hello.sh   通过Bash调用执行脚本 bash hello.sh">
+<meta name="description" content="Shell脚本执行方式第一个脚本hello.sh12#!/bin/bashecho &quot;hello world&quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shell基础">
+<meta property="og:title" content="Shell基础(一)">
 <meta property="og:url" content="http://wuhainan.com/2019/03/10/Shell基础/index.html">
 <meta property="og:site_name" content="WuHainan&#39;Blog">
-<meta property="og:description" content="Shell脚本执行方式第一个脚本hello.sh12#!/bin/bashecho &quot;hello world&quot; 执行脚本 赋予执行权限，直接运行 chmod 755 hello.sh ./hello.sh   通过Bash调用执行脚本 bash hello.sh">
+<meta property="og:description" content="Shell脚本执行方式第一个脚本hello.sh12#!/bin/bashecho &quot;hello world&quot;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-10T09:13:27.121Z">
+<meta property="og:updated_time" content="2019-03-11T12:48:47.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shell基础">
-<meta name="twitter:description" content="Shell脚本执行方式第一个脚本hello.sh12#!/bin/bashecho &quot;hello world&quot; 执行脚本 赋予执行权限，直接运行 chmod 755 hello.sh ./hello.sh   通过Bash调用执行脚本 bash hello.sh">
+<meta name="twitter:title" content="Shell基础(一)">
+<meta name="twitter:description" content="Shell脚本执行方式第一个脚本hello.sh12#!/bin/bashecho &quot;hello world&quot;">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Shell基础 | WuHainan&#39;Blog</title>
+<title>Shell基础(一) | WuHainan&#39;Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -293,7 +293,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Shell基础
+      Shell基础(一)
     </h1>
   
 
@@ -311,6 +311,7 @@
       
           
         <h1 id="Shell脚本执行方式"><a href="#Shell脚本执行方式" class="headerlink" title="Shell脚本执行方式"></a>Shell脚本执行方式</h1><h2 id="第一个脚本hello-sh"><a href="#第一个脚本hello-sh" class="headerlink" title="第一个脚本hello.sh"></a>第一个脚本hello.sh</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">echo "hello world"</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h2><ul>
 <li>赋予执行权限，直接运行<ul>
 <li><code>chmod 755 hello.sh</code></li>
@@ -322,7 +323,6 @@
 </ul>
 </li>
 </ul>
-<a id="more"></a>
 <h1 id="查看历史命令"><a href="#查看历史命令" class="headerlink" title="查看历史命令"></a>查看历史命令</h1><h2 id="命令格式："><a href="#命令格式：" class="headerlink" title="命令格式："></a>命令格式：</h2><p><code>history [选项] [历史命令保存文件]</code></p>
 <h2 id="选项："><a href="#选项：" class="headerlink" title="选项："></a>选项：</h2><ul>
 <li>-c：清空历史命令</li>
@@ -345,6 +345,114 @@
 </ol>
 <h2 id="让别名永久生效"><a href="#让别名永久生效" class="headerlink" title="让别名永久生效"></a>让别名永久生效</h2><p>把别名写入环境变量配置文件 ~/.bashrc 中</p>
 <h2 id="删除别名"><a href="#删除别名" class="headerlink" title="删除别名"></a>删除别名</h2><p><code>[root@localhost ~]# unalias 别名</code></p>
+<h1 id="输入输出重定向"><a href="#输入输出重定向" class="headerlink" title="输入输出重定向"></a>输入输出重定向</h1><h2 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h2><table>
+    <tr>
+        <td>类型</td>
+        <td>符号</td>
+        <td>作用</td>
+    </tr>
+    <tr>
+        <td rowspan="2">标准输出重定向</td>
+        <td>命令 > 文件</td>
+        <td>以覆盖的方式，把命令的正确输出输出到指定的文件或设备中</td>
+    </tr>
+    <tr>
+        <td>命令 >> 文件</td>
+        <td>以追加的方式，把命令的正确输出输出到指定的文件或设备中</td>
+    </tr>
+    <tr>
+        <td rowspan="2">标准错误输出重定向</td>
+        <td>错误命令 2> 文件</td>
+        <td>以覆盖的方式，把命令的错误输出输出到指定的文件或设备中</td>
+    </tr>
+    <tr>
+        <td>错误命令 2>> 文件</td>
+        <td>以追加的方式，把命令的错误输出输出到指定的文件或设备中</td>
+    </tr>
+    <tr>
+        <td rowspan="5">正确输出和错误输出同时保存</td>
+        <td>命令 > 文件 2>&1</td>
+        <td>以覆盖的方式，把正确输出和错误输出都保存到同一个文件中</td>
+    </tr>
+    <tr>
+        <td>命令 >> 文件 2>&1</td>
+        <td>以追加的方式，把正确输出和错误输出都保存到同一个文件中</td>
+    </tr>
+    <tr>
+        <td>命令 &> 文件</td>
+        <td>以覆盖的方式，把正确输出和错误输出都保存到同一个文件中</td>
+    </tr>
+    <tr>
+        <td>命令 &>> 文件</td>
+        <td>以追加的方式，把正确输出和错误输出都保存到同一个文件中</td>
+    </tr>
+    <tr>
+        <td>命令 >> 文件1 2>> 文件2</td>
+        <td>把正确的输出追加到文件1中，把错误的输出追加到文件2中</td>
+    </tr>
+</table>
+
+<h1 id="多命令顺序执行"><a href="#多命令顺序执行" class="headerlink" title="多命令顺序执行"></a>多命令顺序执行</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">多命令执行符</th>
+<th style="text-align:center">格式</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">;</td>
+<td style="text-align:center">命令1;命令2</td>
+<td style="text-align:center">多条命令顺序执行，命令之间没有任何逻辑关系</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">命令1 &amp;&amp; 命令2</td>
+<td style="text-align:center">当命令1正确执行， 则命令2才会执行</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>当命令1执行不正确， 则命令2不会执行 |<br>|     ||     | 命令1 || 命令2 | 当命令1 执行不正确， 则命令2才会执行<br>当命令1正确执行， 则命令2不会执行 |</p>
+<p>如果我们想要判断某条命令是否正确执行，可以这样来做：</p>
+<p><code>[root@localhost ~]#命令 &amp;&amp; echo &quot;yes&quot; || echo &quot;no&quot;</code></p>
+<h1 id="管道符"><a href="#管道符" class="headerlink" title="管道符"></a>管道符</h1><h2 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h2><p><code>[root@localhost ~]#命令1 | 命令2</code></p>
+<p>命令1的正确输出作为命令2的操作对象</p>
+<h1 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h1><p>通配符用于匹配文件名或目录名</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">通配符</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">？</td>
+<td style="text-align:center">匹配一个任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">匹配 0 个或任意多个任意字符，也就是可以匹配任何内容</td>
+</tr>
+<tr>
+<td style="text-align:center">[]</td>
+<td style="text-align:center">匹配中括号中任意一个字符。例如，[abc] 代表一定匹配一个字符，或者是 a,或者是 b,或 者是 c</td>
+</tr>
+<tr>
+<td style="text-align:center">[-]</td>
+<td style="text-align:center">匹配中括号中任意一个字符，- 代表一个范围。例如，[a-z] 代表匹配一个小写字母</td>
+</tr>
+<tr>
+<td style="text-align:center"><sup><a href="#fn_" id="reffn_"></a></sup></td>
+<td style="text-align:center">逻辑非，表示匹配不是中括号内的一个字符。例如，[ ^0-9 ]代表匹配一个不是数字的字符</td>
+</tr>
+</tbody>
+</table>
+</div>
 
       
     </div>
@@ -353,12 +461,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/03/10/Shell基础/">Shell基础</a></p>
+        <p><span>本文标题:</span><a href="/2019/03/10/Shell基础/">Shell基础(一)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">天道酬勤whn</a></p>
         <p><span>发布时间:</span>2019-03-10, 16:27:36</p>
-        <p><span>最后更新:</span>2019-03-10, 17:13:27</p>
+        <p><span>最后更新:</span>2019-03-11, 20:48:47</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/03/10/Shell基础/" title="Shell基础">http://wuhainan.com/2019/03/10/Shell基础/</a>
+            <span>原始链接:</span><a class="post-url" href="/2019/03/10/Shell基础/" title="Shell基础(一)">http://wuhainan.com/2019/03/10/Shell基础/</a>
             <span class="copy-path" data-clipboard-text="原文: http://wuhainan.com/2019/03/10/Shell基础/　　作者: 天道酬勤whn" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -386,7 +494,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell脚本执行方式"><span class="toc-number">1.</span> <span class="toc-text">Shell脚本执行方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一个脚本hello-sh"><span class="toc-number">1.1.</span> <span class="toc-text">第一个脚本hello.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行脚本"><span class="toc-number">1.2.</span> <span class="toc-text">执行脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看历史命令"><span class="toc-number">2.</span> <span class="toc-text">查看历史命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令格式："><span class="toc-number">2.1.</span> <span class="toc-text">命令格式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选项："><span class="toc-number">2.2.</span> <span class="toc-text">选项：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#历史命令的调用："><span class="toc-number">2.3.</span> <span class="toc-text">历史命令的调用：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#给命令设置别名"><span class="toc-number">3.</span> <span class="toc-text">给命令设置别名</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令格式：-1"><span class="toc-number">3.1.</span> <span class="toc-text">命令格式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令执行时的顺序"><span class="toc-number">3.2.</span> <span class="toc-text">命令执行时的顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#让别名永久生效"><span class="toc-number">3.3.</span> <span class="toc-text">让别名永久生效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除别名"><span class="toc-number">3.4.</span> <span class="toc-text">删除别名</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell脚本执行方式"><span class="toc-number">1.</span> <span class="toc-text">Shell脚本执行方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一个脚本hello-sh"><span class="toc-number">1.1.</span> <span class="toc-text">第一个脚本hello.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行脚本"><span class="toc-number">1.2.</span> <span class="toc-text">执行脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看历史命令"><span class="toc-number">2.</span> <span class="toc-text">查看历史命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令格式："><span class="toc-number">2.1.</span> <span class="toc-text">命令格式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选项："><span class="toc-number">2.2.</span> <span class="toc-text">选项：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#历史命令的调用："><span class="toc-number">2.3.</span> <span class="toc-text">历史命令的调用：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#给命令设置别名"><span class="toc-number">3.</span> <span class="toc-text">给命令设置别名</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令格式：-1"><span class="toc-number">3.1.</span> <span class="toc-text">命令格式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令执行时的顺序"><span class="toc-number">3.2.</span> <span class="toc-text">命令执行时的顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#让别名永久生效"><span class="toc-number">3.3.</span> <span class="toc-text">让别名永久生效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除别名"><span class="toc-number">3.4.</span> <span class="toc-text">删除别名</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#输入输出重定向"><span class="toc-number">4.</span> <span class="toc-text">输入输出重定向</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#输出重定向"><span class="toc-number">4.1.</span> <span class="toc-text">输出重定向</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多命令顺序执行"><span class="toc-number">5.</span> <span class="toc-text">多命令顺序执行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#管道符"><span class="toc-number">6.</span> <span class="toc-text">管道符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令格式"><span class="toc-number">6.1.</span> <span class="toc-text">命令格式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#通配符"><span class="toc-number">7.</span> <span class="toc-text">通配符</span></a></li></ol>
         
     </div>
     <style>
@@ -422,7 +530,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Shell基础　| WuHainan'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Shell基础(一)　| WuHainan'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -454,7 +562,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/10/Shell基础/">Shell基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/05/Git学习总结/">Git学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/26/梯度下降法/">梯度下降法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/24/Linux常用命令总结/">Linux常用命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/">MIT线性代数公开课笔记(五)——向量空间、列空间和零空间</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/">MIT线性代数公开课笔记(四)——转置与置换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/">MIT线性代数公开课笔记(三)——矩阵乘法和逆</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/">MIT线性代数公开课笔记(二)——矩阵消元</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">MIT线性代数公开课笔记(一)——方程组的几何解释</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/29/线性模型/">线性模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/16/k-近邻/">k-近邻</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/10/Shell基础/">Shell基础(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/05/Git学习总结/">Git学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/26/梯度下降法/">梯度下降法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/24/Linux常用命令总结/">Linux常用命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/18/MIT线性代数公开课笔记(五)——向量空间、列空间和零空间/">MIT线性代数公开课笔记(五)——向量空间、列空间和零空间</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/16/MIT线性代数公开课笔记(四)——转置与置换/">MIT线性代数公开课笔记(四)——转置与置换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/14/MIT线性代数公开课笔记(三)——矩阵乘法和逆/">MIT线性代数公开课笔记(三)——矩阵乘法和逆</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/13/MIT线性代数公开课笔记(二)——矩阵消元/">MIT线性代数公开课笔记(二)——矩阵消元</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/12/MIT线性代数公开课笔记(一)——方程组的几何解释/">MIT线性代数公开课笔记(一)——方程组的几何解释</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/29/线性模型/">线性模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/16/k-近邻/">k-近邻</a></li></ul>
 
 
 
